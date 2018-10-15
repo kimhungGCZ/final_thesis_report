@@ -1,0 +1,213 @@
+
+\documentclass[a4paper,10pt,twoside]{ThesisStyle}
+
+\include{formatAndDefs}
+\include{myDefinitions}
+
+\usepackage{pdfpages}
+
+
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%\usepackage[left=1.3cm,top=0cm,right=1.3cm,bottom=1.2cm]{geometry}
+%\usepackage{graphicx}
+%\usepackage{eso-pic}
+%\usepackage{array}
+%\usepackage[french]{babel}
+%\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage{helvet}	% or \usepackage{lmodern}
+%\renewcommand\textnumero{n$^{\textsf{{\tiny O}}}$}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\include{TitlePagethinh}
+
+\cleardoublepage
+\include{dedicace}
+\vspace{3cm}
+\dominitoc
+\pagenumbering{roman}
+\cleardoublepage
+
+
+%\section*{}
+% \vspace{118ex}
+% \begin{center}
+% \copyright \hspace{1ex}2012\\Tien-Thinh NGUYEN\\ALL RIGHTS RESERVED
+% \end{center}
+% \cleardoublepage
+
+
+\addcontentsline{toc}{section}{Acknowledgements}
+\markboth{Acknowledgements}{Acknowledgements}
+\chapter*{Acknowledgements}
+
+First of all, I would like to extend my sincere thanks to my advisor Prof. Christian Bonnet for his valuable support and brilliant ideas. Throughout this thesis, he has always found the time for me to guide and encourage my research activities. I also very much appreciate his dynamism and his competences that made this thesis work a success. It has been my real pleasure to work with Christian. \\
+
+I would also like to thank Prof. Jérôme Härri who helped me so much with his stimulating technical discussions and constructive publication reviewing. A special warm thank to my master advisor Michelle Wetterwald for her kindness and words of wisdom which facilitate not only my research but also my life.\\
+
+I am grateful to the committee members of my jury, Prof. Jean-Marie Bonnin, Prof. Thomas Noël and M. Walid Dabbous for their valuable inputs and time spent reading this thesis. \\
+
+I would like to express my appreciation to my colleagues and friends at Eurecom, for all the unforgettable enjoyable moments and their helps. I also wish to extend my warmest thanks to all my friends in France and Vietnam for all the wonderful time we spend together.\\
+
+Finally, last but not least, I want to express my special gratitude to my parents, my wife and my son for their unconditional support, love and trust. They, together with another members in my big family, make my life full of kindness and happiness with their encouragement.\\
+
+\addcontentsline{toc}{section}{Abstract}
+\markboth{Abstract}{Abstract}
+\chapter*{Abstract}
+With the development of wireless access technology as well as the explosion of mobile devices (such as smartphones, tablets, and vehicles), the next generation mobile network is not only restricted to provide the traditional voice services but also the data services. Also, the increasing penetration of the mobile devices is generating a huge number of data traffic over mobile networks. In all-IP mobile networks, IP mobility management is a crucial concept to meet the demand of ubiquitous Internet connectivity as well as new service requirements such as seamless handover across heterogeneous networks, consistent quality of experience and stringent delay constraints. In this context, the scalability and bandwidth efficiency from the multicast routing make the IP multicast a valuable solution from the application point of view to deal with a huge number of traffic, particularly, in mobile environments where users usually share frequency bands and limited capacity. But one of the major challenges for the multicast support is when considering mobility. It comes from the fact that the multicast protocols were designed to support the stationary multicast parties. As such, it raises some issues as a result of the interaction of IP multicast and IP mobility protocols such as service interruption, packet loss, routing non-optimal, and packet duplication, etc. In fact, the conventional IP mobility management (e.g., Mobile IPv6 (MIPv6) and Proxy Mobile IPv6 (PMIPv6)) which leverages on the centralized mobility management approach, brings several issues for the network operator like inefficient use of network resources, poor performance, and scalability issues. The concept of Distributed Mobility Management (DMM) aims to tackle these issues and helps the mobile operators address the challenges created by rising mobile usage while enhancing the overall customer experience.\\
+
+In this thesis, our main objective is to deal with the multicast mobility-related issues. The solutions are proposed in the context of the evolution of the current IP mobility management: from the host-based to the network-based, and also from the centralized to the distributed mobility management. In more details, for a single PMIPv6 domain, we introduce a method to reduce the service disruption and leave latency. We then present a solution from the load balancing point of view to address the service disruption and packet duplication issue. As DMM has not been standardized, we propose an inter-domain mobility solution, which can be considered as a step in the evolution from PMIP towards DMM. Finally, we converge to a final architecture in a DMM environment that can offer various benefits and address most of the multicast listener mobility-related issues. Throughout this thesis, a near-to-real testbed is used to achieve the realistic results.
+
+\clearpage
+
+
+\addcontentsline{toc}{section}{Contents}
+\markboth{Contents}{Contents}
+
+\tableofcontents
+\clearpage
+
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\clearpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\clearpage
+
+%\printnomenclature
+\addcontentsline{toc}{section}{Glossary}
+\markboth{Glossary}{Glossary}
+\include{acronyms}
+\clearpage
+
+\mainmatter
+\chapter{Introduction}
+\label{intro}
+\input{Introduction/Chapter1/chapter1_intro}
+\part{Background Analysis\label{pa:part1}}
+
+\chapter*{Overview of Part \ref{pa:part1}}
+In this Part, we will introduce the fundamental notions of IP multicast, mobility management protocol as well as identify the issues and challenges when considering multicast in wireless mobile networks. We then enlist the performance evaluation metrics for IP mobile multicast. Next, we present an experiment testbed for IP mobile multicast which provides realistic results at a low cost. More than that, our experiment method in general can be applied for experiment in wireless mobile networks. \\
+
+In Chapter \ref{ch:reference_technologies}, we describe the basic notions of IP multicast, its components and its applications in the Internet. To deploy the multicast service, two fundamental components are needed: group management protocols and multicast routing protocols. We then present in details of how an IP multicast service works from the Protocol Independent Multicast - Sparse-Mode (PIM-SM) and MLD protocols point of view. Regarding the IP mobility management protocols, starting from MIPv6 and its variants, we introduce PMIPv6 protocol and its enhancements. After discussing the limitations of the centralized mobility management such as MIPv6 and PMIPv6, DMM will be presented as a promising mobility management scheme for future networks. Based on the fundamental concepts of IP multicast and mobility management protocols, we highlight the issues and challenges when applying IP multicast in a mobile environment. Different impact factors on the multicast service are identified. At the end of this chapter, we highlight such issues as multicast service disruption time, packet loss, tunnel convergence problem, sub-optimal routing, end-to-end delay, and leave latency (waste of resources). \\
+
+In Chapter \ref{ch:performance_evaluation}, a list of specific requirements that would lead to the design of the target solutions is provided. We then define the performance metrics that are crucial to access the effectiveness of a mobile multicast solution. In the context of this thesis, we focus on such metrics as signaling overhead, handover latency (multicast service disruption time), end-to-end delay, packet loss and tunneling overhead. The qualitative metrics like easy-to-deploy and scalability are also taken into account. We then introduce an experiment method which in some cases is used to improve the degree of confidence of the solution's results. Additionally, it can be considered as a framework that aims to close the gap between research experimentation and real deployment. \\
+
+Throughout this thesis, in order to validate the results, firstly, we use an analytical analysis. The proposed experiment method then, in some cases, is used to improve the degree of confidence of the results.
+
+\chapter{Reference Technologies and Challenges}
+\label{ch:reference_technologies}
+\input{Part1/Chapter2/chapter2_reference_technologies} 
+
+\chapter{Performance Evaluation for IP Mobile Multicast}
+\label{ch:performance_evaluation}
+\input{Part1/Chapter3/chapter3_simulation}
+
+\chapter*{Conclusion of Part \ref{pa:part1}}
+In Part \ref{pa:part1} of this thesis, we have given a brief introduction to IP multicast, IP mobility and identified the issues and challenges when considering multicast in a mobile environment as well as introduced the solutions for these issues mainly from the IETF point of view. We have presented the evaluation metrics to assess the performance of a mobile multicast solution and a near-to real testbed which allows achieve the realistic results at low cost. \\
+
+In Chapter \ref{ch:reference_technologies}, we have discussed the basic concepts of IP multicast regarding the multicast address, the architecture, the models and possible applications. Two groups of protocol are needed for providing multicast service, namely multicast group management and multicast routing protocols. We concluded that these protocols, which are originally designed for a fixed network, may not suitable in a mobile/wireless environment. We have then presented various mobility management protocols ranging from the host-based to the network-based, from the centralized to the distributed approach. We focused on PMIPv6 as a typical example of the network-based and the centralized approach. DMM also was presented, mainly focusing on the network-based approach. Note that, from now on, only the network-based mobility management protocols are considered. Starting from the issues/challenges raising when considering IP multicast in MIPv6, we investigated, in details, the multicast-related issues in PMIPv6 from different aspects (general issues, the listener-specified, the source-specified and the deployment issues). We concluded that the mobility of the node has different impacts on the multicast service depending on such factors as the role of the node in the multicast session (source or listener), the considered multicast model (ASM or SSM), the multicast routing protocol, the multicast group management protocol and the mobility protocol in use as well as wireless access technology. In the scope of this thesis, we mainly focus on the service disruption and packet loss; tunnel convergence; sub-optimal routing and end-to-end delay; and leave latency and waste of resources.  \\
+
+In Chapter \ref{ch:performance_evaluation}, the performance evaluation metrics to efficiently assess the performance of a  mobile multicast solution has been introduced. We have then presented a near-to-real testbed which allows achieving the realistic results at low cost. The PMIPv6 testbed then can be used to evaluate the solutions in the next Parts. 
+
+\part{IP Multicast Mobility in Proxy Mobile IPv6}
+\label{pa:part2}
+\chapter*{Overview of Part \ref{pa:part2}}
+
+In Part \ref{pa:part2}, we consider different aspects of multicast mobility in a PMIPv6 domain. Starting with a basic issue - service disruption, this Part then discusses the multicast mobility-related issues in heterogeneous network. As multicast service is becoming popular, scalability and reliability issue should also be taken into account.\\
+
+Chapter \ref{ch:multicast_PMIP} focuses on the service disruption caused by the movement of a listener in a PMIPv6 domain. Since the base solution for the multicast listener in PMIPv6 does not address any specific optimization and performance issues, an effective method, which is based on the combination of the multicast context transfer and the explicit tracking function, will be proposed to minimize the service disruption. Another contribution of this chapter is that a near-to-real testbed for multicast mobility is provided. This testbed allows simulating the movement of multiple sources and listeners at the same time. A real implementation of both PMIPv6 and the multicast-related components (MLD proxy, multicast context transfer and explicit tracking function) are provided. A listener part of MLDv2 is also implemented in NS-3.  \\
+ 
+Chapter \ref{ch:LB} discusses the scalability issue raised when considering a large number of mobile nodes together with their traffic demand. From the fact that multicast is the main service of the future internet and the mobile video content which is typically has much higher bit rates than the other content types, the multicast service should play a crucial load factor on the LMA. The consideration of multicast in the existing load balancing (LB) mechanisms can lead to several issues from both LB (efficiency degradation) and multicast service perspective (e.g., tunnel convergence problem and service disruption). Thus, a LB among LMAs taking multicast into account is proposed. The proposed solution helps better distribute the load among the LMAs (caused by the multicast flows) in runtime, thus, improving the efficiency of resource utilization. Moreover, the proposed solution does not influence the ongoing unicast/multicast sessions (except the selected session with which the multicast service disruption, in most cases, satisfies the requirements for the real-time services). \\
+
+Chapter \ref{ch:EVCS}, via analyzing a use case of electric vehicle charging service (EVCS), discusses the issues and then proposes solution for a node moving in heterogeneous networks. Although the heterogeneous networks provide the possibility for greatly increasing capacity at a low cost, seamless mobility across different wireless access technologies e.g., WLAN, WiMAX and LTE needs to be taken into account. In the context of EVCS, a mobile node (an Electric Vehicle (EV)), can be connected with the infrastructure via different wireless/wired technologies in different steps: LTE while driving, WLAN while approaching a charging infrastructure, and PLC while being docked at a charging infrastructure. In the context of connecting vehicles which is gaining momentum, vehicle is a good example for considering the mobility in the heterogeneous networks. In addition, considering multicast in the EV is one step to enable the entertainment system in the EV, which is becoming more and more popular e.g., software update of the in-vehicle systems.\\
+
+\chapter{Optimizing Service Continuity in a Single PMIPv6 Domain} \label{ch:multicast_PMIP} 
+\input{Part2/Chapter4/chapter4_multicast_PMIP}
+
+\chapter{Load Balancing of Multicast Flows in PMIPv6 Networks} \label{ch:LB} 
+\input{Part2/Chapter5/chapter5_LB.tex}
+
+\chapter{Mobility in Heterogeneous Networks: Electric Vehicle Charging Service Use-Case} 
+\label{ch:EVCS}
+\input{Part2/Chapter6/chapter6_PWL.tex}
+
+
+\chapter*{Conclusion of Part \ref{pa:part2}}
+In Part \ref{pa:part2} of this thesis, we have discussed different aspects of multicast mobility in a PMIPv6 domain and proposed the corresponding solutions. Starting with a basic issue - service disruption, this Part then considered the multicast mobility-related issues in the heterogeneous network as well as the scalability issue from a load-balancing point of view.\\
+
+Chapter \ref{ch:multicast_PMIP} has focused on the service disruption caused by the movement of a listener in a PMIPv6 domain. A simple but effective solution has been proposed to mitigate the service disruption and the handover latency. This solution is based on the combination of the multicast context transfer and explicit tracking function. We have presented a near-to-real testbed for the multicast mobility which allows simulating the movement of multiple sources and listeners at the same time. Also, a real implementation of both PMIPv6 and the multicast-related components (MLD proxy, multicast context transfer and explicit tracking function) have been developed. A listener part of MLDv2 was also implemented in NS-3.  \\
+
+Chapter \ref{ch:LB} discusses the scalability issue raised when considering a large number of mobile nodes and their traffic demand. From the fact that multicast is the main service of the future internet, the multicast service should play a crucial factor in putting load on the LMA. The consideration of multicast in the existing LB mechanisms can lead to several issues from both LB (efficiency degradation) and multicast service perspective (e.g., tunnel convergence problem and service disruption).  Thus, a LB among LMAs taking multicast into account was proposed. The proposed solution helps better distribute the load among the LMAs in runtime, thus, improving the efficiency of resource utilization. Moreover, the proposed solution does not influence the ongoing unicast/multicast sessions (except the selected session with which the multicast service disruption, in most cases, satisfies the requirements for the real-time services \cite{interruption_requirements}). Our solution can co-operate with the existing ones to improve the performance of the system. This chapter also showed an example of the performance of the near-to-real testbed when considering the real traffic.\\ 
+
+Chapter \ref{ch:EVCS}, via analyzing a use case of electric vehicle charging services, has discussed the issues as well as proposed solution for a node moving in heterogeneous networks. In the context of EVCS, a mobile node (an EV), can be connected with the infrastructure via different wireless/wired technologies in different steps: LTE while driving, WLAN while approaching a charging infrastructure, and PLC while being docked at a charging infrastructure. Thus, both vertical and horizontal handovers between different access technologies have been considered. The logical interface has been used to hide the different access technology to the IP and the application layer. \\
+ 
+In the next Part, we will consider the inter-domain mobility as a step towards DMM before investigating solution for DMM environment.
+
+\part{IP Multicast Mobility in DMM}
+\label{pa:part3}
+\chapter*{Overview of Part \ref{pa:part3}}
+
+In this Part, we will first propose an inter-domain mobility for PMIPv6 based on DMM concept. The inter-domain PMIPv6 can be considered as one step towards DMM. The multicast mobility support then will be considered in both the inter-domain and DMM environments. \\
+
+In Chapter \ref{ch:inter_domain}, a solution for inter-domain mobility for PMIPv6 will be presented. As DMM is still under discussion, and has not been standardized, it will not be deployed soon. In addition, since PMIP is widely accepted, inter-domain PMIPv6 which is based on DMM concept can be considered as a step towards a \textit{pure DMM} deployment. The proposed solution allows the data packets to be routed via a near-optimal way by bringing the mobility anchors closer to the MN while the control management can be placed anywhere in the network. A basic support for the multicast listener mobility in an inter-domain environment then will be provided.  \\
+
+In Chapter \ref{ch:multicast_dmm}, a dynamic multicast mobility anchor selection will be proposed in DMM. It enables a per-flow multicast support. From a multicast service perspective, it helps satisfy the strict requirements in terms of service disruption and delay. Additionally, the packet duplication as well as waste of resources (or leave latency) issues can be reduced. It also provides a mechanism to better distribute the load among the MARs. 
+
+%\clearpage
+\chapter{Inter-domain Mobility for PMIPv6: From the DMM's Perspective} \label{ch:inter_domain}
+\input{Part3/Chapter7/chapter7_DMM_inter.tex}
+
+\chapter{On the Efficiency of Dynamic Multicast Mobility Anchor in DMM} \label{ch:multicast_dmm}
+\input{Part3/Chapter8/chapter8_DMM.tex}
+\chapter*{Conclusion of Part \ref{pa:part3}}
+
+In Chapter \ref{ch:inter_domain}, a solution for inter-domain mobility for PMIPv6 has been presented. As DMM is still under discussion, it will not be deployed soon. In addition, since PMIP is widely accepted, the inter-domain PMIPv6 which is based on DMM concept can be considered as a step towards the deployment of DMM. The proposed solution allows the data packets to be routed via a near-optimal way by bringing the mobility anchors closer to the MN while the control management can be placed anywhere in the network. A basic mechanism for the listener mobility in an inter-domain environment was also introduced. It helps keep the MN unaware of mobility with an acceptable service disruption.\\
+
+In Chapter \ref{ch:multicast_dmm}, a dynamic multicast mobility anchor selection has been proposed in DMM. This mechanism takes into account various contexts ranging from the multicast service, the mobile node's mobility to the network context, thereby, enabling a per-flow multicast support. From a multicast service perspective, it helps satisfy a set of requirements in terms of service disruption and delay. Several benefits can also be offered such as tunnel convergence avoidance, effective tunnel management, route optimization, waste of resources reduction and multicast flow load distribution. 
+
+
+% \cleardoublepage\pagestyle{empty}\mbox{}\cleardoublepage
+\addtocontents{toc}{\protect\addvspace{2.25em}}
+\clearpage\pdfbookmark[-1]{Conclusions and Future Perspectives}{conclusions}
+% \chapter{Conclusions}
+% Conclusion and Perspectives
+% \clearpage
+\chapter{Conclusions and Outlook}
+%\minitoc
+\label{ch:CFP}
+% \lipsum[1-5]
+\input{conclusions/conclusions}
+
+\appendix
+%\clearpage
+\chapter{R\'{e}sum\'{e} de la Th\`{e}se en Fran\c{c}ais}
+\input{resume/resumfrancais.tex}
+\chapter{List of Publications}
+\label{publication}
+% \markboth{List ofPublications}{ListofPublications}
+\input{publications}
+
+
+% \clearpage
+%\bibliographystyle{ThesisStyle}
+%\bibliographystyle{plainnat}
+\bibliographystyle{IEEEtran}
+% abbrv
+% ThesisStyleWithEtAl
+\bibliography{ref_final}
+% \printnomenclature
+
+\end{document}
+ 

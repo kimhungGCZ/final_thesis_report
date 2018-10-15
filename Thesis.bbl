@@ -1,0 +1,702 @@
+\begin{thebibliography}{100}
+
+\bibitem{acea}
+{ACEA (Association des Constructeurs Europeens d'Automobiles)}.
+\newblock \url{http://www.acea.be/}.
+
+\bibitem{ertico}
+{ERTICO}.
+\newblock \url{http://www.ertico.com/}.
+
+\bibitem{etsitc}
+{European Telecommunications Standards Institute (ETSI) - Technical Commitee
+  (TC)}.
+\newblock Technical report, {Intelligent Transportation Systems (ITS)}.
+
+\bibitem{fcc}
+{Federal Communications Commission (FCC)}.
+\newblock \url{http://wireless.fcc.gov/services/its/dsrc/}.
+
+\bibitem{inrix}
+{INRIX European National Traffic Scorecard in 2010}.
+\newblock \url{http://www.inrix.com/scorecard/}.
+
+\bibitem{itsAmerica}
+{ITS America}.
+\newblock \url{http://www.itsa.org/}.
+
+\bibitem{ns2}
+Ns-2 official website.
+\newblock \url{http://www.isi.edu/nsnam/ns/}.
+
+\bibitem{c2c}
+{The C2C-CC official website}.
+\newblock \url{http://www.car-2-car.org/}.
+
+\bibitem{geonet}
+{T}he {G}eo{N}et project.
+\newblock \url{http://www.geonet-project.eu/}.
+
+\bibitem{wards}
+{The Information Center For And About The Global Auto Industry}.
+\newblock \url{http://wardsauto.com/ar/world_vehicle_population_110815}.
+
+\bibitem{itetris}
+{T}he i{TETRIS} project.
+\newblock \url{http://www.ict-itetris.eu/10-10-10-community/}.
+
+\bibitem{ns3}
+{T}he ns-3 simulator.
+\newblock \url{http://www.nsnam.org/}.
+
+\bibitem{sumo}
+{T}he {SUMO} simulator.
+\newblock \url{http://sumo.sourceforge.net/}.
+
+\bibitem{who}
+{T}he {W}orld {H}ealth {O}rganizations ({WHO}).
+\newblock \url{http://www.who.int}.
+
+\bibitem{veins}
+Veins official website.
+\newblock \url{http://www7.informatik.uni-erlangen.de/veins/}.
+
+\bibitem{802.11p}
+{IEEE standard for information technology-telecommunications and information
+  exchange between systems-local and metropolitan area networks-Specfic
+  requirements-Part 11: Wireless LAN medium access control (MAC) and physical
+  layer (PHY) specifications amendment 6: Wireless Access in Vehicular
+  Environments.}
+\newblock {\em IEEE 802.11 Working Group. (2010)}, 2000.
+
+\bibitem{c2cmanifesto}
+{Car to Car Communication Consortium Manifesto: Overview of the C2C-CC System}.
+\newblock Technical report, {Car to Car Communication Consortium, C2C-CC},
+  2007.
+
+\bibitem{bsm}
+{Dedicated Short Range Communications (DSRC) Message Set Dictionary; SAE Std
+  J2735}.
+\newblock Technical report, {SAE International, DSRC Committee}, November 2009.
+
+\bibitem{aimsun}
+Aimsun.
+\newblock http://www.aimsun.com/wp/, 2012.
+
+\bibitem{ctr}
+P.~Akkhara, Y.~Sekiya, and Y.~Wakahara.
+\newblock {Efficient Alarm Messaging by Multi-Channel Cut-Through
+  Rebroadcasting based on Inter-Vehicle Communication}.
+\newblock {\em in Proc. of the IAENG Journal of Computer Science (IJCS)}, 2009.
+
+\bibitem{oapb}
+H.~ALshaer and E.~Horlai.
+\newblock {An Optimized Adaptive Broadcast Scheme for Inter-Vehicle
+  Communication}.
+\newblock {\em in Proc. of the 61st Vehicular Technology Conference (VTC'05)},
+  2005.
+
+\bibitem{95pr}
+N.~An, T.~Gaugel, and H.~Hartenstein.
+\newblock Vanet: Is 95\% probability of packet reception safe?
+\newblock {\em in Proc. of the eleventh International Conference on ITS
+  Telecommunications (ITST'11)}, August 2011.
+
+\bibitem{ekf1}
+B.~Anderson and J.~Moore.
+\newblock {\em {Optimal Filtering}}.
+\newblock Prentice-Hall, Englewood Cliffs, NJ, 1979.
+
+\bibitem{l1}
+M.~Artimy.
+\newblock {Local Density Estimation and Dynamic Transmission-Range Assignment
+  in Vehicular Ad Hoc Networks}.
+\newblock {\em in Proc. of the IEEE Transactions on Intelligent Transportation
+  Systems}, September 2007.
+
+\bibitem{baloon}
+N.~Balon.
+\newblock {Introduction to Vehicular Ad Hoc Networks and the Broadcast Storm
+  Problem}.
+
+\bibitem{balon}
+N.~Balon and J.~Guo.
+\newblock {Increasing Broadcast Reliability in Vehicular Ad Hoc Networks}.
+\newblock {\em in Proc. of the 3rd ACM International Workshop on Vehicular Ad
+  Hoc Networks (VANET'06)}, 2006.
+
+\bibitem{odam}
+A.~Benslimane.
+\newblock {Optimized Dissemination of Alarm Messages in Vehicular Ad-hoc
+  Networks (VANET)}.
+\newblock {\em in Proc. of the seventh IEEE International Conference on High
+  Speed Networks and Multimedia Communications (HSNMC'04)}, 2004.
+
+\bibitem{ekfb3}
+G.~Binazzi, L.~Chisci, F.~Chiti, R.~Fantacci, and S.~Menci.
+\newblock {Localization of a Swarm of Mobile Agents via Unscented Kalman
+  Filtering}.
+\newblock {\em in Proc. of the IEEE International Conference on Communications
+  (ICC'09)}, pages 1 --5, June 2009.
+
+\bibitem{ob-van}
+B.~Blaszczyszyn, A.~Laouiti, P.~Muhlethaler, and Y.~Toor.
+\newblock {Opportunistic broadcast in VANETs (OB-VAN) using active signaling
+  for relays selection}.
+\newblock {\em in Proc. of the eighth Intelligent Transport Systems
+  Telecommunications(ITST'08)}, October 2008.
+
+\bibitem{swarmIntelligence}
+E.~Bonabeau, M.~Dorigo, and G.~Theraulaz.
+\newblock {\em {Swarm intelligence: from natural to artificial systems}}.
+\newblock Oxford University Press, Inc., New York, NY, USA, 1999.
+
+\bibitem{DBA-MAC}
+L.~Bononi and M.~D. Felice.
+\newblock {A {C}ross {L}ayered {M}AC and {C}lustering {S}cheme for {E}fficient
+  {B}roadcast in {V}ANETs}.
+\newblock {\em in Proc. of the IEEE International Conference on Mobile Ad hoc
+  and Sensor Systems (MASS'07)}, October.
+
+\bibitem{IEEEhowto:Bries}
+L.~Briesemeister, L.~Schafers, and G.~Hommel.
+\newblock {Disseminating {M}essages among Highly Mobile Hosts based on
+  {I}ntervehicle {C}ommunication}.
+\newblock {\em in Proc. of the IEEE Intelligent Vehicles Symposium (IV'00)},
+  October 2000.
+
+\bibitem{NN}
+C.~M.~H. C.~Y.~Kong and M.~Y. Mashor.
+\newblock {Radar Tracking System Using Neural Networks}.
+\newblock 1998.
+
+\bibitem{lpg}
+W.~Chen, J.~Chennikara-Varghese, J.~Lee, S.~Cai, and T.~Hikita.
+\newblock Dynamic {L}ocal {P}eer {G}roup {O}rganizations for {V}ehicle
+  {C}ommunications.
+\newblock {\em in Proc. of the third Annual International Conference on Mobile
+  and Ubiquitous Systems - Workshops}, July 2006.
+
+\bibitem{kf2}
+Z.~Chen.
+\newblock {Bayesian Filtering: From Kalman Filters to Particle Filters, and
+  Beyond}.
+\newblock Technical report, McMaster University, 2003.
+
+\bibitem{ekfb2}
+J.~L. Crassidis and F.~L. Markley.
+\newblock {Unscented Filtering for Spacecraft Attitude Estimation}.
+\newblock {\em in Proc. of the Journal of Guidance, Control, and Dynamics},
+  26(4):536--542, 2003.
+
+\bibitem{IPv6}
+S.~Deering and R.~Hinden.
+\newblock {\em {RFC 2460 Internet Protocol, Version 6 (IPv6) Specification}}.
+\newblock Internet Engineering Task Force, December 1998.
+
+\bibitem{chapman}
+J.~L. Doob.
+\newblock {\em Stochastic Processes}.
+\newblock Wiley, New York, 1953.
+
+\bibitem{etsi}
+{Draft ETSI TS102 636-4-1 V0.0.5}.
+\newblock {Intelligent Transportation Systems (ITS); Vehicular Communications;
+  Part 4: Geographical Addressing and Forwarding for Point-to-Point and
+  Point-to-Multipoint Communications; Sub-part1: Media-Independent
+  Functionality}, January 2010.
+
+\bibitem{etsidenm}
+{Draft ETSI TS102 637-3 V1.1.1}.
+\newblock {Intelligent Transportation Systems (ITS); Vehicular Communications;
+  Basic Set of Applications; Part3: Specifications of Decentralized
+  Environmental Notification Basic Service}, September 2010.
+
+\bibitem{broad}
+M.~Durresi, A.~Durresi, and L.~Barolli.
+\newblock {Emergency {B}roadcast {P}rotocol for {I}nter-{V}ehicle
+  {C}ommunications}.
+\newblock {\em in Proc. of the eleventh {I}nternational {C}onference on
+  {P}arallel and {D}istributed {S}ystems (ICPADS'05)}, 2005.
+
+\bibitem{IEEEhowto:benefit2}
+S.~Eichler and C.~Schroth.
+\newblock A {M}ulti-{L}ayer {A}pproach for {I}mproving the {S}calability of
+  {V}ehicular {A}d-{H}oc {N}etworks.
+\newblock {\em in Proc. of the Conference on Communication in Distributed
+  Systems (KiVS'07), the fourth Workshop on Mobile Ad Hoc Networks (WMAN'07)},
+  March 2007.
+
+\bibitem{IEEEhowto:benefit1}
+S.~Eichler, C.~Schroth, T.~Koscht, and M.~Strassbergert.
+\newblock Strategies for {C}ontext-{A}daptive {M}essage {D}issemination in
+  {V}ehicular {A}d {H}oc {N}etworks.
+\newblock {\em in Proc. of the Second International Workshop on
+  Vehicle-to-Vehicle Communications (V2VCOM'06)}, 2006.
+
+\bibitem{etsi2}
+{ETSI specification TR 102 638, V1.0.5}.
+\newblock {Intelligent Transportation Systems (ITS); Vehicular Communications;
+  Basic Set of Applications; Definition}, January 2009.
+
+\bibitem{cam}
+{ETSI specification TS 102 637-2, V1.1.1}.
+\newblock {Intelligent Transportation Systems (ITS); Vehicular Communications;
+  Basic Set of Applications;Part 2: Specification of Cooperative Awareness
+  Basic ServiceBasic set of applications; cooperative awareness basic service},
+  April 2010.
+
+\bibitem{IEEEhowto:SBA}
+E.~Fasolo, R.~Furiato, and A.~Zanella.
+\newblock {Smart {B}roadcast Algorithm for Inter-vehicular Communications}.
+\newblock {\em in Proc. of the Wireless Personal Multimedia Communication
+  (WPMC'05)}, September 2005.
+
+\bibitem{cbf}
+H.~F\"{u}{\ss}ler, H.~Hartenstein, J.~Widmer, M.~Mauve, and W.~Effelsberg.
+\newblock {Contention-Based Forwarding for Street Scenarios}.
+\newblock {\em in Proc. of the first International Workshop on Intelligent
+  Transportation (WIT'04)}, March 2004.
+
+\bibitem{ekf2}
+A.~Gelb.
+\newblock {\em {Applied Optimal Estimation}}.
+\newblock MIT Press, 1974.
+
+\bibitem{is}
+N.~Gordon.
+\newblock {A Hybrid Bootstrap Filter for Target Tracking in Clutter}.
+\newblock {\em in Proc. of the IEEE Transactions on Aerospace and Electronic
+  Systems}, 33:353--358, 1997.
+
+\bibitem{SIR}
+N.~Gordon, D.~Salmond, and A.~Smith.
+\newblock {Novel approach to nonlinear/non-Gaussian Bayesian state estimation}.
+\newblock {\em in Proc. of the IEEE Radar and Signal Processing}, 140(2):107
+  --113, April 1993.
+
+\bibitem{pf2}
+F.~Gustafsson, F.~Gunnarsson, N.~Bergman, U.~Forssell, J.~Jansson, R.~Karlsson,
+  and P.-J. Nordlund.
+\newblock {Particle Filters for Positioning, Navigation, and Tracking}.
+\newblock {\em in Proc. of the IEEE Transactions on Signal Processing}, 2002.
+
+\bibitem{bzb}
+F.~{H}rizi, C.~{B}onnet, J.~{H}\"{a}rri, and F.~{F}ilali.
+\newblock {A}dapting contention-based forwarding to urban vehicular topologies
+  for traffic safety applications.
+\newblock {\em in Proc. of the {A}nnals of {T}elecommunications, 2012}, pages
+  1--19, 2012.
+
+\bibitem{bzbconf}
+F.~Hrizi and F.~Filali.
+\newblock {Achieving broadcasting efficiency in V2X networks with a simple
+  distance-based protocol}.
+\newblock {\em in Proc. of the first International Conference on Communications
+  and Networking (COMNET'09)}, 2009.
+
+\bibitem{survey}
+F.~Hrizi and F.~Filali.
+\newblock {On {C}ongestion-{A}ware {B}roadcasting in {V2X} {N}etworks}.
+\newblock {\em in Proc. of the second international workshop on communication
+  technologies for vehicles (Nets4Cars'09)}, October 2009.
+
+\bibitem{vanet}
+F.~{H}rizi, J.~{H}{\"a}rri, and C.~{B}onnet.
+\newblock {C}an mobility predictions be compatible with cooperative active
+  safety for {VANET}?
+\newblock {\em in Proc. of the ninth ACM international workshop on Vehicular
+  inter-networking, systems, and applications (VANET'12)}, 2012.
+
+\bibitem{mobigis}
+F.~{H}rizi, J.~{H}{\"a}rri, and C.~{B}onnet.
+\newblock {I}mproving unreliable mobile {GIS} with swarm-based particle
+  filters.
+\newblock {\em in Proc. of the first {ACM} {SIGSPATIAL} {W}orkshop on {M}obile
+  {G}eographic {I}nformation {S}ystems ({MOBIGIS}'12)}, November 2012.
+
+\bibitem{raja2}
+C.-L. Huang, Y.~P. Fallah, R.~Sengupta, and H.~Krishnan.
+\newblock {Intervehicle Transmission Rate Control for Cooperative Active Safety
+  System}.
+\newblock {\em {in Proc. of the IEEE Transactions on Intelligent Transportation
+  Systems}}, September 2011.
+
+\bibitem{IP}
+Internet Engineering Task Force.
+\newblock {\em {RFC 791 Internet Protocol - DARPA Inernet Programm, Protocol
+  Specification}}, September 1981.
+
+\bibitem{itetrisd42}
+iTETRISWP400.
+\newblock {V2I wireless communications modeling}.
+\newblock Technical report, {D4.2}, 2009.
+
+\bibitem{itetrisd41}
+iTETRISWP400.
+\newblock {V2V wireless communications modeling}.
+\newblock Technical report, {D4.1}, 2009.
+
+\bibitem{Mittag}
+{J. Mittag, F. Schmidt-Eisenlohr, M. Killat, J. {H}\"{a}rri and H.
+  Hartenstein}.
+\newblock {Analysis and Design of Effective and Lowoverhead Transmission Power
+  Control for VANETs}.
+\newblock {\em in Proc. of the fifth ACM international workshop on Vehicular
+  Inter-NETworking (VANET'08)}, September.
+
+\bibitem{osi}
+H.~Z. J.D.~Day.
+\newblock {\em {The OSI Reference Model}}.
+
+\bibitem{pack}
+D.~Jiang, M.~Bogdanovic, and L.~Delgrossi.
+\newblock Piggybacked acknowledgement for reception assessment in a pervasive
+  broadcasting system.
+\newblock {\em in Proc. of the eighth International Symposium on Autonomous
+  Decentralized Systems (ISADS'07}, pages 387 --393, March 2007.
+
+\bibitem{rear}
+H.~Jiang, H.~Guo, and L.~Chen.
+\newblock Reliable and efficient alarm message routing in vanet.
+\newblock {\em in Proc. of the 28th International Conference on Distributed
+  Computing Systems Workshops}, 2008.
+
+\bibitem{sigmap}
+S.~Julier and J.~Uhlmann.
+\newblock {A new extension of the Kalman filter to nonlinear systems}.
+\newblock {\em in Proc. of the AeroSense: The eleventh Int. Symp. on
+  Aerospace/Defence Sensing, Simulation and Controls}, 1997.
+
+\bibitem{ut}
+S.~J. Julier.
+\newblock {The Scaled Unscented Transformation}.
+\newblock {\em in Proc. of the IEEE American Control Conference}, pages
+  4555--4559, May 2002.
+
+\bibitem{kf}
+R.~Kalman.
+\newblock {A New Approach to Linear Filtering and Prediction Problems}.
+\newblock {\em in Proc. of the Transaction of the ASME, Journal of Basic
+  Engineering}, 1960.
+
+\bibitem{ietf}
+G.~Karagiannis, R.~Wakikawa, J.~Kenney, C.~J. Bernardos, and F.~Kargl.
+\newblock {Traffic safety applications requirements}.
+\newblock Technical report, {Internet Engineering Task Force, Internet-Draft
+  draft-karagiannis-traffic-safety-requirements-02.txt}, February 2010.
+
+\bibitem{IEEEhowto:fathy}
+S.~Khakbaz and M.~Fathy.
+\newblock {A} {R}eliable {M}ethod for {D}isseminating {S}afety {I}nformation in
+  {V}ehicular {A}d {H}oc {N}etworks {C}onsidering {F}ragmentation {P}roblem.
+\newblock {\em in Proc. of the fourth International Conference on Wireless and
+  Mobile Communications (ICWMC'08)}, 2008.
+
+\bibitem{trrs}
+T.~Kim, W.~Hong, and H.~Kim.
+\newblock {An effective Multi-hop Broadcast in Vehicular Ad-hoc Network}.
+\newblock {\em in Proc. of the Architecture of Computing Systems (ARCS'07)},
+  March 2007.
+
+\bibitem{umb}
+G.~Korkmaz and E.~Ekici.
+\newblock {Urban Multi-hop Broadcast Protocol for Inter-Vehicle Communication
+  Systems}.
+\newblock {\em in Proc. of the first ACM workshop on vehicular Ad Hoc networks
+  (VANET'04)}, 2004.
+
+\bibitem{umbgps}
+G.~Korkmaz, E.~Ekici, and F.~Ozguner.
+\newblock {Effects of Location Uncertainty on Position-based Broadcast
+  Protocols in Inter-vehicle Communication Systems}.
+\newblock {\em in Proc. of the fifth Annual Mediterranean Ad Hoc Networking
+  Workshop (Med-Hoc-Net'06)}, 2006.
+
+\bibitem{Krauss}
+S.~Krauss.
+\newblock {\em Microscopic Modeling of Traffic Flow: Investigation of Collision
+  Free Vehicle Dynamics}.
+\newblock PhD thesis, ZAIK, University of Cologne, 1998.
+
+\bibitem{gso}
+K.~Krishnanand and D.~Ghose.
+\newblock {Glowworm Swarm Optimization for Simultaneous Capture of Multiple
+  Local Optima of Multimodal Functions}.
+\newblock {\em in Proc. of the Swarm Intelligence Journal}, 2009.
+
+\bibitem{ukfb}
+K.-C. Lee, A.~Oka, E.~Pollakis, and L.~Lampe.
+\newblock {A comparison between Unscented Kalman Filtering and particle
+  filtering for RSSI-based tracking}.
+\newblock {\em in Proc. of the seventh Workshop on Positioning Navigation and
+  Communication (WPNC'10)}, pages 157 --163, March 2010.
+
+\bibitem{edb}
+D.~Li, H.~Huang, X.~Li, M.~Li, and F.~Tang.
+\newblock {A Distance-Based Directional Broadcast Protocol for Urban Vehicular
+  Ad Hoc Network}.
+\newblock {\em in Proc. of the International Conference on Wireless
+  Communications, Networking and Mobile Computing (WiCom'07)}, pages 1520
+  --1523, September 2007.
+
+\bibitem{l2}
+X.~Li, T.~D. Nguyen, and R.~P. Martin.
+\newblock {Using Adaptive Range Control to Maximize 1-Hop Broadcast Coverage in
+  Dense Wireless Networks}.
+\newblock {\em in Proc. of the first Annual IEEE Communications Society
+  Conference on Sensor and Ad Hoc Communications and Networks (SECON'04)},
+  October 2004.
+
+\bibitem{SIS}
+J.~S. Liu and R.~Chen.
+\newblock {Sequential Monte Carlo Methods for Dynamic Systems}.
+\newblock {\em in Proc. of the Journal of the American Statistical
+  Association}, 93:1032--1044, 1998.
+
+\bibitem{BROADCOMM}
+A.~D. M.~Durresi and L.Barolli.
+\newblock {Emergency Broadcast Protocol for Inter-Vehicle Communications}.
+\newblock {\em in Proc. of the eleventh International Conference on Parallel
+  and Distributed Systems (ICPADS'05)}, 2005.
+
+\bibitem{matt}
+{M. R\"ockl and P. Robertson}.
+\newblock {Data Dissemination in Cooperative ITS from an Information-centric
+  Perspective}.
+\newblock {\em in Proc. of the IEEE. International Conference on Communications
+  (ICC'10)}, May 2010.
+
+\bibitem{app}
+{M. Sepulcre, J. Gozalvez, J. {H}\"{a}rri and Hannes Hartenstein}.
+\newblock {Application-Based Congestion Control Policy for the Communication
+  Channel in VANETs}.
+\newblock {\em in Proc. of the IEEE Communications Letters, VOL. 14, NO. 10},
+  2010.
+
+\bibitem{groove}
+R.~Mangharam et~al.
+\newblock {GrooveSim: a Topography-accurate Simulator for Geographic Routing in
+  Vehicular Networks}.
+\newblock {\em in Proc. of the second ACM International Workshop on Vehicular
+  Ad hoc Networks (VANET'05)}, September 2005.
+
+\bibitem{emhvb}
+M.~N. Mariyasagayam, T.~Osafune, and M.~Lenardi.
+\newblock {Enhanced Multi-Hop Vehicular Broadcast (MHVB) for Active Safety
+  Applications}.
+\newblock {\em in Proc. of the seventh International Conference on ITS
+  Telecommunications (ITST'07)}, 2007.
+
+\bibitem{mc1}
+N.~Metropolis.
+\newblock {The beginning of the Monte Carlo Method}.
+\newblock {\em in Proc. of the Los Alamos Science}, 1987.
+
+\bibitem{mc2}
+N.~Metropolis and S.~Ulam.
+\newblock {The Monte Carlo Method}.
+\newblock {\em in Proc. of the Journal of the American Statistical
+  Association}, 1949.
+
+\bibitem{IEEEhowto:storm}
+S.-Y. Ni, Y.-C. Tseng, Y.-S. Chen, and J.-P. Sheu.
+\newblock {T}he {B}roadcast {S}torm {P}roblem in a {M}obile {A}d {H}oc
+  {N}etwork.
+\newblock {\em in Proc. of the fifth annual ACM/IEEE international conference
+  on Mobile computing and networking}, August 1999.
+
+\bibitem{ekfb1}
+F.~Orderud.
+\newblock {Comparison of Kalman Filter Estimation Approaches for State Space
+  Models with Nonlinear Measurements}.
+\newblock {\em in Proc. of the Scandinavian Conference on Simulation and
+  Modelling}.
+
+\bibitem{IEEEhowto:QUICK}
+C.~E. Palazzi, S.~Ferretti, M.~Roccetti, G.~Pau, and M.~Gerla.
+\newblock {H}ow {D}o {Y}ou {Q}uickly {C}horeograph {I}nter-{V}ehicular
+  {C}ommunications? {A} {F}ast {V}ehicle-to-{V}ehicle {M}ulti-{H}op {B}roadcast
+  {A}lgorithm, {E}xplained.
+\newblock {\em in Proc. of the fourth IEEE Consumer Communications and
+  Networking Conference (CCNC'07)}, January.
+
+\bibitem{paramics}
+PARAMICS.
+\newblock http://www.paramics.com/, 2012.
+
+\bibitem{gfilter}
+S.~Park, J.~Hwang, K.~Rou, and E.~Kim.
+\newblock {A New Particle Filter Inspired by Biological Evolution: Genetic
+  Filter}.
+\newblock {\em World Academy of Science, Engineering and Technology}, September
+  2007.
+
+\bibitem{NN1}
+L.~I. Perlovsky and R.~W. Deming.
+\newblock {Neural networks for improved tracking}.
+\newblock {\em in Proc. of the IEEE transactions on neural networks, Vol. 18,
+  No. 6.}, 2007.
+
+\bibitem{trans}
+M.~Pi\'{o}rkowski, M.~Raya, A.~L. Lugo, P.~Papadimitratos, M.~Grossglauser, and
+  J.-P. Hubaux.
+\newblock {TraNS: Realistic Joint Traffic and Network Simulator for VANETs}.
+\newblock {\em in Proc. of the ACM SIGMOBILE Mobile Computing and
+  Communications Review}, January 2008.
+
+\bibitem{UDP}
+J.~Postel.
+\newblock {User Datagram Protocol (RFC 768)}.
+\newblock IETF Request For Comments, August 1980.
+
+\bibitem{TCP}
+J.~Postel.
+\newblock {RFC 793: Transmission Control Protocol}, September 1981.
+
+\bibitem{festag}
+L.~L. W.~Z. R.~Baldessari, D.~Scanferla and A.~Festag.
+\newblock {Joining Forces for VANETs: A Combined Transmit Power and Rate
+  Control Algorithm}.
+\newblock {\em in Proc. of the seventh International Workshop on Intelligent
+  Transportation (WIT'10)}, 2010.
+
+\bibitem{Reumerman}
+H.~Reumerman and M.~Runi.
+\newblock {Distributed Power Control for Reliable Broadcast in Inter-Vehicle
+  Communication Systems}.
+\newblock {\em in Proc. of the second International Workshop on Intelligent
+  transportation (WIT'05)}, March.
+
+\bibitem{raja}
+S.~Rezaeia, R.~Sengupta, H.~Krishnanc, X.~Guanb, and R.~Bhatiab.
+\newblock {Tracking the Position of Neighboring Vehicles using Wireless
+  Communications}.
+\newblock {\em in Proc. of the Transportation Research Part C: Emerging
+  Technologies}, June 2010.
+
+\bibitem{pf1}
+B.~Ristic, S.~Arulampalam, and N.~Gordon.
+\newblock {Beyond the Kalman Filter: Particle Filters for Ttracking
+  Applications}.
+\newblock {\em Artech House Boston London}, 2004.
+
+\bibitem{ekfb4}
+A.~Romanenko and J.~A. A.~M. Castro.
+\newblock The unscented filter as an alternative to the ekf for nonlinear state
+  estimation: a simulation case study.
+\newblock {\em in Proc. of the Computers and Chemical Engineering},
+  28(3):347--355, 2004.
+
+\bibitem{cds1}
+F.~J. Ros, P.~M. Ruiz, and I.~Stojmenovic.
+\newblock {Reliable and Efficient Broadcasting in Vehicular Ad Hoc Networks}.
+\newblock {\em in Proc. of the 69th Vehicular Technology Conference
+  (VTC'2009)}, April 2009.
+
+\bibitem{cds2}
+F.~J. Ros, P.~M. Ruiz, and I.~Stojmenovic.
+\newblock {Acknowledgment-based Broadcast Protocol for Reliable and Efficient
+  Data Dissemination in Vehicular Ad-hoc Network}.
+\newblock {\em in Proc. of the IEEE Transactions on Mobile Computing}, December
+  2010.
+
+\bibitem{GA}
+P.~J. Shea, K.~Alexander, and J.~Peterson.
+\newblock {Group Tracking using Genetic Algorithms}.
+\newblock {\em in Proc. of the International Society Information Fusion}, 2003.
+
+\bibitem{survey1}
+M.~Sichitiu and M.~Kihl.
+\newblock Inter-vehicle communication systems: a survey.
+\newblock {\em in Proc. of the IEEE Communications Surveys Tutorials}, 10(2):88
+  --105, 2008.
+
+\bibitem{ddt}
+M.~Sun, W.~Feng, T.~Lai, K.~Yamada, H.~Okada, and K.~Fujimura.
+\newblock {GPS-based message broadcast for adaptive inter-vehicle
+  communications}.
+\newblock {\em in Proc. of the 52nd Vehicular Technology Conference
+  (VTC-Fall'00)}, May 2000.
+
+\bibitem{taha}
+M.~Taha and Y.~Hasan.
+\newblock {VANET-DSRC Protocol for Reliable Broadcasting of Life Safety
+  Messages}.
+\newblock {\em in Proc. of the IEEE International Symposium on Signal
+  Processing and Information Technology}.
+
+\bibitem{Morenothesis}
+M.~Torrent-Moreno.
+\newblock {\em Inter-vehicle communications : achieving safety in a distributed
+  wireless environment : challenges, systems and protocols}.
+\newblock PhD thesis, University of Karlsruhe, 2007.
+
+\bibitem{IEEEhowto:Morenno}
+M.~Torrent-Moreno.
+\newblock {Inter-{V}ehicle {C}ommunications: {A}ssessing {I}nformation
+  {D}issemination under {S}afety {C}onstraints}.
+\newblock {\em in Proc. of the fourth Annual IEEE/IFIP Conference on Wireless
+  On Demand Network Systems and Services (WONS'07)}, January 2007.
+
+\bibitem{dfpav}
+M.~Torrrent-Moreno, P.~Santi, and H.~Hartenstein.
+\newblock {Distributed Fair Transmit Power Adjustment for vehicular Ad Hoc
+  Networks}.
+\newblock {\em in Proc. of the 3rd Annual IEEE Communications Society on Sensor
+  and Ad Hoc Communications and Networks (SECON'06)}, 2006.
+
+\bibitem{UPF}
+R.~van~der Merwe, N.~de~Freitas, A.~Doucet, and E.~Wan.
+\newblock {The Unscented Particle Filter}.
+\newblock {\em in Proc. of the Advances in Neural Information Processing
+  Systems 13}, November 2001.
+
+\bibitem{itetrispaper}
+{V}ineet {K}umar, {L}an {L}in~and{ D}aniel {K}rajzewicz, {F}atma {H}rizi,
+  {O}scar {M}artinez, {J}avier~{S}empere {G}ozalvez, and {R}amon {B}auza.
+\newblock i{TETRIS} : adaptation of {ITS} technologies for large scale
+  integrated simulation.
+\newblock {\em in Proc. of the 3rd {IEEE} {I}nternational {S}ymposium on
+  {W}ireless {V}ehicular {C}ommunications ({WIVEC}'10)}, May 2010.
+
+\bibitem{vissim}
+VISSIM.
+\newblock
+  http://www.ptv-vision.com/en-uk/products/vision-traffic-suite/ptv-vissim/ov
+  erview/, 2012.
+
+\bibitem{ukf}
+E.~A. Wan and R.~Van Der~Merwe.
+\newblock {The unscented Kalman filter for nonlinear estimation}.
+\newblock {\em in Proc. of the Adaptive Systems for Signal Processing,
+  Communications, and Control Symposium (AS-SPCC'00)}, pages 153--158, August
+  2000.
+
+\bibitem{nctuns}
+S.~Wang et~al.
+\newblock {NCTUns 4.0: An Integrated Simulation Platform for Vehicular
+  Traffic}.
+\newblock {\em in Proc. of the first IEEE International Symposium on Wireless
+  Vehicular Communications (WiVec'07)}, October 2007.
+
+\bibitem{traci}
+A.~Wegener et~al.
+\newblock {TraCI: An Interface for Coupling Road Traffic and Network
+  Simulators}.
+\newblock {\em in Proc. of the eleventh Communications and Networking
+  Simulation Symposium (CNS'08)}, April 2008.
+
+\bibitem{identity}
+M.~Wetterwald, F.~Hrizi, and P.~Cataldi.
+\newblock {Cross-layer Identities Management in ITS Stations}.
+\newblock {\em in Proc. of the tenth IEEE International Conference on ITS
+  Telecommunications (ITST'10)}, 2010.
+
+\bibitem{repet}
+Q.~Xu, T.~Mak, J.~Ko, and R.~Sengupta.
+\newblock Vehicle-to-vehicle safety messaging in dsrc.
+\newblock {\em in Proc. of the first ACM Workshop on Vehicular Ad hoc Networks
+  (VANET'04)}, 2004.
+
+\end{thebibliography}

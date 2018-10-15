@@ -1,0 +1,414 @@
+\section{Introduction}
+Récemment, de nouvelles technologies de communications sans fil ont été con\c{c}ues ouvrant la voie à une grande variété d'applications et services innovants. En particulier, les technologies de communication sans fil véhiculaire (V2X) y compris les communications de véhicule à véhicule (V2V) et de véhicule à infrastructure (V2I), sont actuellement mises en oeuvre pour soutenir l'intégration des technologies de l'information et de la communication (TIC) dans les systèmes de transport traditionnels.
+Ce concept dénommé Systèmes de Transport Intelligents (STI) propose des solutions innovantes pour améliorer nos vies et rendre le transport plus sûr, plus efficace, plus confortable et respectant l'éco-système.
+
+En conséquence, deux branches principales de services destinés aux STI sont créées. Tout d'abord, les \textit{applications de divertissement} qui sont destinées à fournir plus de confort et d'assistance au conducteur et aux passagers, par exemple l'accès à Internet, la diffusion des informations météorologiques et des points d'intérêts à proximité. Deuxièmement, les \textit{applications de sécurité} qui visent à améliorer la sécurité routière, y compris les services d'évitement des collisions, les notifications d'accidents et, la collecte et la distribution des informations relatives aux conditions de la circulation routière.
+Dans le cadre de cette thèse, nous nous intéressons aux applications coopératives de sécurité puisqu'elles représentent les services les plus vitaux des STI.
+
+Compte tenu de leur importance, les applications de sécurité sont particulièrement très exigeantes en matière de précision et de fiabilité de la réception de l'information. De plus, ils sont considérablement sensibles au délai. Par exemple, quand un accident se produit, les informations les plus pertinentes doivent être livrées correctement tout en respectant les contraintes de délai afin d'éviter que d'autres accidents aient lieu.
+Les informations de sécurité pourraient être soit des informations de localisation envoyées périodiquement en un seul saut dénommé ``\textit{awareness}'' correspondant à l'information relative au voisinage et qui constituent la perception globale du véhicule, ou bien des informations de sécurité événementielles générées et envoyées en mode multi-sauts lors de la détection d'une situation de sécurité.
+
+L'efficacité des applications de sécurité routière dépend donc de la fiabilité du support de communication partagé. La stratégie de communication envisagée d'être utilisée est la \textit{diffusion V2X} basée essentiellement sur le standard \textit{IEEE 802.11p MAC} \cite{802.11p} qui est un amendement de la norme IEEE 802.11 adapté pour l'environnement véhiculaire. Bien qu'elle soit considérée comme efficace dans un environnement à faible échelle, la diffusion est contrainte par la capacité limitée du canal partagé et par conséquent ne peut pas faire face au très grand nombre de nœuds dans le réseau véhiculaire.
+Autres aspects qui méritent d'être examinés, sont d'une part la quantité diverse et importante de données transmises sur le réseau, et d'autre part, la forte dynamicité des nœuds. Ce qui entraine un problème de congestion de réseau et, donc une dégradation de la performance du système de communication.
+En outre, l'absence de "feedback" dans le canal de diffusion pourrait encore freiner la fiabilité des transmissions et plus particulièrement, les transmissions de "sécurité" nécessitant une plus grande fiabilité et une latence plus faible.
+
+L'objectif principal de ce travail est d'assurer une gestion efficace ainsi qu'une diffusion robuste des informations de sécurité routière tout en considérant l'environnement contraignant des STI. Nous proposons de concevoir des \textit{mécanismes de contrôle} efficaces pour contrôler la charge de canal et réduire le problème de la congestion réseau et respecter les besoins des applications de sécurité routière.
+
+Dans la section \ref{state}, nous introduisons l'état de l'art de l'environnement STI. En particulier, nous analysons systématiquement les besoins des applications de sécurité routière. Dans la section \ref{cont1}, nous abordons la conception de mécanismes de contrôle pour diffuser l'information événementielle de sécurité de manière efficace et optimisée. Nous proposons une approche de contrôle de congestion adaptant le protocole de diffusion multi-hop de référence `` \textit{CBF}'' (Contention-Based Forwarding) à  l'environnement véhiculaire. Après, nous proposons dans la section \ref{cont2} un mécanisme de contrôle robuste d'awareness, à savoir Glow-worm essaim filtre (GSF), capable de fournir la précision requise pour une détection efficace et exacte d'une situation de sécurité. Puis, dans la section \ref{cont3}, nous suggérons d'appliquer notre GSF pour adapter la fréquence de transmission de l'awareness. En outre, nous évaluons la capacité de GSF pour obtenir une détection efficace des situations de sécurité.
+
+Observant que les transmissions liées à des événements de sécurité dépendent essentiellement du contexte global perçu par les véhicules, nous démontrons dans la section \ref{frame} la nécessité d'une entité globale pour contrôler à la fois la congestion du réseau et l'awareness. Enfin, la section \ref{conclusion} présente la conclusion qui peut être tirée de la thèse et fournit des directives pour les travaux futurs.
+
+
+\section{Les applications de sécurité routière pour les STI\label{state}}
+
+\subsection{Aperçu sur les STI}
+Le concept des \textit {``Systèmes de Transport Intelligents''} a progressivement évolué dans le but de décrire l'application des technologies de l'information et de la communication dans les systèmes de transport standards.
+Selon ERTICO (Europe) \cite {ertico}, les STI sont des \textit {``nouvelles technologies d'information et de communication trouvant des applications intéressantes dans le domaine des transports urbains, aussi appelées, les télématiques des transports''}. ITS America \cite{itsAmerica} les définit comme \textit{``une large gamme de technologies, qui répond à beaucoup de besoins de transport. Les STI sont composés d'un certain nombre de technologies, y compris le traitement de l'information, les communications, le contrôle et de l'électronique. Associant ces technologies à notre système de transport permettra de sauver des vies, gagner du temps et économiser de l'argent''}.
+
+La principale innovation consiste à appliquer les technologies de l'information et de la communication au domaine des transports. Les STI réutilisent des technologies existant pour créer des services innovants qui peuvent être appliqués dans les différents modes de transport et utilisés par les passagers et aussi dans le secteur de transport de marchandises.
+
+Le concept de base des STI est principalement le partage de l'information entre les véhicules ce qui permettra d'assurer le bon fonctionnement des diverses applications qui visent à améliorer les systèmes de transport. Les communications véhiculaires sont les outils de communication utilisés pour l'échange et le partage de l'information dans le réseau sans fil véhiculaire. Ce sont, donc, les technologies essentiels promettant un déploiement des applications et services des STI.
+
+Dans ce contexte, des véhicules tels que les voitures, les camions, les bus et les motos, et même les piétons seront équipés d'une interface réseau, des capacités de calculs embarqués et plusieurs dispositifs de détection tels que les systèmes de localisation (comme par exemple le GPS), des caméras vidéo et des radars. Les infrastructures peuvent également coopérer avec les véhicules et participer au processus de communication afin d'assurer une meilleure couverture. Figure \ref{ch2:v2vv2i} illustre un scénario de communications entre véhicules, y compris V2V et V2I.
+
+\begin{figure}[h!]
+ \centerline{\includegraphics[width=0.85\textwidth]{./Background/Chapter2/figures/v2vv2i.eps}}
+\caption[Les différents paradigmes de communication en environnement véhiculaire.] {Les différents paradigmes de communication en environnement véhiculaire.Seuls les véhicules sont concernés par les communications V2V. Par exemple, les informations sur les travaux routiers sont échangées entre les voitures qui approchent la zone. D'autre part, les communications V2I partagent les données entre les véhicules et les infrastructures. Le conducteur peut par exemple obtenir des informations à propos des restaurants les plus proches.} \label{ch2:v2vv2i}
+\end{figure}
+
+\subsection{Les applications de sécurité routière}
+
+Étant considérées comme la motivation originale derrière la création des STI, les applications de sécurité routière ont acquis beaucoup d'intérêt de la part des entités publiques ainsi que des organismes de recherche. Elles ont principalement l'objectif de réduire le taux d'accidents et de décès sur les routes et, ainsi de garantir une bonne gestion du trafic routier. Donc, vu la grande diversité de ces applications, plusieurs types de données devraient être échangées entre les nœuds. En effet, il existe deux types principaux: Les informations de localisation périodique ou `` \textit{awareness}'' qui sont transmises en diffusion en un seul-saut via des messages spécifiques dénommés CAM (Cooperative Awareness Message). Elles représentent la perception globale du véhicule, à savoir l'état des véhicules dans le voisinage tels que leurs positions géographiques (fournies par le récepteur GPS), leurs vitesses ainsi que leurs directions, etc.
+
+Le second type concerne les informations de sécurité événementielles générées et envoyées en diffusion multi-hop lors de la détection d'une situation de sécurité. Ainsi, des messages spécifiques (DENM (Decentralized Environment Notification Messages)) sont donc transférés contenants des informations sur la location du danger. En général, ces informations portent sur une zone spécifique de la route. Ainsi, la dimension de la zone de diffusion où l'information est censée être reçue est incluse dans le message.
+
+Pour assurer un bon fonctionnement des applications de sécurité routière, il est nécessaire que les nœuds \textit{coopèrent} entre eux et, en conséquence partagent ensemble l'information de sécurité. Voitures, camions, trains, motos et même les piétons peuvent contribuer à des routes plus efficaces et sûres si la diffusion et le partage de l'information sont gérés efficacement fournissant les données pertinentes pour les conducteurs tout en respectant les exigences et contraintes spécifiques de ces applications. Par conséquent, plusieurs aspects doivent être considérés:
+
+\begin{itemize}
+\item \textbf{Le défi caractérisant l'environnement véhiculaire}
+Cet environnement est caractérisé par plusieurs aspects particuliers comme la nature non fiable et incertaine du support de communication ce qui n'est pas adapté aux besoins des applications de sécurité en matière de fiabilité de réception. En outre, l'aspect grande échelle du contexte véhiculaire ainsi que la capacité limitée du canal partagé sont d'autres aspects cruciaux qui doivent \^etre prise en considération.
+
+\item \textbf{Les exigences des applications de sécurité des STI}
+Ces applications nécessitent des délais très courts et une grande fiabilité de réception de l'information ce qui n'est pas nécessairement le cas pour les applications de divertissement par exemple où les données sont moins sensibles aux délais. Les passagers peuvent tolérer de recevoir avec retard une vidéo téléchargée sur Internet, cependant, il est extrêmement important d'être informé à temps d'un éventuel accident. Cela pourrait être même mortel, car il peut conduire à d'autres situations dangereuses.
+\end{itemize}
+
+\subsection{Métriques d'évaluation pour les applications de sécurité routière}
+Dans cette section, nous définissons les indicateurs de performance primordiaux pour évaluer l'efficacité des applications coopératives de sécurité des STI et des mécanismes de contrôle. Ces paramètres ont été identifiés afin d'examiner avec précision la capacité des mécanismes de contrôle conçus à répondre aux besoins des applications de sécurité coopératives en particulier, en termes de latence et de probabilité de réception.
+
+\subsubsection{Fiabilité}
+Une application de sécurité coopérative est considérée comme fiable si la politique de contrôle utilisé est capable d'assurer une réception fiable et efficace de l'information de sécurité. La fiabilité de la réception des informations est l'une des métriques les plus pertinentes pour l'évaluation des protocoles de communication utilisés.
+
+\subsubsection{Réactivit\'e}
+À la fiabilité s'ajoute la réactivité qui est consid\'erée comme la deuxième métrique importante pour l'évaluation des performances des mécanismes de communication de sécurité. La réactivité d'un protocole de communication donné définit sa capacité à fournir les informations nécessaires au véhicule dans les délais requis.
+
+\subsubsection{Précision de l'information}
+Du point de vue de l'application, la précision des informations échangées dans le réseau est vitale et plus précisément pour les applications de sécurité. Néanmoins, cette information est souvent exposée à des erreurs. Par conséquent, l'évaluation du degré de la précision de cette information demeure importante.
+
+\subsubsection{Extensibilité}
+L'extensibilité est un enjeu important pour les applications des STI en général. Il définit la capacité de l'application et le système de communication à s'adapter aux différents besoins et exigences sans changements majeurs dans sa conception. l'extensibilité et la performance sont souvent associées, une application STI est extensible si et seulement si elle est capable de garantir la même performance dans deux contextes différents par exemple basse et haute densité routière.
+
+
+\section{Mécanisme de contrôle des informations événementielles de sécurité routiére\label{cont1}}
+
+Dans cette section, nous présenterons notre contribution au contrôle de la diffusion à multi-sauts des informations événementielles de sécurité.
+Un aspect particulier des applications de sécurité est qu'elles sont intolérantes aux délais de réception. L'information de sécurité doit être transmise à tous les véhicules situés dans une zone spécifique à proximité du danger comme l'illustre Figure \ref{ch4:scenarios}, la diffusion périodique à multi-sauts et à courte portée devrait être utilisée.
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/accident.eps} \label{ch4:accident}}
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/roadwork.eps}\label{ch4:roadwork}}
+\caption[Illustration de deux situations de sécurité.] {Illustration de deux situations de sécurité. Dans le premier scénario (a), un accident se produit entre deux voitures et afin d'éviter d'autres accidents potentiels, les données de sécurité doivent être transmises à tous les nœuds situés sur la même route que le danger (zone rouge). Les véhicules sur les autres routes ne sont pas concernés par cette information. Dans le second scénario (b), l'information des travaux routiers doit être délivrée dans la zone rouge pour réduire le risque d'accident et de garantir la sécurité des passagers.}
+\label{ch4:scenarios}
+\end{figure}
+
+Vu la nature de communication utilisée dans les réseaux véhiculaires, les acquittements explicites ne sont pas employées. Par conséquent, assurer une diffusion fiable de l'information s'avère un objectif très difficile à réaliser.
+Toutefois, c'est un aspect crucial qui doit être résolu avant tout déploiement des applications de sécurité routière. Un moyen pour savoir si une transmission donnée est bien réussie est de s'appuyer sur les transmissions redondantes soit directement ou bien via des noeuds intermédiaires. Bien que cette idée, appelée ``flooding'', semble \^etre efficace appliquée dans des réseaux à petite échelle, elle ne s'adapte pas au contexte à grandee échelle et peut engendrer le problème de ``broadcast storm'' \cite{IEEEhowto:storm}. En effet, le nombre de réémetteurs augmente de façon exponentielle et sature par conséquent, le canal sans fil avec les communications inutiles conduisant à des problèmes de congestion du réseau. Le défi i\c{c}i est donc de parvenir à assurer le taux de réception le plus élevé possible, mais en réduisant le nombre de transmissions. Plusieurs travaux ont été effectués visant à optimiser la diffusion multi-sauts dans les réseaux véhiculaires dans le but de réduire la congestion du réseau.
+
+La diffusion basée au niveau du récepteur, également connue sous le nom de {\em Contention based Forwarding (CBF)} \cite{cbf} ou transmission fondée sur la contention, est l'une des solutions proposées. Chaque nœud décide localement du relai du message lors de sa réception. Tous les récepteurs entrent en contention afin d'aboutir à un mécanisme de sélection des potentiels relais, le noeud remportant la contention transmet et tous les autres nœuds entendant cette dernière transmission arr\^etent leur contention. Cette approche est basée sur trois hypothèses de conception principales: l'uniformité de la topologie du réseau véhiculaire, la fiabilité des canaux de communication (non-fading) et enfin l'homogénéité des moyens et capacités de communications. En revanche, l'environnement des STI, et plus particulièrement, le contexte urbain n'est pas conforme à ces aspects divers. Par conséquent, les relais sélectionnés par CBF peuvent être non-existants, non accessibles et/ou non optimaux en raison des capacités de transmission hétérogènes.
+
+\subsection{Bi-Zone Broadcast: BZB}
+Dans cette section, nous aborderons la conception d'un mécanisme efficace basé sur CBF adapté aux besoins des applications de sécurité ainsi qu'aux spécificités de l'environnement urbain véhiculaire. En effet, aucun des mécanismes CBF disponibles aujourd'hui différencie entre les relais en fonction de leurs capacités de transmission. Nous proposons donc deux approches, appelées {\em Bi-Zone Broadcast (BZB)} et {\em Infrastructure Bi-Zone Broadcast (I-BZB)}, qui regroupent l'aspect aléatoire ainsi que le principe de la distance dans CBF. I-BZB à son tout, ajuste le temps de contention pour fournir plus de chances aux nœuds ayant des propriétés de communication plus importantes (des RSUs, des autobus, des tramways, des camions, etc.) pour être élus comme relais. Nous séparons la zone de diffusion en deux zones, l'une où un ``random'' CBF est appliqué, et la deuxième où un CBF basé sur la distance doit être utilisé. Les deux zones peuvent être adaptées à la topologie et à la connectivité, en fonction d'un seuil de distance \textit{``D$_{th}$''}.
+
+Comme il est indiqué dans la Figure \ref{BZB}, où la ligne pointillée montre l'évolution du temps d'attente du mécanisme standard CBF basé sur la distance en fonction de la distance par rapport à l'expéditeur. Les lignes continues représentent les différentes limites du temps de la contention de notre approche \textit{BZB}. La contention que chaque nœud doit effectuer, dépend principalement de ces deux zones.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[scale=0.6]{./Part1/Chapter5/figures/scenariodth.eps}
+\caption{Le système de contention de \textit{BZB} où  les courbes pointillées et continues représentent respectivement le temps d'attente du CBF basé sur la distance et les limites du temps de contention de \textit{BZB}.}
+\label{BZB}
+\end{figure}
+
+Dans ces deux distinctes zones, le temps d'attente est choisi au hasard entre deux bornes. Pour les nœuds les plus proches où la distance est inférieure à D$_{th}$, l'intervalle de sélection du temps de contention est fixé entre [T2, T$_{max}$], où T2 est donnée dans l'équation Eq.\ref{eq:t2} et T $_{max}$ est le temps maximum d'attente. En raison de l'utilisation de l'aspect aléatoire dans \textit{BZB}, une amélioration du système de contention est perçue, comme le montre Figure \ref{BZB}, le troisième noeud après l'émetteur a acquis un temps de contention inférieur à celui obtenu par le standard CBF basé sur la distance.
+
+L'intervalle de contention des véhicules dont la distance est au-delà de D$_{th}$ est [0, T1], où T1 est détaillée dans l'équation Eq. \ref{eq:t1}. Ayant une limite inférieure de 0, les noeuds les plus éloignés sont accordés la priorité de transmettre immédiatement le message, sans attendre un temps donné. Dans le pire des cas, l'approche CBF basée sur la distance est appliquée.
+
+\begin{equation}
+T_{1} = T_{max}\,\times\,(1\,-\,\frac{d}{r})\label{eq:t1}\end{equation}
+
+\begin{equation}
+T_{2} = T_{max}\,\times\,(1\,-\,\frac{D_{th}}{r})\label{eq:t2}\end{equation}
+où r indique la portée de transmission, T$_{max}$ est le temps d'attente maximum, D$_{th}$ est le seuil distance et d est la distance par rapport à l'émetteur.
+
+\subsection{Évaluation des performances de BZB}
+
+L'étude d'évaluation a été réalisée en utilisant la plateforme iTETRIS qui est un environnement de simulation intégré qui est conçu pour les études d'évaluation des STI. Cette plateforme assure, d'une part, la simulation de l'échange de données V2X sans fil et les caractéristiques de communications, et d'autre part la modélisation de la mobilité des véhicules et des différentes conditions de trafic. Comme illustré dans Figure \ref{itetris}, le simulateur de réseau ns-3 \cite{ns3} et le simulateur de trafic SUMO \cite{sumo} sont regroupés. Un module indépendant pour les applications est conçu ainsi qu'une entité intermédiaire pour gérer l'interconnexion entre les différents blocs.
+
+ \begin{figure}[!t]
+ \centering
+ \includegraphics[scale=0.7]{./Part1/Chapter4/figures/itetris.eps}
+ \caption{L'architecture de la plateforme de simulation iTETRIS.}
+ \label{itetris}
+ \end{figure}
+
+Un environnement réaliste calibré et urbain de la ville de Bologne représentant la non-homogénéité de la topologie et la connectivité dans l'environnement véhiculaire a été également employé. À partir des résultats obtenus, notre stratégie hybride BZB a montré significativement qu'elle est plus adaptée à l'environnement urbain véhiculaire fournissant environ 46\% d'amélioration de délai de réactivité comme le montre Figure \ref{BZB-eval2} et aussi une réduction de 40\% de la charge réseau (Figure \ref{BZB-eval1}) par rapport au flooding.
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf500bzbgeo.eps}}
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf2200bzbgeo.eps}}
+\caption{Le CDF du délai de réactivité moyenne dans le cas de \textit{BZB}, du flooding et du standard CBF basé sur la distance. (a) taille de paquet 500 octets. (b) taille de paquet 2200 octets.}
+\label{BZB-eval2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{./Part1/Chapter5/figures/overhead-bzbgeo.eps}
+\caption{La variation du facteur de la redondance de transmission dans le cas de \textit{BZB}, du flooding et du standard CBF basé sur la distance en fonction de la taille de paquet.}
+\label{BZB-eval1}
+\end{figure}
+
+\subsection{Impact de l'imprécision de l'awareness sur la performance de \textit{BZB}}
+
+Les mécanismes de contrôle de diffusion, et plus particulièrement les approches basées au niveau du récepteur, dépendent principalement des informations de position ou de l'``awareness''. En effet, la décision de la sélection des relais est basée sur l'évaluation de l'emplacement du récepteur par rapport à l'émetteur.
+Ces données de localisation sont collectées auprès de plusieurs sources, notamment, le GPS et/ou les différents messages échangés. En outre, ces sources sont souvent exposées à l'imprécision résultant essentiellement du taux élevé de pertes. Le signal GPS est souvent atténué par des obstacles (par exemple les grands immeubles) qui bloquent le LOS (Line of Sight) des satellites ce qui pourrait générer des erreurs de l'ordre de plusieurs dizaines de mètres. En plus de cela, les réflexions, le fading et les interférences influencent considérablement les transmissions des CAMs et DENMs et par conséquent peuvent produire des taux très importants de perte des données de localisation. D'autre part, les changements dynamiques de la mobilité des véhicules sont un problème supplémentaire à prendre en compte.
+
+L'objectif principal de cette section est d'analyser la relation entre d'un côté l'information d'awareness et d'un autre côté l'aptitude des mécanismes de diffusion d'assurer une transmission fiable et précise des informations de sécurité routière. En particulier, on s'intèresse à l'impact de cette imprécision sur le comportement et la performance de \textit{BZB}. En particulier, l'imprécision des données d'awareness pourrait entrainer des problèmes liés à la diffusion ou à la détection de l'événement de sécurité de la part de l'application:
+
+\paragraph{Génération de \textit {`` fausses alarmes''}:}
+Le premier aspect important est associé particulièrement à la détection des situations d'urgence au niveau applicatif. Des données de positionnement imprécises pourraient conduire potentiellement à une fausse détection d'une collision entre deux véhicules et en conséquence l'émission d'une fausse alarme, comme illustré dans la figure \ref{scen-false}. Les relais à la réception ne peuvent pas distinguer cela et vont retransmettre à leur tours des informations erronées.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{./Part1/Chapter5/figures/falsealarm.eps}
+\caption[Une illustration d'un scénario où une fausse alarme est déclenchée lors d'une estimation erronée des informations de positionnement] {Une illustration d'un scénario où une fausse alarme est déclenchée lors d'une estimation erronée des informations de positionnement. Une autre collision réelle s'est produite et en conséquence une transmission est déclenchée.}
+\label{scen-false}
+\end{figure}
+
+
+\paragraph{Détection multiple du m\^eme événement de sécurité:}
+
+Un scénario qui pourrait se produire aussi bien, c'est quand plusieurs nœuds détectent la même situation d'urgence et, par conséquent, déclenchent plusieurs alertes redondantes. Comme décrit dans Figure \ref{scen-multi}, noeud (A) et (B) déclenchent deux messages différents qui contiennent des informations du même événement perçu. Le nœud relais à la réception les deux messages et enverra deux messages séparément mais redondants.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{./Part1/Chapter5/figures/multiplesource.eps}
+\caption{Une illustration d'un scénario où deux noeuds (A et B) détectent le même événement d'urgence et envoient des paquets différents.}
+\label{scen-multi}
+\end{figure}
+
+Nous avons mené une étude de simulation pour étudier spécifiquement les effets de la détection inexacte d'événements de sécurité sur la performance de \textit{BZB}. Deux scénarios ont été envisagés, la mono-détection et les détections multiples. Dans le deuxième scénario, quatre sources différentes (ou nœuds) ont été utilisés pour déclencher la transmission d'informations de sécurité, un est considérée comme réelle et trois comme fausses alarmes (ou alertes redondantes).
+
+Figure \ref{overhead-multi} représente la redondance de transmission qu'on a mesurée. La surcharge du réseau dans le cas du scénario de multiples détections est très importante par rapport à la mono-détection. Elle correspond à quasiment plus du double en cas de paquet de 2200 octets, ce qui représente une charge supplémentaire et inutile générée dans le réseau.
+De manière analogue, dans Figure \ref{cdf-multi}, on peut constater que lorsque l'on augmente le nombre de transmissions redondantes ou de fausses alertes, \textit{BZB} ne respecte pas les exigences des applications STI de sécurité en matière de délai de réactivité. Dans le meilleur des cas, jusqu'à 90\% des récepteurs re\c{c}oivent correctement le paquet dans plus de 50 ms.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{./Part1/Chapter5/figures/overhead-multi.eps}
+\caption{La variation du facteur de la redondance de transmission de \textit{BZB} en fonction de la taille de paquets dans le cas du scénario de multiples détections.}
+\label{overhead-multi}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf500multi.eps}}
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf2200multi.eps}}
+\caption{Le CDF de \textit{BZB} dans le cas du scénario de multiples détections. (a) Taille de paquet 500 octets. (b) Taille de paquet 2200 octets.}
+\label{cdf-multi}
+\end{figure}
+
+Les résultats obtenus révèlent l'impact important de l'imprécision de l'information d'awareness sur l'efficacité de la procédure de diffusion des informations événementielles. Une détection précise d'une situation d'urgence dépend d'une perception exacte du contexte global. Nous pensons qu'il est nécessaire d'étudier davantage ce sujet afin d'assurer la précision de la perception globale (ou `` awareness'') des véhicules requise par les applications de sécurité routière.
+
+\section{Contrôler la précision de l'awareness\label{cont2}}
+
+Comme démontré dans la section précédente, les protocoles de diffusion d'événements de sécurité ainsi que les applications coopératives de sécurité exigent fortement une haute précision de la perception globale. Par exemple, en cas d'application de l'évitement des collisions, les données géographiques exactes de chaque véhicule et de son voisinage doivent être fournies afin d'évaluer efficacement le risque de collision avec des véhicules potentiels. Cependant, les signaux GPS et les communications sans fil sont connus pour être peu fiables et incertains. En effet, les pertes de paquets dues au fading et aux interférences peuvent se produire fréquemment, et les signaux GPS peuvent être reçus avec des erreurs importantes.
+
+Dans de tels cas, l'extrapolation en utilisant la prédiction de mobilité représente une solution possible afin de récupérer les données de localisation perdues ou bien non fiables.
+
+La prédiction de mobilité a été largement étudiée dans les dernières décennies et plusieurs approches de prédiction ont été proposées. Les filtres Bayésiens notamment les filtres de Kalman (KF) \cite{kf} et les filtres particulaires (PF) \cite{pf1} sont les plus connus. La limitation de ces approches est le fait qu'elles sont basées sur une mise à jour fiable et constante des données de localisation, soit en provenance du GPS, soit à partir des CAMs et DENMs. En outre, ils sont basés sur les hypothèses que la future mobilité ne varie pas trop par rapport aux positions précédentes ainsi que les erreurs de positionnement sont Gaussien et non corrélées.
+%
+Toutefois, les caractéristiques non fiables du canal sans fil, ainsi que les changements brusques du mouvement qu'on trouve habituellement dans la mobilité véhiculaire, entra\^ine une déviation importante des filtres de la position réelle. En observant que la mobilité véhiculaire est régie conjointement par les lois physiques et sociales, par exemple la formation des groupes (ou clusters) sur la route en raison des besoins et des comportements sociaux, et présente des comportements comparables aux comportements des essaims, on propose de considérer l'intelligence artificielle des essaims pour améliorer les algorithmes de prédiction afin d'optimiser la précision d'awareness.
+
+\subsection{Glow-worm Swarm Filter: GSF}
+
+Nous proposons dans cette section un mécanisme nouveau de contrôle pour optimiser la précision de l'awareness. Nous nous intéressons principalement à l'awareness fourni par les CAMs. Notre approche appelée Glow-worm Swarm Filter (GSF) est un filtre particulaire (PF) à base d'essaims qui est basé sur de multiples hypothèses de prédiction. La solution proposée est de considérer non seulement un seul emplacement futur potentiel, mais aussi d'envisager divers autres emplacements potentiels ce qui permettra une modélisation de la perte éventuelle de signaux GPS ou des paquets ainsi que les changements imprévisibles du mouvement.
+L'algorithme Glow-worm Swarm Optimisation (GSO)S a été utilisé afin de trouver des multiples optimums locaux et à grouper l'espace de recherche en différentes hypothèses multiples. Cela pourrait implicitement améliorer la fonctionnalité du filtre particulaire en augmentant la diversité de particules et d'éviter le problème de la dégénérescence (voir Figure \ref{fig:pfscenario}). Figure \ref{fig:gsfscenario} représente un scénario de prédiction appliquant GSF, les particules sont divisés en trois groupes, une hypothèse majeure et deux hypothèses mineures. Compte tenu de ces différentes hypothèses, le filtre, par conséquent, est capable de gérer la perte de l'awareness et de maintenir efficacement le processus de prédiction.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{./Part2/Chapter6/figures/pfscloss.eps}
+\caption[Une illustration d'un scénario de prédiction où les points illustrent les particules générées par le standard PF.] {Une illustration d'un scénario de prédiction où les points illustrent les particules générées par le standard PF. Après avoir perdu l'information d'awareness ce qui engendre une dégénérescence des particules, PF ne peut plus prédire correctement la mobilité réelle.}
+\label{fig:pfscenario}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{./Part2/Chapter6/figures/gsfscloss.eps}
+\caption[Une illustration d'un scénario de prédiction.] {Une illustration d'un scénario de prédiction. Les points de la figure représentent les particules correspondant à l'estimation de la position du véhicule. La position du véhicule poursuivi est estimée par GSF à être dans l'hypothèse mineure. Compte tenu des pertes inattendues des messages, GSF est en mesure d'assurer des bonnes performances de prédiction.}
+\label{fig:gsfscenario}
+\end{figure}
+
+\subsection{Évaluation des performances de GSF}
+En utilisant iTetris \cite{itetris} et des scénarios réalistes et calibrés, nous démontrons que GSF est adapté aux conditions du canal sans fil ainsi qu'aux changements imprévus de la mobilité véhiculaire, offrant des meilleurs résultats de prédiction avec un faible nombre de particules par rapport au standard filtre particulaire. Ainsi, GSF assure un compromis entre la précision de la prédiction et la convergence rapide de l'exécution.
+Notre algorithme donne de meilleurs résultats d'estimation de position avec une erreur en dessous de 1,3~m dans le cas du scénario urbain iTetris. Cependant, dans le cas du standard filtre particulaire PF, la meilleure performance dépasse le 1,65~m d'erreur de position. Une amélioration de l'erreur de prédiction de 44\% est assurée par GSF comparant à PF en cas de nombre de particules de 10 dans les deux scénarios artificiel et iTETRIS.
+
+\begin{table}
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{Artificial Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+Erreur GSF [m] & 1.53 & 1.49 & 1.55\\
+\midrule 
+Erreur PF [m] & 2.73 & 2.44 & 2.24\\
+\midrule
+Erreur Absolue [m] & 1.2 & 0.95 & 0.69 \\
+\midrule
+Gain \% & 44\% & 39\% & 31\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{L'erreur de prédiction de GSF et du standard PF dans le cas du scénario urbain artificiel considérant 10, 100 and 500 particules.}
+	\label{tab:artificialurban}
+\end{table}
+
+
+\begin{table}
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{iTETRIS Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+Erreur GSF [m] & 1.36 & 1.31 & 1.27\\
+\midrule 
+Erreur PF [m] & 2.42 & 1.79 & 1.69\\
+\midrule
+Erreur Absolue [m] & 1.06 & 0.48 & 0.32 \\
+\midrule
+Gain \% & 44\% & 27\% & 25\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{L'erreur de prédiction de GSF et du standard PF dans le cas du scénario urbain iTETRIS considérant 10, 100 and 500 particules.}
+	\label{tab:itetrisurban}
+\end{table}
+
+
+Afin d'évaluer la performance en temps réel des algorithmes de prédiction, le temps d'exécution a été mesuré pour différents nombres de particules. Tableau \ref{tab:execurban} illustre le temps d'exécution réel en secondes de 100s de simulation en utilisant ns-3. L'algorithme standard PF assure le plus faible temps d'exécution par rapport à GSF pour les différents scénarios ce qui est dû au calcul supplémentaire que notre algorithme introduit. Toutefois, afin de respecter les exigences en temps réel des applications de sécurité des STI et en même temps préserver un haut niveau de précision, un compromis entre la convergence rapide et la précision doit être pris en compte ce qui est assuré par notre approche GSF pour 10 particules comme le montre le Tableau \ref{tab:execurban}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+GSF [s] & 1.3 & 33.7 & 934.6\\
+\midrule 
+PF [s] & 0.6 & 8.2 & 158.2\\
+\midrule
+Gain [s] & 0.7 & 25.5 & 776.4\\
+		\bottomrule
+	\end{tabular}
+	\caption{Temps de convergence de GSF comparé au standard PF dans le cas du scénario urbain artificiel pour 10, 100 and 500 particules.}
+	\label{tab:execurban}
+\end{table}
+
+Nous considérons également l'évaluation de l'effet de la perte de messages sur les performances des algorithmes de prédiction. D'après le tableau \ref{tab:plossaurban}, on constate que dans tous les cas l'erreur de la position devient de plus en plus importante lorsque le nombre de perte des paquets augmente. L'erreur ne dépasse pas environ 2,5~m en appliquant GSF mais elle va jusqu'à 4,7~m dans le cas du PF standard. En effet, les particules du PF perdent leur pertinence. Cependant, dans le cas de GSF ils sont dispersés dans toutes les directions possibles afin d'optimiser l'espace de recherche. Le tableau montre comment l'erreur augmente de plus de 70\% pour PF (1,99~m). Toutefois, en cas de GSF l'augmentation ne dépasse pas 63 \% (0,97~m). Pour un et 2 pertes d'awareness, l'erreur de PF standard augmente de 18\% et 56\% respectivement, ce qui est plus ou moins le double par rapport à l'erreur de GSF (10\% et 22\% respectivement).
+
+\begin{table}
+	\centering
+	\begin{tabular}{lllll}
+		\toprule
+\textbf{Urban Scenario} & \textbf{No Loss} & \textbf{1 Loss} & \textbf{2 Loss} & \textbf{3 Loss}\\
+\midrule 
+GSF & 1.53 & 1.69 & 1.88 & 2.50\\
+\midrule 
+PF & 2.73 & 3.23 & 4.26 & 4.72\\
+\midrule
+Erreur absolue [m] (GSF/SIR-PF)& -/- & 0.16/0.5 & 0.35/1.53 & 0.97/1.99 \\
+\midrule
+Gain \% (GSF/SIR-PF)& -/- & 10\%/18\% & 22\%/56\% & 63\%/72\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Impact des pertes de paquets sur l'erreur de prédiction de GSF et du standard PF dans le cas du scénario urbain pour 10 particules.}
+	\label{tab:plossaurban}
+\end{table}
+
+%Dans les approches de prédiction existantes, l'évaluation de fausses alarmes n'a pas été étudié.
+Afin d'évaluer l'impact de l'amélioration de la précision de l'awareness sur la détection des événements de sécurité, nous proposons d'appliquer notre concept à multiples hypothèses (GSF) et évaluer son efficacité à éviter les fausses alertes.
+
+\subsection{Détection des fausses alarmes}
+
+Dans cette section, nous examinons la performance de notre approche GSF à détecter correctement l'événement d'urgence entre deux véhicules et de limiter les fausses alarmes. Nous considérons un scénario d'urgence de freinage où deux véhicules se suivent sur la même voie d'une route. Le véhicule en avant décélère brusquement plusieurs fois. Le véhicule en avant est appelé le véhicule ego le véhicule derrière est appelé véhicule cible.
+Le taux de fausses alarmes (False Alarm Rate (FAR)) est utilisé comme la métrique de performance. La distance entre les deux véhicules a été mesurée pour évaluer la détection de l'alerte de sécurité. Une distance seuil de 8~m a été employée, au-dessous de cette valeur une alerte de sécurité doit être déclenchée.
+
+Figure \ref{targetresult} montre l'évolution de la distance entre les deux véhicules en fonction du temps de simulation. La distance réelle, les distances estimées par GSF et le standard PF sont tracées. Dans ce scénario, le véhicule ego effectue plusieurs décélérations brusques. À partir des courbes illustrées dans Figure \ref{targetresult} nous pouvons en déduire que notre approche donne plus de précisions. L' approche standard PF ne parvient pas à détecter avec précision l'événement de freinage. On peut remarquer que PF donne parfois de fausses alarmes (deux exemples sont représentés sur la figure). Le moyen FAR pour le standard PF atteint facilement les 54\%. Néanmoins, il est seulement de 2\% dans le cas de notre approche GSF.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{./Part2/Chapter7/figures/resultFAR.eps}
+\caption{La distance entre les deux vehicles en fonction du temps de simulation.}
+\label{targetresult}
+\end{figure}
+
+\section{Contrôler le taux de transmission de l'awareness\label{cont3}}
+
+Afin de limiter la congestion du réseau qui pourrait résulter des transmissions périodiques d'awareness, nous proposons une approche pour contrôler le taux de transmission d'awareness basée sur les multiples hypothèses. Cette approche bénéficie du fait que GSF peut s'adapter aux transmissions apériodiques.
+En effet, on propose de considérer, d'une part, la charge du canal, d'autre part de répondre aux exigences des applications de sécurité routière. Le défi de ce système est d'assurer efficacement:
+\begin{enumerate}
+\item{\em Un contrôle de la congestion du canal sans fil et une réduction des émissions inutiles d'awareness.}
+\item{\em Un contrôle des événements critiques et d'être capable de détecter les situations de sécurité routière imprévus.}
+\end{enumerate}
+
+\subsection{Contrôle du taux de transmission basé sur les multiples hypothèses}
+
+Le concept de base de notre approche est de permettre à tous les nœuds de prédire l'awareness de leur environnement. De plus, chaque véhicule doit prévoir sa propre position aussi afin d'évaluer la précision de la prédiction des autres. Les véhicules sont autorisés à communiquer et à envoyer leur awareness si et seulement s'ils perçoivent un écart critique par rapport à la position réelle et détectent le besoin des autres véhicules de l'information actuelle. Un flowchart de ce mécanisme est présenté dans Figure \ref{flowchartTB}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{./Part2/Chapter7/figures/flowcharttb.eps}
+\caption{Flowchart du contrôle du taux de transmission d'awareness basée sur la prédiction.}
+\label{flowchartTB}
+\end{figure}
+
+Cet aspect rend conceptuellement les transmissions périodiques d'awareness apériodiques. Toutefois, cela peut réduire la qualité et la précision de l'awareness ce qui n'est pas compatible avec les contraintes des applications de sécurité.
+
+Le passage aux transmissions périodiques lors de la détection de scénarios critiques, pourrait être une solution. Le problème ici est que, dans des environnements dynamiques comme les STI, ces situations devraient être présentes souvent. Par exemple, en considérant le cas d'embouteillages, les véhicules accélèrent et décélèrent fréquemment, cependant, il n'est pas nécessaire de transmettre l'information d'awareness à chaque accélération ou décélération. Cela pourrait conduire à une surcharge inutile du canal de communication. Une détection efficace du contexte est donc nécessaire afin de distinguer entre les situations de sécurité réellement critiques et les fausses alarmes.
+
+L'idée est de fournir des hypothèses alternatives et de transmettre l'awareness que lorsque la position future n'existe pas dans aucune des différentes hypothèses de notre système. En outre, la transmission est déclenchée uniquement lorsque l'une des hypothèses détecte un événement de sécurité qui dépend de l'application. Nous évaluons l'efficacité de notre mécanisme de contrôle de détecter des situations de sécurité.
+
+\subsection{Évaluation des performances de notre mécanisme}
+
+Dans cette section, nous évaluons la performance de notre système de contrôle de l'awareness basé sur GSF et le comparons avec un système de contrôle basé sur le standard PF. Tout d'abord, sous des contraintes de sécurité, nous examinons la performance de notre approche pour détecter les événements critiques de  sécurité dans le contexte d'un scénario de freinage. Ensuite, nous étudions l'efficacité de notre approche dans la réduction de la congestion du canal tenant compte des scénarios denses (zones urbaines et autoroutes).
+
+\subsubsection{Détection des situations de sécurité}
+Figure \ref{lightdecc} trace l'évolution de la vitesse d'un scénario de freinage. Le nombre de transmissions de GSF et du standard PF sont illustrés. On peut déduire de ce résultat que l'approche de transmission basée sur le standard PF est essentiellement périodique dans l'ensemble du scénario ce qui est dû à l'augmentation de l'erreur accumulée sur l'estimation de la position. Toutefois, avant la décélération GSF est apériodique en raison de sa capacité à suivre et bien prédire l'awareness. Puis, lorsque le véhicule commence à ralentir GSF détecte ce changement de contexte et reste apériodique m\^eme après la détection.
+On peut remarquer ici que GSF est capable de détecter un changement de contexte brutal. En outre, il est capable de réduire le nombre de transmissions lorsque cela n'est pas nécessaire, et également contribue à la réduction de la charge du canal.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.75]{./Part2/Chapter7/figures/mediumspeed.eps}
+\caption{La vitesse vs. le temps de simulation. L'impact de la décélération sur la performance du système de transmission d'awareness.}
+\label{lightdecc}
+\end{figure}
+
+Nous concluons, ici, que l'approche standard de PF, ne peut pas garantir une bonne prédiction et par conséquent une detection robuste des événements critiques. Cependant, GSF est capable de maintenir son apériodicité et en même temps de détecter le changement de contexte, mis \`a part le fait d'assurer une précision considérable de l'awareness.
+
+\subsubsection{Réduire la congestion du canal}
+Dans cette section, nous avons l'intention d'étudier la performance de notre approche de contrôle de taux de transmission d'awareness en termes de réduction de congestion de canal.
+
+Les résultats de simulation dans le tableau \ref{tab:rate}, prouvent que GSF contribue à réduire le taux de transmission d'awareness, seulement 4,68 transmissions sur 10 (en cas de transmission périodique) effectuées en 1~s. Plus de 50\% de transmissions périodiques ont été supprimées par notre algorithme GSF, seulement 16 \% dans le cas du PF standard. On peut noter également l'amélioration apportée par notre mécanisme de contrôle basé sur GSF par rapport à celui basé sur PF, 45 \% pour le scénario urbain et 30 \% dans le cas de l'autoroute.
+
+\begin{table}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+Transmit Rate & Scenario Urbain & Scenario Autoroute\\
+\midrule 
+GSF           & 4.68           &  5.92  \\
+\midrule 
+PF            & 8.44           & 8.40 \\
+\midrule 
+Gain \%    &  45\%          & 30\%  \\
+		\bottomrule
+	\end{tabular}
+	\caption{\label{tab:rate}Le taux de transmission dans le cas des scénarios urbain et autoroute.}
+\end{table}
+
+Figure \ref{rate} trace la charge de canal des différents mécanismes, celui basé sur GSF, basé sur PF et la transmission périodique. La transmission périodique présente le taux le plus élevé de surcharge canal, plus de 80\% de l'utilisation du canal peut conduire à un problème de congestion du réseau. Nous pouvons voir que GSF assure les meilleures performances en maintenant la charge de canal à moins de 15\% ce qui correspond à l'état inactif (0\% -15\% ). D'autre part, la charge de PF est supérieure à 15\%.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.95]{./Part2/Chapter7/figures/rateacosta.eps}
+\caption{Charge du canal vs. nombre de particules.}
+\label{rate}
+\end{figure}
+
+Nous concluons que notre système de contrôle de transmission assure une gestion efficace de la congestion canal, en plus il permet de satisfaire les contraintes des applications de sécurité en matière de la détection efficace des événements critiques de sécurité.
+
+\section{Design d'un framework générique pour les STI\label{frame}}
+
+Les résultats obtenus dans cette thèse ouvrent la voie à la conception d'un framework générique pour la gestion des informations de sécurité routière. Les mécanismes de contrôle con\c{c}us constituent la base de ce framework. Le concept principal est de rassembler tous les mécanismes de contrôle pertinents en un seul bloc garantissant les besoins et les exigences des différentes applications STI. Nous pensons que la couche (de l'architecture ETSI/ITS \cite{etsi}) la plus adaptée pour regrouper ces mécanismes de contrôle est la couche Facilities car elle contrôle tous les données entrantes et sortantes des nœuds.
+
+Par ailleurs, le système que nous proposons se compose de trois éléments constitutifs: un bloc dédié à  la gestion d'awareness, un bloc de gestion du contexte global des véhicules et un bloc d'agrégation de données.
+Le bloc de gestion d'awareness est divisé en deux blocs: le contrôle de la précision de l'awareness et le contrôle du taux de son émission. Le premier fournit aux véhicules une grande précision de leur perception globale en utilisant un modèle de prédiction de mobilité spécifique. Le deuxième bloc est conçu pour contrôler la fréquence de transmission de l'information périodique d'awareness afin de contrôler la congestion du réseau. Le bloc de gestion du contexte globale permet la gestion de la pertinence de la transmission de données événementielles de sécurité. Le modèle de l'agrégation de données gère l'agrégation de l'information redondante et décide de la fusion potentielle d'informations.
+
+\section{Conclusion \label{conclusion}}
+
+Dans le cadre de ce travail, nous nous sommes intéressés au développement des mécanismes de contrôle de l'information de sécurité capables de réguler la détection et la diffusion d'événements de sécurité routière à différents niveaux ainsi qu'à optimiser les ressources de canal.
+Compte tenu de leur importance, nous avons abordé en premier lieu le contrôle de la diffusion des informations de sécurité événementielles afin de limiter le nombre de réémetteurs et donc, de réduire la ''congestion`` du canal.
+
+Nous avons observé qu'un contrôle efficace de la diffusion des messages de sécurité dépend de différents aspects qui ne peuvent pas être contrôlés à ce niveau, à savoir la détection des événements de sécurité, la charge de canal, qui sont tous liés à l'awareness. En conséquence, nous avons proposé un mécanisme efficace de contrôle de précision de l'awareness.
+Une awareness plus précise est capable de fournir une meilleure détection des événements de sécurité. Nous avons enfin appliqué notre approche de contrôle d'awarenes pour réguler la charge sur le canal, en réduisant le taux de transmission de ces messages périodiques.
+
+Les résultats obtenus dans cette thèse ouvrent la voie à davantage innovations et à la conception de nouvelles méthodes.
+Une amélioration de notre système de prédiction en utilisant par exemple la prédiction macroscopique afin de différencier les multiples hypothèses pourrait \^etre envisagée afin de réduire davantage l'erreur de 'information d'awareness et obtenir des résultats inférieurs à ceux du GPS (1.5m).
+Par ailleurs, des efforts devraient être consacrés à l'évaluation de notre système de contrôle de transmission basé sur GSF.
+En outre, la conception du framework générique pour les applications de sécurité doit être étudiée davantage car il doit tenir en compte tous les aspects liés à la diversité des applications STI.

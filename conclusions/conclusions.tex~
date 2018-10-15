@@ -1,0 +1,79 @@
+In this chapter, we summarize our contributions and major findings. Furthermore, we present the conclusions drawn from the results of this thesis. Finally, we give an outlook on possible future work.
+
+\section{Summary}
+
+Intelligent Transportation Systems have emerged in the last decades with the main aim to improve the safety of drivers and passengers on the roads. Research efforts have been concentrated on investigating the design of the appropriate communication architecture and the development of robust mechanisms for these systems.
+% 
+This thesis suggested to rethink the existing control mechanisms. New approaches have to be designed in order to cope with the adverse conditions of ITS environments and guaranty the requirements of ITS cooperative safety applications.
+% to efficiently disseminate and manage safety re lated information in the vehicular network. Through this dissertation, the objective is to consider the needs of ITS cooperative safety applications while providing an efficient management of network congestion. With the control mechanisms that we propose, we ensure the dissemination of only relevant information in the network. Redundant and/or false detection of emergency events are accordingly avoided.
+\\
+\\
+Through this dissertation, the following objectives are achieved:
+\begin{itemize}
+ \item \textbf{Identify of the challenges of ITS environment, the requirements of ITS applications and the related evaluation metrics}\\
+We examined in Chapter \ref{ch:backgroundITSgeneral} the unique characteristics and challenges of the ITS environment. Moreover, we focus on the requirements of ITS safety applications has been provided. In Chapter \ref{ch:backgroundITSsimulation}, we have defined the performance metrics that are crucial to assess the effectiveness of the ITS cooperative applications.
+
+ \item \textbf{Adapt existing dissemination control policies to ITS environments}\\
+% 
+We have overviewed in Chapter \ref{ch:ch4} current proposals for event-driven information dissemination for vehicular environment providing a comprehensive comparison. Based on this study, we conclude that existing dissemination control mechanisms are not compatible with the properties of ITS systems which could not ensure the required reliability and reactivity for safety applications.
+% CBF mechanism appears to be the most adapted for ITS environment.
+% 
+Thus, we propose in Chapter \ref{ch:ch5} an enhancement of the ITS dissemination benchmark ``CBF'' overcoming these challenges and supporting safety in the road. The dynamic topology and high fading vehicular channel have been considered. Simulations using iTETRIS have proved to provide significant improvement in dissemination delay and network overhead compared to \textit{CBF}. Furthermore, the results of this chapter showed that the effectiveness of safety dissemination control policies depends strongly on the awareness accuracy.
+
+\item \textbf{Control the accuracy of the cooperative awareness system} \\
+We address in Chapter \ref{ch:ch6} the one-hop cooperative awareness information. We designed an efficient control methodology of the awareness system capable of providing high accuracy and precision to cooperative safety information taking into account the challenging ITS environment. Our tracking approach, namely GSF, is based on multiple hypotheses concept considering not only one single potential future position but also other alternative locations modeling the eventual loss of GPS signals or packets in addition to the unpredictable motion changes. Performance evaluation have been conducted and proved that our accuracy control scheme outperforms existing algorithms.
+
+\item \textbf{Control the transmission of the cooperative awareness system}\\
+In Chapter \ref{ch:ch6}, we apply GSF to adapt the transmit rate of the awareness. The idea is to conceptually make the awareness transmission system aperiodic and to be capable of accurately detecting brutal changes and limit false alarms. Simulations conducted with \textit{iTETRIS} platform showed how our approach is capable of answering the trade-off between channel congestion and cooperative safety requirements.
+
+\item \textbf{Develop realistic ITS evaluation tool}\\
+We have contributed also in the scope of this thesis to the design and implementation of the generic realistic platform iTETRIS which is dedicated for the simulation of ITS applications, protocols and technologies in a high level of realism. iTETRIS platform can be exploited by researchers to validate and evaluate the performances of new designed communication protocols for vehicular communications.
+\end{itemize}
+
+The results accomplished in this thesis pave the way for the design of a generic framework for safety-related information control. The designed control mechanisms compose the basis of such framework. The main concept is to bring together all relevant control mechanisms in one block guaranteeing the needs and requirements of different ITS applications. We think that the most convenient layer to place control mechanisms is the Facilities layer (from the ETSI/ITS architecture \cite{etsi}) since it controls all the input and output of the nodes.
+
+Moreover, the modeling approach that we suppose is comprised of three building blocks: the awareness management block, the context management and the data aggregation blocks.
+The awareness management block is split into two blocks: the awareness accuracy control and the awareness transmit control. The former provides the vehicles with high precision in its global perception using a specific mobility prediction model. The latter is designed to control the transmission rate of periodic awareness information in order to control the network congestion.
+The context management block provides functions for the management of the relevance of the transmission of event-driven safety data. The data aggregation model handles the potential aggregation of redundant information and takes the decision of the fusion of information.
+
+The design of such generic framework has to be further investigated as it has to take into account all the challenging issues associated with the diversity of the ITS applications.
+% constitute the fundamental building blocks
+% With the absolute aim to guarantee efficient safety information management, the proposed control mechanisms have been trying to tackle independently the dissemination issue in the vehicular network.
+
+% Moreover, they address the dissemination issues for a very specific type of ITS applications i.e road safety, without taking into account that there will be several applications running on the same node with various requirements. Therefore, if there was a common framework for connecting control mechanisms seamlessly to an integrated system, redundant efforts can be saved. 
+% In the last part, we introduced a generic framework for the management and control of the information gathering all the control mechanisms needed for the efficient information dissemination. Our framework is designed to be located at the Facilities layer as it controls all the input and output of the nodes.
+
+\section{Conclusions}
+
+In this thesis, we have focused on the robust ``control'' mechanisms of the safety-related information. We identified the various control levers available and feedbacks metrics required by control mechanisms for safety applications.
+
+Given its importance, we addressed first the \textit{control of the dissemination} of safety event-driven information in order to limit the number of retransmitters and thus, the ``channel congestion''.
+
+We observed that an efficient control safety-related message dissemination depends on parameters, feedback and levers that cannot be controlled at this level, i.e detection of event, channel load, which are all linked to the local cooperative awareness. Accordingly, we investigated efficient control mechanisms for local cooperative awareness precision and accuracy.
+% We have, thus, attempted to improve it and design a \textit{``control mechanism for awareness precision''}.
+% Our approach has shown its capability to provide required accuracy to enable efficient detection of safety events.
+
+A more precise awareness is capable of a better detection of safety events, but still does not impact the channel congestion. We finally applied the awareness control mechanisms to regulate the load on the channel, by reducing the transmission rate of awareness messages .
+
+In this thesis, we therefore first identified the various influencing factors impacting efficient control mechanisms for traffic safety applications. We then provided a set of control mechanisms capable of regulating the detection and dissemination of traffic safety events at various level and optimizing channel resources.  
+
+% Observing that the efficiency of this latter depends strongly on the degree of accuracy of the cooperative awareness system, we have, thus, attempted to improve it and design a \textit{``control mechanism for awareness precision''}. Our approach has shown its capability to provide required accuracy to enable efficient detection of safety events.
+% Then, to benefit from the fact that our awareness precision control is not constrained by periodic transmissions, we propose an \textit{awareness transmit rate control approach} improving the channel congestion problem and accordingly impacting directly the transmissions of event-driven information.
+% With these proposed control mechanisms, we think that we have provided a fundamental contribution to the development of robust information management for ITS cooperative safety applications.
+
+\section{Outlook}
+With the wish to support ITS cooperative safety applications, this thesis dealt with the design of robust and effective control mechanisms. Yet, it opens the door to new methodology and design innovations. 
+% Yet, further investigation has to be addressed. 
+
+The concept of distance threshold of BZB that has been introduced in Chapter \ref{ch:ch5}, requires further and detailed studies to investigate and determine its optimal selection. It could be adjusted according to specific parameters (e.g. the network density, the vehicular inter-space and/or the vehicle coverage range).
+
+The integration of the swarm based algorithm GSO into our tracking system GSF, presented in Chapter \ref{ch:ch6}, did not consider all the features of the GSO algorithm. For instance, the use of the fitness function \textit{``J''} that gives the possibility to GSF to use the previous information (history) of the filter, has not been considered.
+% 
+Furthermore, an improvement of the decision making model of our tracking system using for instance macroscopic tracking in order to differentiate between multi-hypotheses has to be performed. We believe we can manage to further reduce the awareness error to be below that of the GPS (1.5m).
+Also, some efforts should be devoted to evaluate our GSF based transmit rate control system under specific safety-critical road situations. Thus, we plan to conduct a larger evaluation. 
+% These particular scenarios have not attracted much attention from researchers so far. However, solving specificc cases can have a significant benefitt in terms of improving vehicular safety and better evaluating the proposed protocol.
+% Although being at its early step, our generic framework addresses a conceptual change, as it suggests to rethink of information management. In future work, we plan to extend the framework to also dynamically adapt the transmit power criteria.
+% \section{Future Research Directions}
+% The first part of this study introduced the notion of knowledge ... An overview of existing .. approaches and methodologies is provided.
+% The second part of this thesis describes the different solutions proposed to build .. architecture design for...  The first solution relies on the ... The second solution exposes ... This solution introduces the new concept  of ...
+% In the third and last part of this thesis focused on the ... 

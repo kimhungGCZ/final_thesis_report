@@ -1,0 +1,91 @@
+\section{Introduction}
+R\'ecemment, de nouvelles technologies de communications sans fil ont \'et\'e con\c{c}ues ouvrant la voie a une grande vari\'et\'e d'applications et services innovants. En particulier, les technologies de communication sans fil véhiculaires (V2X) y compris les communications de véhicule à véhicule (V2V) et de véhicule \'a infrastructure (V2I), sont actuellement mises en oeuvre pour soutenir l'intégration des technologies de l'information et de la communication (TIC) dans les systèmes de transport traditionnel.
+Ce concept dénommé Systèmes de Transport Intelligents (STI) propose des solutions innovantes pour améliorer nos vies et rendre le transport plus sûr, plus efficace, plus confortable et respectant le éco-système.
+
+En conséquence, deux branches principales de services destinés aux STI sont créés. Tout d'abord, les \textit{applications de divertissement} qui sont destinées à fournir plus de confort et d'assistance au conducteur et aux passagers, par exemple l'accès à Internet, la diffusion des informations météorologiques et des points d'intérêts à proximité. Deuxièmement, les \textit{applications de sécurité} qui visent à améliorer la sécurité routière, y compris les services d'évitement des collisions, les notifications d'accidents et, la collecte et la distribution des informations relatives aux conditions de la circulation routière.
+Dans le cadre de cette thèse, nous nous interessons aux applications coopératives de sécurité puisqu'elles représentent les services les plus vitales des STI.
+
+Compte tenu de leur importance, les applications de sécurité sont particulièrement très exigeantes en termes de précision et de fiabilité de la réception de l'information. De plus, ils sont considérablement sensibles aux d\'elai. Par exemple, quand un accident se produit, les informations les plus pertinentes doivent être livrées correctement tout en respectant les contraintes de délai afin d'\'eviter que d'autres accidents auront lieu.
+Les informations de sécurité pourraient être soit des informations de localisation envoy\'ees périodiquement en un seul saut dénommé ``\textit{awareness}'' correspondant à l'information relative au voisinage et qui constitut la perception globale du v\'ehicule, ou bien des informations de sécurité événementielle généré et envoyé en mode multi-sauts lors de la détection d'une situation de sécurité.
+
+L'efficacité des applications de sécurité routière dépend donc de la fiabilité du support de communication partagé. La stratégie de communication commune envisagée d'être utilisée est la \textit{diffusion V2X} basée essentiellement sur le standard \textit{IEEE 802.11p MAC} \cite{802.11p} qui est un amendement de la norme IEEE 802.11 adapté pour l'environnement véhiculaire. Bien qu'elle est consid\'er\'ee comme efficace dans un environnement à faible échelle, la diffusion est contrainte par la capacit\'e limit\'ee du canal partagé et par conséquent ne peut pas faire face au très grand nombre de nœuds dans le réseau véhiculaire.
+Autres aspects qui méritent d'être examinés, sont d'une part la quantité diverse et importante de données transmises sur le réseau, et d'autre part, la forte dynamicité des nœuds. Ce qui entraine un problème de congestion de r\'eseau et par consequent une dégradation de la performance du système de communication.
+En outre, l'absence de "feedback" dans le canal de diffusion pourrait encore freiner la fiabilité des transmissions et plus particulièrement, les transmissions de "sécurité" nécessitant une plus grande fiabilité et une latence plus faible.
+
+L'objectif principal de ce travail est d'assurer une gestion et diffusion efficaces des informations de sécurité routi\`ere tout en consid\'erant l'environnement contraignant des STI. Nous proposons de concevoir des \textit{mécanismes de contrôle} efficaces pour d'une part contrôler la charge de canal et réduire le proble\`eme de la congestion r\'eseau et d'autre part respecter les besoins des applications de s\'ecurit\'e routi\`ere.
+%
+%Nous vous suggérons donc de \ textit {commande} le système de la conscience coopérative. Tout d'abord, nous concevons une politique de contrôle de précision de "awareness" assurer une précision suffisante pour les applications STI de sécurité. Deuxièmement, un contrôle de la transmission de sensibilisation est présenté pour obtenir le contrôle de congestion efficace.
+%
+%Réduire la congestion de canal pourrait impliquer également une réduction de la précision des informations des véhicules sur leur voisinage (ou la «awareness»). En outre, les applications de sécurité dépendent fortement de l'exactitude de l'information d'awareness.
+
+Dans la section \ref{state}, nous introduisons l'état de l'art de l'environnement STI. En particulier, nous analysons systématiquement les besoins des applications de sécurité routi\`ere. Dans la section \ref{cont1}, nous abordons la conception de mécanismes de contrôle pour diffuser l'information événementielle de sécurité de manière efficace et optimis\'ee. Nous proposons une approche de contrôle de congestion adaptant le protocole de diffusion multi-hop de référence `` \textit{CBF}'' (Contention-Based Forwarding) \'a l'environnement v\'ehiculaire. Apr\`es, nous proposons dans la section \ref{cont2} un mécanisme de contr\^ole robuste d'awareness, à savoir Glow-worm essaim filtre (GSF), capable de fournir la précision requise pour une détection efficace et exacte d'une situation de s\'ecurit\'e. Puis, dans la section \ref{cont3}, nous suggérons d'appliquer notre GSF pour adapter la fr\'equence de transmission de l'awareness. En outre, nous évaluons la capacité de GSF pour obtenir une détection efficace des situations de sécurité.
+
+Observant que les transmissions liées à des événements de sécurité dépendent essentiellement du contexte global perçu par les véhicules, nous démontrons dans la section \ref{frame} la nécessité d'une entité globale pour contrôler à la fois la congestion du réseau et l'awareness. Enfin, la section \ref{conclusion} pr\'esente la conclusion qui peut être tirée de la th\`ese et fournit des directives pour les travaux futurs.
+
+
+\section{Les applications de sécurité routière pour les STI\label{state}}
+
+Etant considérées comme la motivation originale derrière la création des STI, les applications de sécurité routi\`ere ont acquis beaucoup d'intérêt. Elles ont principalement l'objectif de réduire le taux d'accidents et de décès sur les routes et, ainsi de garantir une bonne gestion du traffic routier. Donc, vue la grande diversité de ces applications, plusieurs types de données devraient être échangées entre les nœuds, notamment ils existent  deux types principaux: Les informations de localisation périodique qui sont transmis en diffusion \'a un seul saut dénommé `` \textit{awareness}'' et qui repr\'esentent des donn\'ees sur l'environnement du v\'ehicule. Le second type concerne les informations de sécurité événementielle généré et envoyé en diffusion multi-hop lors de la détection d'une situation de sécurité.
+
+Pour assurer un bon fonctionnement des applications de sécurité routière, il est nécessaire que les nœuds \textit{coopérent} entre eux et, en conséquence partagent ensemble l'information de sécurité. Voitures, camions, trains, motos et même les piétons peuvent contribuer à des routes plus efficaces et sûres si la diffusion et le partage de l'information sont gér\'es efficacement fournissant les donn\'ees pertinentes pour les conducteurs tout en respectant les exigences et contraintes spécifiques de ces applications. Plusieurs aspects doivent \^etre consid\'er\'es:
+\begin {itemize}
+\item \textbf{Le défi pr\'esent dans l'environnement v\'ehiculaire} \\
+Cet environnement est caractérisé par plusieurs aspects particuliers comme la nature non fiable et incertaine du support de communication ce qui n'est pas adapt\'e aux besoins des applications de s\'ecurit\'e. En outre, la grande taille des r\'eseaux v\'ehiculaires ainsi que la capacité limitée du canal partagé sont d'autres aspects cruciaux qui doivent \^etre prise en considération.
+\item \textbf{Les exigences des applications STI} \\
+Ces applications nécessitent des délais très courts et une grande fiabilité dans la réception de l'information ce qui n'est pas n\'ecessairement le cas pour les applications de non-sécurité où les données sont moins sensibles aux retards. Les passagers peuvent tolérer de recevoir une vidéo téléchargée d'Internet avec retard. Cependant, il est extrêmement important d'être informé \'a temps d'un éventuel accident. Cela pourrait être même mortel, car il peut conduire à d'autres situations dangereuses.
+\end {itemize}
+
+\section{M\'ecanisme de contr\^ole des informations \'evenementielles de s\'ecurit\'e routi\'ere\label{cont1}}
+
+Un aspect particulier des applications de sécurité est qu'elles sont intol\'erentes aux d\'elais de r\'eception. L'information de s\'ecurit\'e doit être transmise à tous les véhicules situés dans une zone spécifique \'a proximité du danger comme l'illustre la figure \ref{ch4: scénarios}, la diffusion périodique à multi-sauts et à courte portée devrait être utilisée.
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/accident.eps} \label{ch4:accident}}
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/roadwork.eps}\label{ch4:roadwork}}
+\caption[Illustration de deux situations de sécurité.] {Illustration de deux situations de sécurité. Dans le premier scénario (a), un accident se produit entre deux voitures et afin d'éviter d'autres accidents potentiels, les donn\'ees de sécurité doivent être transmises à tous les nœuds situés à la même route que le danger (zone rouge). Les véhicules sur les autres routes ne sont pas concernés par cette information. Dans le second scénario (b), l'information des travaux routiers doit être d\'elivr\'ee dans la zone rouge pour réduire le risque d'accident et de garantir la sécurité des passagers.}
+\label{ch4:scenarios}
+\end{figure}
+
+Vu la nature de communication utilis\'ee dans les r\'eseaux v\'ehiculaires, les aquitements explicites ne sont pas employ\'ees. Par cons\'equent, assurer une diffusion fiable de l'information s'av\`ere un objectif très difficile \`a r\'ealiser.
+Toutefois, c'est un aspect crucial qui doit être résolu avant tout déploiement des applications de sécurité routière. Un moyen pour savoir si une transmission donn\'ee est bien r\'eussie est de s'appuyer sur les transmissions redondantes soit directement ou bien via des noeuds intermidiares. Bien que cette id\'ee semble \^etre efficace appliqu\'ee dans des r\'eseaux à petite échelle, elle ne s'adapte pas pour des r\'eseaux à grandee échelle et peut poser le problème de ``broadcast storm'' \cite{IEEEhowto:storm}, comme le nombre de réémetteurs croît de façon exponentielle, et sature le canal sans fil avec les communications inutiles conduisant à des problèmes de congestion du réseau. Le défi i\c{c}i est donc de parvenir à assurer un taux de r\'eception le plus élevé possible, mais avec beaucoup moins de transmissions. Plusieurs travaux ont été effectués visant à optimiser la diffusion multi-sauts dans les réseaux véhiculaires dans le but de réduire la congestion du réseau.
+
+La diffusion bas\'ee sur le récepteur, également connu sous le nom de {\em Contention based Forwarding (CBF)} \cite{cbf} ou ransmission basée sur la contention, est l'une des solutions proposées. Chaque nœud décide localement du relai de messages. Les récepteurs entrent en contention pour être selectionner comme des relais potentiels, le noeud remportant la contention transmets et tous les autres nœuds entendant cette derni\`ere transmission arr\^etent leur contention. Cette approche est bas\'ee sur trois hypothèses de conception principales: la topolgie uniforme du r\'eseau véhiculaire, la fiabilit\'e des canaux de communication (non-fading) et enfin l'homogèneit\'e des moyens de communications. L'environnement réaliste des STI, et plus particulièrement, les topologies urbaines ne sont pas forcement conformes avec ces aspects. Par cons\'equent, les relais s\'electionn\'es par CBF peuvent être non-existants, non accessibles et/ou non optimales en raison de capacités de transmission hétérogènes.
+
+Dans cette section, nous aborderons la conception d'un mécanisme efficace CBF adapté aux besoins des applications de sécurité et adapté aux spécificités de l'environnement urbain véhiculaire. En outre, aucun des mécanismes CBF disponibles aujourd'hui différencie relais en fonction de leurs capacités de diffusion. Nous proposons donc deux approches, appelées {\em Bi-Zone Broadcast (BZB)} et {\em Infrastructure Bi-Zone Broadcast (I-BZB)}, qui regroupent l'aspect aléatoire ainsi que le principe de la distance dans CBF. I-BZB ajuste le temps de contention pour fournir plus de chance pour les nœuds ayant des propriétés de diffusion plus importantes (des RSUs, des autobus, des tramways, des camions ..) pour être \'elus comme relais. Nous séparons la zone de diffusion en deux zones, l'une où un ``random'' CBF devrait être appliqué, et la deuxi\`eme où un CBF basé sur la distance doit être utilisé. Les deux zones peuvent être adapt\'ees à la topologie et de la connectivité, en fonction d'un seuil de distance \textit{``D$_{th}$''}.
+
+Comme il est indiqué dans la figure \ref{BZB}, où la ligne pointillée montre l'évolution du temps d'attente du standard CBF basé sur la distance en fonction de la distance par rapport \`a l'expéditeur. Les lignes continues présentent les différentes limites du temps de la contention de \textit{BZB}, la contention que chaque nœud doit effectuer, dépend principalement de ces deux zones.
+\begin{figure}[!t]
+\centering
+\includegraphics[scale=0.6]{./Part1/Chapter5/figures/scenariodth.eps}
+\caption{Le \textit{BZB} système de contention où les courbes pointillés et continues représentent respectivement le temps d'attente du CBF basé sur la distance et les limites du \textit{BZB}.}
+\label{BZB}
+\end{figure}
+
+Dans ces deux zones distinctes, le temps d'attente est choisi au hasard entre deux bornes. Pour les nœuds les plus proches où la distance est inférieure à D$_{th}$, l'intervalle de sélection du temps de contention est fixé entre [T2, T$_{max}$], où T2 est donnée dans l'équation Eq.\ref{eq:t2} et T $_{max}$ est le temps d'attente maximum. En raison de l'utilisation de l'aspect aléatoire dans \textit{BZB}, une amélioration du système de contention est perçu, comme le montre la figure \ref{BZB}, les véhicules les plus proches, le troisième noeud après l'émetteur a acquis un temps de contention inférieur à celui obtenu par un standard CBF basé sur la distance.
+
+L'intervalle de contention des véhicules dont la distance est au-delà de D$_{th}$ est [0, T1], où T1 est détaillée dans l'équation Eq. \ref{eq:t1}. Ayant une limite inférieure de 0, les noeuds les plus éloignés sont accordées la priorité de transmettre immédiatement le message, sans attendre un temps donn\'e. Dans le pire des cas, l'approche CBF basée sur la distance est appliquée.
+
+\begin{equation}
+T_{1} = T_{max}\,\times\,(1\,-\,\frac{d}{r})\label{eq:t1}\end{equation}
+
+\begin{equation}
+T_{2} = T_{max}\,\times\,(1\,-\,\frac{D_{th}}{r})\label{eq:t2}\end{equation}
+où r indique la port\'ee de transmission, T$_{max}$ est le temps d'attente maximum, D$_{th}$ est le seuil distance et d est la distance de l'émetteur.
+
+L'étude d'évaluation a été réalisée en utilisant la plate-forme iTETRIS et un environnement réaliste calibré urbain de la ville de Bologne repr\'esentant la non-homogénéité de la topologie et la connectivité dans l'environnement véhiculaire. Notre stratégie hybride a montré significativement qu'elle est plus adaptée à l'environnement urbain fournissant environ 46\% d'amélioration des d\'elais de r\'eception de l'information comme le montre la figure \ref{BZB-eval1} et aussi une réduction de 40\% du charge réseau (figure \ref {BZB-eval2}) par rapport au standard CBF.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{./Part1/Chapter5/figures/overhead-bzbgeo.eps}
+\caption{La variation du facteur de la redondance de transmission dans le cas de \textit{BZB}, de la diffusion non control\'ee et du standard CBF bas\'e sur la distance en fonction de la taille de paquet.}
+\label{BZB-eval1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf500bzbgeo.eps}}
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf2200bzbgeo.eps}}
+\caption{Le CDF du d\'elai de r\'eactivit\'e moyenne dans le cas de \textit{BZB}, de la diffusion non control\'ee et du standard CBF bas\'e sur la distance. (a) taille de paquet 500 bytes. (b) taille de paquet 2200 bytes.}
+\label{BZB-eval2}
+\end{figure}

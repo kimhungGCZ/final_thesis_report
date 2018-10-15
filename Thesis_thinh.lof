@@ -1,0 +1,154 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}{chapter.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Evolution of the solutions for multicast mobility.\relax }}{3}{figure.caption.7}
+\contentsline {xpart}{Background Analysis}{9}{part.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Reference Technologies and Challenges}{10}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An example of multicast deployment architecture}}{11}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A multicast deployment scenario: from protocols point of view}}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The operations of PIM-SM}}{16}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{16}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{16}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{16}{subfigure.3.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The architecture of a PMIPv6 domain}}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Signaling when a mobile node attaches to the PMIPv6 domain}}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Signaling when a mobile node performs a handover in the PMIPv6 domain}}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Mobile network architecture.\relax }}{22}{figure.caption.18}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Mobility management in the host-based approach (scheme 1).}}{25}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{25}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{25}{subfigure.8.2}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Signaling for the mobility management in the host-based approach (scheme 1).\relax }}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Mobility management in the host-based approach (scheme 2).}}{26}{figure.caption.22}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{26}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{26}{subfigure.10.2}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Mobility management in the network-based approach.}}{26}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{26}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{26}{subfigure.11.2}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Signaling for the mobility management in the network-based approach.\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Mobility management for 3GPP.}}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Mapping PMIP entities into the multicast deployment architecture}}{35}{figure.caption.31}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Base solution for multicast listener mobility in PMIPv6.\relax }}{36}{figure.caption.34}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Signaling for the multicast source mobility support in PMIPv6.\relax }}{39}{figure.caption.38}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Multicast listener mobility in DMM (MLD deployment at MARs).\relax }}{41}{figure.caption.39}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Performance Evaluation for IP Mobile Multicast}{44}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An example of the virtualization technique.\relax }}{50}{figure.caption.40}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture of the near-to-real testbed.}}{53}{figure.caption.41}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}{subfigure.2.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The PMIP domain and the corresponding testbed.}}{54}{figure.caption.42}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}{subfigure.3.2}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the scalability tesbed.}}{55}{figure.caption.46}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Resource usage of the near-to-real testbed.}}{57}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{subfigure.5.2}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Near-to-real testbed: An example of the distributed experiment environment.}}{58}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}{subfigure.6.2}
+\contentsline {xpart}{IP Multicast Mobility in Proxy Mobile IPv6}{63}{part.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Optimizing Service Continuity in a Single PMIPv6 Domain}{64}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Reference network topology for the multicast service disruption time analysis.}}{66}{figure.caption.53}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Multicast-related signaling when a listener performs a handover inside a PMIPv6 domain.}}{67}{figure.caption.54}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces PMIPv6 testbed for mobile multicast experimentation.}}{68}{figure.caption.55}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The interactions between components of the multicast mobility management module.}}{69}{figure.caption.56}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The multicast service disruption time: numerical results.}}{70}{figure.caption.58}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces The multicast service disruption time: experimental results.}}{71}{figure.caption.60}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The multicast service disruption time: experimental vs. numerical results.}}{71}{figure.caption.61}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Multicast-related signaling overhead over the air interface.}}{72}{figure.caption.64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{72}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{72}{subfigure.8.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Load Balancing of Multicast Flows in PMIPv6 Networks}{75}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Multicast considerations in the reactive-MN load balancing approach.}}{76}{figure.caption.66}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The proactive-multicast load balancing approach.}}{78}{figure.caption.69}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The reactive-multicast load balancing approach.}}{79}{figure.caption.70}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Load balancing-related signaling when a node performs a handover in a PMIPv6 domain.}}{79}{figure.caption.71}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Reference network topology for multicast service disruption analysis: from the load balancing perspective}}{81}{figure.caption.72}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Testbeds for load balancing mechanisms. }}{83}{figure.caption.73}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{83}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{83}{subfigure.6.2}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Load factors measurement.}}{84}{figure.caption.74}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{84}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{84}{subfigure.7.2}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Fairness Index for the multicast-based load balancing mechanisms.}}{85}{figure.caption.75}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{85}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{85}{subfigure.8.2}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces LMA load in the experimentation.}}{86}{figure.caption.76}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{86}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{86}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{86}{subfigure.9.3}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Service disruption time as a function of the average hop-count distances.}}{86}{figure.caption.77}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{86}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{86}{subfigure.10.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Mobility in Heterogeneous Networks: Electric Vehicle Charging Service Use-Case}{88}{chapter.6}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces General use cases of the electrical vehicle charging service}}{91}{figure.caption.79}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The EVCS's modules.}}{92}{figure.caption.84}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The multicast-related signaling when an EV changes its point of attachment.}}{94}{figure.caption.91}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Testbed implementation for the ECVS experimentation.}}{95}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{95}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{95}{subfigure.4.2}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Mapping between the actual image and the testbed components.}}{96}{figure.caption.94}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Logical interface mechanism under Linux.\relax }}{96}{figure.caption.96}
+\contentsline {xpart}{IP Multicast Mobility in DMM}{103}{part.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Inter-domain Mobility for PMIPv6: From the DMM's Perspective}{104}{chapter.7}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Initial registration signaling in the partially distributed approach.}}{106}{figure.caption.103}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Handover signaling in the partially distributed approach.}}{107}{figure.caption.104}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Signaling for the fully distributed approach.}}{108}{figure.caption.105}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Multicast mobility support in the inter-domain mobility solution.}}{109}{figure.caption.106}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Reference network topology for performance analysis.}}{110}{figure.caption.107}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Signaling cost as a function of the session-to-mobility.}}{113}{figure.caption.109}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Handover latency as a function of the session-to-mobility.}}{113}{figure.caption.110}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces The impact of domain size on the handover latency.}}{113}{figure.caption.111}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Tunnel usage.}}{114}{figure.caption.112}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Multicast service disruption time as a function of the session-to-mobility.}}{114}{figure.caption.113}
+\addvspace {10\p@ }
+\contentsline {xchapter}{On the Efficiency of Dynamic Multicast Mobility Anchor in DMM}{115}{chapter.8}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Signaling when a listener performs a handover in DMM.}}{117}{figure.caption.114}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Reference network topology.\relax }}{118}{figure.caption.115}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Multicast service disruption time.}}{124}{figure.caption.117}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{124}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{124}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{124}{subfigure.3.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces End-to-end delay.}}{125}{figure.caption.118}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{125}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{125}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{125}{subfigure.4.3}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Signaling cost.}}{126}{figure.caption.119}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{126}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{126}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{126}{subfigure.5.3}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Packet delivery cost.}}{127}{figure.caption.120}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{127}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{127}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{127}{subfigure.6.3}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Tunneling cost.}}{128}{figure.caption.121}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Packet Loss.}}{128}{figure.caption.122}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{128}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{128}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{128}{subfigure.8.3}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Expected number of handovers.}}{129}{figure.caption.123}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{129}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{129}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{129}{subfigure.9.3}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Multicast mobility management module (MUMO) in the MAR.\relax }}{132}{figure.caption.127}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Multicast-related handover signaling with the multicast context transfer.\relax }}{133}{figure.caption.128}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Multicast-related handover signaling: Interactions between the modules.\relax }}{134}{figure.caption.129}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Multicast service disruption time in DMMA.}}{135}{figure.caption.130}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{135}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{135}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{135}{subfigure.13.3}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Signaling cost in DMMA.}}{136}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{136}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{136}{subfigure.14.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{136}{subfigure.14.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusions and Outlook}{139}{chapter.9}
+\addvspace {10\p@ }
+\contentsline {xchapter}{R\'{e}sum\'{e} de la Th\`{e}se en Fran\c {c}ais}{142}{appendix.A}
+\addvspace {10\p@ }
+\contentsline {xchapter}{List of Publications}{143}{appendix.B}

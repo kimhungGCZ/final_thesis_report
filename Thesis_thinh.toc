@@ -1,0 +1,216 @@
+\babel@toc {english}{}
+\contentsline {section}{Acknowledgements}{i}{Doc-Start}
+\contentsline {section}{Abstract}{i}{chapter*.1}
+\contentsline {section}{Contents}{iii}{chapter*.2}
+\contentsline {section}{List of Figures}{vii}{chapter*.3}
+\contentsline {section}{List of Tables}{x}{chapter*.4}
+\contentsline {section}{Glossary}{xi}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Thesis Contributions and Outline}{4}{section.1.2}
+\contentsline {paragraph}{PMIP-based solutions}{4}{section*.8}
+\contentsline {paragraph}{DMM-based solutions}{4}{section*.9}
+\contentsline {part}{I\hspace {1em}Background Analysis}{7}{part.1}
+\contentsline {xpart}{Background Analysis}{9}{part.1}
+\contentsline {chapter}{\numberline {2}Reference Technologies and Challenges}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}IP Multicast}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}IP Multicast Applications}{12}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Multicast Model}{13}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Group Management Protocols}{13}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Multicast Routing Protocols}{14}{subsection.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Protocol Independent Multicast-Spare Mode/Source-Specific Mode}{15}{subsubsection.2.1.4.1}
+\contentsline {subsection}{\numberline {2.1.5}IGMP/MLD Proxy}{17}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}IP Mobility Management}{17}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Centralized Mobility Management}{19}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Mobile IPv6}{19}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Proxy Mobile IPv6}{20}{subsubsection.2.2.1.2}
+\contentsline {paragraph}{Extensions to PMIPv6}{21}{section*.17}
+\contentsline {subsubsection}{\numberline {2.2.1.3}Mobility Management in the Current Cellular Networks}{22}{subsubsection.2.2.1.3}
+\contentsline {subsection}{\numberline {2.2.2}Distributed Mobility Management}{23}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}DMM from IETF Point of View}{24}{subsubsection.2.2.2.1}
+\contentsline {paragraph}{Host-based DMM Approach}{24}{section*.19}
+\contentsline {paragraph}{Network-based DMM approach}{26}{section*.23}
+\contentsline {subsubsection}{\numberline {2.2.2.2}DMM Consideration in 3GPP}{28}{subsubsection.2.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Other Considerations}{29}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Mobility across Heterogeneous Networks}{29}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Network Mobility}{29}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Comparison between the Mobility Management Approaches}{30}{subsubsection.2.2.3.3}
+\contentsline {section}{\numberline {2.3}IP Mobile Multicast}{30}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Overview of Multicast Mobility in Mobile IP}{31}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Multicast Mobility in PMIPv6}{32}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Multicast Mobility Issues}{32}{subsubsection.2.3.2.1}
+\contentsline {paragraph}{General Issues}{32}{section*.27}
+\contentsline {paragraph}{Specific Multicast Listener Mobility Issues}{33}{section*.28}
+\contentsline {paragraph}{Specific Multicast Source Mobility Issues}{34}{section*.29}
+\contentsline {paragraph}{Deployment Issues}{34}{section*.30}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Solutions from the IETF Point of View}{34}{subsubsection.2.3.2.2}
+\contentsline {paragraph}{Solutions for Multicast Listener Mobility\\ \\ }{35}{section*.32}
+\contentsline {subparagraph}{Base Solution for Multicast Listener Mobility in PMIPv6}{35}{section*.33}
+\contentsline {subparagraph}{Direct-routing Solution}{37}{section*.35}
+\contentsline {paragraph}{Additional Considerations \\}{38}{section*.36}
+\contentsline {paragraph}{Solutions for Multicast Source Mobility \\}{38}{section*.37}
+\contentsline {subsubsection}{\numberline {2.3.2.3}Alternative Proposals}{39}{subsubsection.2.3.2.3}
+\contentsline {subsection}{\numberline {2.3.3}IP Multicast Mobility in Network-based DMM}{40}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Multicast Listener Support in DMM}{40}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Multicast Source Support in DMM}{42}{subsubsection.2.3.3.2}
+\contentsline {section}{\numberline {2.4}Conclusion}{43}{section.2.4}
+\contentsline {chapter}{\numberline {3}Performance Evaluation for IP Mobile Multicast}{44}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{44}{section.3.1}
+\contentsline {section}{\numberline {3.2}Performance Evaluation Metrics}{44}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Specific System Requirements}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2} Performance Evaluation Metrics for IP Mobile Multicast}{45}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Signaling and Packet Delivery Cost}{46}{subsubsection.3.2.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Multicast Service Disruption Time and Packet Lost}{46}{subsubsection.3.2.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.3}End-to-End Delay}{47}{subsubsection.3.2.2.3}
+\contentsline {subsubsection}{\numberline {3.2.2.4}Other Metrics}{48}{subsubsection.3.2.2.4}
+\contentsline {section}{\numberline {3.3}Experimental Evaluation of Wireless Mobile Network}{48}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Experiment Methods in Networking Research}{48}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Virtualization Technique and Virtual Networking}{50}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Virtualization Techniques and Virtualization Tools}{50}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}Virtual Networking in Linux}{51}{subsubsection.3.3.2.2}
+\contentsline {subsection}{\numberline {3.3.3}Wireless Simulation and Emulation}{52}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Requirements and Proposed Strategies}{52}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}Requirements for a Wireless Testbed}{52}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}Description of the Proposed Testbeds}{52}{subsubsection.3.3.4.2}
+\contentsline {subsection}{\numberline {3.3.5}Tesbed Deployment}{54}{subsection.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.5.1}Different Platforms}{54}{subsubsection.3.3.5.1}
+\contentsline {paragraph}{Real PMIP Testbed (R-PMIP)}{54}{section*.43}
+\contentsline {paragraph}{Proposed Testbed (PMIP-NS3)}{55}{section*.44}
+\contentsline {paragraph}{A \textit {pure-simulation PMIPv6} (Pure-NS3)}{55}{section*.45}
+\contentsline {subsubsection}{\numberline {3.3.5.2}Scalability}{55}{subsubsection.3.3.5.2}
+\contentsline {subsection}{\numberline {3.3.6}Evaluation}{55}{subsection.3.3.6}
+\contentsline {subsubsection}{\numberline {3.3.6.1}High Level Metrics}{56}{subsubsection.3.3.6.1}
+\contentsline {subsubsection}{\numberline {3.3.6.2}PMIPv6 Benchmark}{56}{subsubsection.3.3.6.2}
+\contentsline {subsubsection}{\numberline {3.3.6.3}Scalability Evaluation}{57}{subsubsection.3.3.6.3}
+\contentsline {subsubsection}{\numberline {3.3.6.4}Distributed Experiment Environment}{58}{subsubsection.3.3.6.4}
+\contentsline {section}{\numberline {3.4}Conclusion}{59}{section.3.4}
+\contentsline {part}{II\hspace {1em}IP Multicast Mobility in Proxy Mobile IPv6}{61}{part.2}
+\contentsline {xpart}{IP Multicast Mobility in Proxy Mobile IPv6}{63}{part.2}
+\contentsline {chapter}{\numberline {4}Optimizing Service Continuity in a Single PMIPv6 Domain}{64}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{64}{section.4.1}
+\contentsline {section}{\numberline {4.2}Multicast Listener Mobility and Service Continuity}{65}{section.4.2}
+\contentsline {section}{\numberline {4.3}Multicast Service Disruption Time Analysis}{66}{section.4.3}
+\contentsline {section}{\numberline {4.4}Experimentation Setup and Scenarios Description}{68}{section.4.4}
+\contentsline {section}{\numberline {4.5}Results and Discussions}{70}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Results}{70}{subsection.4.5.1}
+\contentsline {paragraph}{Numerical Results}{70}{section*.57}
+\contentsline {paragraph}{Experimental Results}{70}{section*.59}
+\contentsline {paragraph}{Numerical vs. Experimental Results}{71}{section*.62}
+\contentsline {subsection}{\numberline {4.5.2}Discussions}{71}{subsection.4.5.2}
+\contentsline {paragraph}{Impact of QRI Reduction on the Wireless Link Condition}{71}{section*.63}
+\contentsline {paragraph}{Waste of Resource (Leave Latency) Issue}{72}{section*.65}
+\contentsline {section}{\numberline {4.6}Conclusion}{73}{section.4.6}
+\contentsline {chapter}{\numberline {5}Load Balancing of Multicast Flows in PMIPv6 Networks}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Multicast Consideration in the Existing LB Mechanisms}{76}{section.5.2}
+\contentsline {section}{\numberline {5.3}Multicast-based Load Balancing Solution}{77}{section.5.3}
+\contentsline {paragraph}{Target LMA Selection}{77}{section*.67}
+\contentsline {paragraph}{Multicast Session Selection}{78}{section*.68}
+\contentsline {subsection}{\numberline {5.3.1}Load Balancing in the Proactive-Multicast Approach}{78}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Load Balancing in the Reactive-Multicast Approach}{78}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Handover Consideration}{79}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Performance Analysis}{79}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Load Analysis}{80}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Multicast Service Disruption Consideration}{81}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Experimentation}{82}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Experimentation Setup and Scenarios Description}{83}{subsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.1.1}Impact of Different Load Factors}{83}{subsubsection.5.5.1.1}
+\contentsline {subsubsection}{\numberline {5.5.1.2}Evaluation of the Multicast-based LB Mechanism}{84}{subsubsection.5.5.1.2}
+\contentsline {subsection}{\numberline {5.5.2}Experimental Results}{84}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}Load Factors Measurement}{84}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}Evaluation of the Multicast-based Load Balancing Solution}{85}{subsubsection.5.5.2.2}
+\contentsline {subsection}{\numberline {5.5.3}Multicast Service Disruption Time}{86}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}Conclusion}{87}{section.5.6}
+\contentsline {chapter}{\numberline {6}Mobility in Heterogeneous Networks: Electric Vehicle Charging Service Use-Case}{88}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{88}{section.6.1}
+\contentsline {section}{\numberline {6.2}Electric Vehicle Charging Service}{90}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Electric Vehicle Charging Deployment}{90}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}General Use Cases for Electric Vehicle Charging Service}{91}{subsection.6.2.2}
+\contentsline {paragraph}{Charging at Home}{91}{section*.80}
+\contentsline {paragraph}{Charging at a Station}{91}{section*.81}
+\contentsline {paragraph}{Charging at a Parking}{91}{section*.82}
+\contentsline {paragraph}{Moving between the Parkings}{91}{section*.83}
+\contentsline {subsection}{\numberline {6.2.3}Design Principles}{92}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}EVCS: Operations and Functionalities}{92}{subsection.6.2.4}
+\contentsline {paragraph}{Session initiation (via WLAN/LTE/PLC)}{92}{section*.85}
+\contentsline {paragraph}{Session negotiation and guidance (via WLAN/LTE)}{92}{section*.86}
+\contentsline {paragraph}{Charging management (via PLC)}{93}{section*.87}
+\contentsline {paragraph}{Session termination (Billing, via WLAN/LTE/PLC)}{93}{section*.88}
+\contentsline {section}{\numberline {6.3}PMIPv6 for Electric Vehicle Charging Service}{93}{section.6.3}
+\contentsline {paragraph}{Handover across heterogeneous access technologies (WLAN, LTE and PLC) - IPv6 Address Preservation}{93}{section*.89}
+\contentsline {paragraph}{Context Preservation}{94}{section*.90}
+\contentsline {subsection}{\numberline {6.3.1}Multicast Considerations}{94}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Experimentation}{95}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Experimentation Setup and Scenarios Description}{95}{subsection.6.4.1}
+\contentsline {paragraph}{Description of the Testbed}{95}{section*.93}
+\contentsline {paragraph}{Logical Interface Mechanism in Linux}{96}{section*.95}
+\contentsline {paragraph}{Experiment Scenarios}{96}{section*.97}
+\contentsline {subsection}{\numberline {6.4.2}Experiment Results and Discussions}{96}{subsection.6.4.2}
+\contentsline {paragraph}{Functionality Metric}{97}{section*.98}
+\contentsline {paragraph}{Performance Metric}{97}{section*.99}
+\contentsline {paragraph}{Multicast Considerations}{98}{section*.100}
+\contentsline {section}{\numberline {6.5}Conclusion}{98}{section.6.5}
+\contentsline {part}{III\hspace {1em}IP Multicast Mobility in DMM}{101}{part.3}
+\contentsline {xpart}{IP Multicast Mobility in DMM}{103}{part.3}
+\contentsline {chapter}{\numberline {7}Inter-domain Mobility for PMIPv6: From the DMM's Perspective}{104}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{104}{section.7.1}
+\contentsline {section}{\numberline {7.2}Inter-domain Mobility Support}{105}{section.7.2}
+\contentsline {section}{\numberline {7.3}Description of the Solution}{105}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Partially Distributed Solution (DP-PMIP)}{106}{subsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.1.1}Initial Registration}{106}{subsubsection.7.3.1.1}
+\contentsline {subsubsection}{\numberline {7.3.1.2}Inter-domain Operations}{107}{subsubsection.7.3.1.2}
+\contentsline {subsection}{\numberline {7.3.2}Fully Distributed Solution (DF-PMIP)}{107}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Local Routing Considerations}{108}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Multicast Considerations}{109}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Performance Analysis}{110}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Reference Model}{110}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Signaling Cost}{110}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}Handover Latency}{111}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}Tunnel Usage}{111}{subsection.7.4.4}
+\contentsline {subsection}{\numberline {7.4.5}Multicast Service Disruption Time}{112}{subsection.7.4.5}
+\contentsline {section}{\numberline {7.5}Numerical Results}{112}{section.7.5}
+\contentsline {section}{\numberline {7.6}Conclusion}{114}{section.7.6}
+\contentsline {chapter}{\numberline {8}On the Efficiency of Dynamic Multicast Mobility Anchor in DMM}{115}{chapter.8}
+\contentsline {section}{\numberline {8.1}Multicast Listener Mobility in DMM}{116}{section.8.1}
+\contentsline {section}{\numberline {8.2}Quantitative Analysis}{117}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Network Model and Performance Metrics}{118}{subsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.1.1}Reference model}{118}{subsubsection.8.2.1.1}
+\contentsline {subsubsection}{\numberline {8.2.1.2}Messages Related to the Performance Analysis}{119}{subsubsection.8.2.1.2}
+\contentsline {subsubsection}{\numberline {8.2.1.3}Delay Model}{119}{subsubsection.8.2.1.3}
+\contentsline {subsubsection}{\numberline {8.2.1.4}Mobility Model}{120}{subsubsection.8.2.1.4}
+\contentsline {subsection}{\numberline {8.2.2}Analytical Modeling}{120}{subsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.2.1}Multicast Service Disruption Time Analysis}{120}{subsubsection.8.2.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2.2}End-to-End Delay}{121}{subsubsection.8.2.2.2}
+\contentsline {subsubsection}{\numberline {8.2.2.3}Cost Analysis}{122}{subsubsection.8.2.2.3}
+\contentsline {subsubsection}{\numberline {8.2.2.4}Packet Loss}{123}{subsubsection.8.2.2.4}
+\contentsline {subsection}{\numberline {8.2.3}Numerical Results}{124}{subsection.8.2.3}
+\contentsline {subsubsection}{\numberline {8.2.3.1}Multicast Service Disruption Time}{124}{subsubsection.8.2.3.1}
+\contentsline {subsubsection}{\numberline {8.2.3.2}End-to-End delay}{126}{subsubsection.8.2.3.2}
+\contentsline {subsubsection}{\numberline {8.2.3.3}Signaling Cost}{127}{subsubsection.8.2.3.3}
+\contentsline {subsubsection}{\numberline {8.2.3.4}Packet Delivery Cost}{127}{subsubsection.8.2.3.4}
+\contentsline {subsubsection}{\numberline {8.2.3.5}Tunneling Cost}{127}{subsubsection.8.2.3.5}
+\contentsline {subsubsection}{\numberline {8.2.3.6}Packet Loss}{128}{subsubsection.8.2.3.6}
+\contentsline {subsubsection}{\numberline {8.2.3.7}Expected Number of Handovers}{128}{subsubsection.8.2.3.7}
+\contentsline {subsection}{\numberline {8.2.4}Conclusion of the Quantitative Analysis}{129}{subsection.8.2.4}
+\contentsline {section}{\numberline {8.3}Dynamic Multicast Mobility Anchor Selection}{130}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Considered Contexts}{131}{subsection.8.3.1}
+\contentsline {paragraph}{Multicast service context}{131}{section*.124}
+\contentsline {paragraph}{Mobile node context}{131}{section*.125}
+\contentsline {paragraph}{Network context}{131}{section*.126}
+\contentsline {subsection}{\numberline {8.3.2}Architecture Description}{132}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}Operations of the Solution}{133}{subsection.8.3.3}
+\contentsline {subsection}{\numberline {8.3.4}Other Considerations}{134}{subsection.8.3.4}
+\contentsline {subsection}{\numberline {8.3.5}Performance Evaluation}{135}{subsection.8.3.5}
+\contentsline {section}{\numberline {8.4}Discussions}{136}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Implementation Work}{136}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Multicast Router Function Deployment at MAR}{137}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}Multicast Source Mobility Support}{137}{subsection.8.4.3}
+\contentsline {section}{\numberline {8.5}Conclusion}{137}{section.8.5}
+\addvspace {2.25em}
+\contentsline {chapter}{\numberline {9}Conclusions and Outlook}{139}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusion}{139}{section.9.1}
+\contentsline {paragraph}{Benefit of the Solutions - Application to Real System and Projects}{140}{section*.133}
+\contentsline {section}{\numberline {9.2}Perspectives and Future work}{140}{section.9.2}
+\contentsline {chapter}{\numberline {A}R\'{e}sum\'{e} de la Th\`{e}se en Fran\c {c}ais}{142}{appendix.A}
+\contentsline {chapter}{\numberline {B}List of Publications}{143}{appendix.B}
+\contentsline {chapter}{Bibliography}{144}{appendix*.134}

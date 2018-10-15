@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Thesis_thinh.aux
+A level-1 auxiliary file: TitlePagethinh.aux
+A level-1 auxiliary file: dedicace.aux
+A level-1 auxiliary file: acronyms.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 14405 items from 5000.
+Database file #1: ref_final.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty author in ericsson
+Warning--empty author in gas_emission
+Warning--empty author in EV_smart_grid
+
+Done.
+You've used 209 entries,
+            4039 wiz_defined-function locations,
+            1826 strings with 40402 characters,
+and the built_in function-call counts, 113655 in all, are:
+= -- 8699
+> -- 2784
+< -- 446
++ -- 1423
+- -- 570
+* -- 4992
+:= -- 17794
+add.period$ -- 431
+call.type$ -- 209
+change.case$ -- 203
+chr.to.int$ -- 999
+cite$ -- 212
+duplicate$ -- 8996
+empty$ -- 10667
+format.name$ -- 717
+if$ -- 25940
+int.to.chr$ -- 0
+int.to.str$ -- 209
+missing$ -- 1918
+newline$ -- 718
+num.names$ -- 185
+pop$ -- 5024
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 8885
+stack$ -- 0
+substring$ -- 2511
+swap$ -- 6364
+text.length$ -- 113
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 209
+warning$ -- 3
+while$ -- 331
+width$ -- 212
+write$ -- 1883
+(There were 3 warnings)

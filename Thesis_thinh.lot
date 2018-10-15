@@ -1,0 +1,31 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}{chapter.1}
+\contentsline {xpart}{Background Analysis}{9}{part.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Reference Technologies and Challenges}{10}{chapter.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Performance Evaluation for IP Mobile Multicast}{44}{chapter.3}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Method of experimentation: Comparison between different approaches regarding the high level metrics.}}{56}{table.caption.47}
+\contentsline {table}{\numberline {3.2}{\ignorespaces PMIPv6 benchmark: Comparison between different approaches.}}{57}{table.caption.48}
+\contentsline {xpart}{IP Multicast Mobility in Proxy Mobile IPv6}{63}{part.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Optimizing Service Continuity in a Single PMIPv6 Domain}{64}{chapter.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Load Balancing of Multicast Flows in PMIPv6 Networks}{75}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Mobility in Heterogeneous Networks: Electric Vehicle Charging Service Use-Case}{88}{chapter.6}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Electrical vehicle charging system deployment: type and location.}}{90}{table.caption.78}
+\contentsline {xpart}{IP Multicast Mobility in DMM}{103}{part.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Inter-domain Mobility for PMIPv6: From the DMM's Perspective}{104}{chapter.7}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Inter-mobility domain solution: Parameters for the performance analysis}}{112}{table.caption.108}
+\addvspace {10\p@ }
+\contentsline {xchapter}{On the Efficiency of Dynamic Multicast Mobility Anchor in DMM}{115}{chapter.8}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Parameters for the performance analysis.\relax }}{124}{table.caption.116}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusions and Outlook}{139}{chapter.9}
+\addvspace {10\p@ }
+\contentsline {xchapter}{R\'{e}sum\'{e} de la Th\`{e}se en Fran\c {c}ais}{142}{appendix.A}
+\addvspace {10\p@ }
+\contentsline {xchapter}{List of Publications}{143}{appendix.B}

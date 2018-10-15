@@ -1,0 +1,47 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introduction}{\reset@font\mtcSfont 142}{section.A.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Technologies de R\IeC {\'e}f\IeC {\'e}rence et D\IeC {\'e}fis}{\reset@font\mtcSfont 144}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Multicast IP}{\reset@font\mtcSSfont 144}{subsection.A.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}La gestion de la mobilit\IeC {\'e} IP}{\reset@font\mtcSSfont 145}{subsection.A.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.3}Multicast IP dans le contexte de la mobilit\IeC {\'e}}{\reset@font\mtcSSfont 148}{subsection.A.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Les solutions en point de vue de l'IETF}{\reset@font\mtcPfont 149}{section*.136}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode La solution de base}{\reset@font\mtcPfont 149}{section*.137}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.4}La mobilit\IeC {\'e} d'un n\IeC {\oe }ud multicast dans un domaine DMM orient\IeC {\'e} r\IeC {\'e}seau}{\reset@font\mtcSSfont 150}{subsection.A.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.5}Evaluation de la performance}{\reset@font\mtcSSfont 151}{subsection.A.2.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.5.1}M\IeC {\'e}triques pour l'\IeC {\'e}valuation de la performance}{\reset@font\mtcSSSfont 151}{subsubsection.A.2.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.5.2}Evaluation exp\IeC {\'e}rimentale pour les r\IeC {\'e}seaux sans fil}{\reset@font\mtcSSSfont 151}{subsubsection.A.2.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}La mobilit\IeC {\'e} d'un n\IeC {\oe }ud multicast dans PMIPv6}{\reset@font\mtcSfont 153}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Optimisation de la continuit\IeC {\'e} de service dans un domaine PMIPv6}{\reset@font\mtcSSfont 153}{subsection.A.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Equilibrage de charge du flux multicast dans les r\IeC {\'e}seaux PMIPv6 }{\reset@font\mtcSSfont 154}{subsection.A.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.3}Mobilit\IeC {\'e} dans les r\IeC {\'e}seaux h\IeC {\'e}t\IeC {\'e}rog\IeC {\`e}nes}{\reset@font\mtcSSfont 154}{subsection.A.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.4}La mobilit\IeC {\'e} inter-domaine : du point de vue du DMM}{\reset@font\mtcSSfont 156}{subsection.A.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}La mobilit\IeC {\'e} d'un n\IeC {\oe }ud multicast dans DMM}{\reset@font\mtcSfont 156}{section.A.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.1}La mobilit\IeC {\'e} de l'auditeur dans DMM}{\reset@font\mtcSSfont 157}{subsection.A.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.2}Analyse Quantitative}{\reset@font\mtcSSfont 158}{subsection.A.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.2.1}Le mod\IeC {\`e}le du r\IeC {\'e}seau et les m\IeC {\'e}triques pour la performance}{\reset@font\mtcSSSfont 158}{subsubsection.A.4.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le mod\IeC {\`e}le de r\IeC {\'e}f\IeC {\'e}rence}{\reset@font\mtcPfont 158}{figure.caption.144}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Les messages li\IeC {\'e}s \IeC {\`a} l'analyse de performance}{\reset@font\mtcPfont 159}{section*.145}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le mod\IeC {\`e}le de d\IeC {\'e}lai}{\reset@font\mtcPfont 159}{section*.146}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le mod\IeC {\`e}le de mobilit\IeC {\'e}}{\reset@font\mtcPfont 159}{section*.147}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.2.2}La mod\IeC {\'e}lisation analytique}{\reset@font\mtcSSSfont 160}{subsubsection.A.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le temps d'interruption du service}{\reset@font\mtcPfont 160}{section*.148}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le d\IeC {\'e}lai de bout en bout}{\reset@font\mtcPfont 161}{section*.149}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode L'analyse du co\IeC {\^u}t}{\reset@font\mtcPfont 161}{section*.150}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode La perte de paquets}{\reset@font\mtcPfont 163}{section*.151}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.2.3}Les r\IeC {\'e}sultats num\IeC {\'e}riques}{\reset@font\mtcSSSfont 163}{subsubsection.A.4.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le temps d'interruption de service multicast}{\reset@font\mtcPfont 164}{figure.caption.154}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le d\IeC {\'e}lai de bout en bout}{\reset@font\mtcPfont 165}{section*.156}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le co\IeC {\^u}t de signalisation}{\reset@font\mtcPfont 166}{section*.158}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le co\IeC {\^u}t de livraison de paquets}{\reset@font\mtcPfont 166}{figure.caption.160}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le co\IeC {\^u}t de tunnelisation}{\reset@font\mtcPfont 166}{section*.162}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.2.4}Conclusion de la partie d'analyse quantitative}{\reset@font\mtcSSSfont 167}{subsubsection.A.4.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.3}La s\IeC {\'e}lection dynamique de l'ancre multicast}{\reset@font\mtcSSfont 167}{subsection.A.4.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.1}Les contextes consid\IeC {\'e}r\IeC {\'e}s}{\reset@font\mtcSSSfont 169}{subsubsection.A.4.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le contexte du service multicast}{\reset@font\mtcPfont 169}{section*.163}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le contexte du n\IeC {\oe }ud mobile}{\reset@font\mtcPfont 169}{section*.164}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Le contexte du r\IeC {\'e}seau}{\reset@font\mtcPfont 169}{section*.165}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.2}La description de l'architecture de la solution propos\IeC {\'e}e}{\reset@font\mtcSSSfont 169}{subsubsection.A.4.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.3}Les op\IeC {\'e}rations de la solution propos\IeC {\'e}e}{\reset@font\mtcSSSfont 170}{subsubsection.A.4.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.4}L'impl\IeC {\'e}mentation de la solution propos\IeC {\'e}e}{\reset@font\mtcSSSfont 171}{subsubsection.A.4.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}Conclusion et Perspectives}{\reset@font\mtcSfont 172}{section.A.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Les b\IeC {\'e}n\IeC {\'e}ficie des solutions propos\IeC {\'e}es}{\reset@font\mtcPfont 172}{section*.168}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Perspectives}{\reset@font\mtcPfont 173}{section*.169}}

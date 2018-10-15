@@ -1,0 +1,82 @@
+% {
+
+% \begin{titlepage}
+\vspace{5mm}
+% \center
+% Protocoles de communication coopératifs pour les réseaux véhiculaires sans-fil
+% Adaptive Communication Protocols for Cooperative Vehicular Systems
+% Mechanisms and architecture to support ITS Cooperative Safety Applications
+%  An information management Approach \\ to Safety  \\  for ITS Cooperative Sfety Applications
+% \begin{bfseries}
+  \noindent{To my parents, Salima and Ali
+\vspace{4mm}}
+%   \vspace{15mm}
+
+% 
+% 
+% 
+% \noindent{A doctoral dissertation submitted to:}
+% 
+% \vspace{2mm}
+% 
+% \noindent{TELECOM ParisTech}
+% 
+% \vspace{2mm}
+% 
+% \noindent{In Partial Fulfillment of the Requirements for the Degree of:}
+% 
+% \vspace{2mm}
+% 
+% \noindent{\textbf{Doctor of Philosophy}}
+% 
+% \vspace{2mm}
+% 
+% \noindent{Specialty : \textsc{Computer Science and Networking}}
+% 
+% \vspace{2mm}
+% 
+% 
+% 
+% 	%\noindent{Approved by the following examining committee:}
+% 
+% 
+%   %\vspace{2mm}
+% 
+% %\begin{large}
+% %  \begin{tabular}{l r} 
+% %    Dr. Jean-Marc Odobez & Pr\`esident\vspace*{2mm}\\
+% %    Prof. Fabio Roli & Rapporteur\\
+% %    Dr. Fran\c{c}ois Br\'emond\vspace*{2mm} & Rapporteur\\
+% %    Dr. Frederic Dufaux & Examinateur\vspace*{2mm}\\
+% %    Prof. Dugelay Jean-Luc  & \hspace{15mm} Directeurs de th\`ese\\
+% %  \end{tabular}
+% %\end{large}
+% 
+% \begin{center}
+% \noindent \large 
+% \begin{tabular}{llcl}
+%       \textit{Jury :}	& 		& & \\\\
+%      \textit{Reviewers:} & & & \\
+%  \multicolumn{2}{l}{~~Prof.\ Javier \textsc{Gozalvez-Sempre}} 		& - &  University Miguel Hernandez, Spain\\
+%  \multicolumn{2}{l}{~~Prof.\ Andr\'{e} Luc \textsc{Beylot}} 		& - &  IRIT-ENSEEIHT, France \\
+%   %    \textit{Advisor :}	& Gr�goire \textsc{Malandain}		& - & INRIA (Asclepios)\\
+%  %     \textit{President :}& 		& & \\
+% \\
+%       \textit{Examiners:}& 		& & \\
+%       
+% \multicolumn{2}{l}{~~Prof.\ Marcelo \textsc{Dias de Amorin}}           & - & LIP6, Universit\'{e} Pierre et Marie Curie, France\\
+% \multicolumn{2}{l}{~~Prof.\ Carla-Fabiana \textsc{Chiasserini}}           & - &  Politecnico di Torino, Italy\\
+%  %     				& Guido \textsc{Gerig}			& - & University of North Carolina\\
+% \\
+% 
+%       \textit{Supervisors:}& 		& & \\
+%         \multicolumn{2}{l}{~~Prof.\ Christian \textsc{Bonnet}} 		& - & EURECOM, France\\
+%           \multicolumn{2}{l}{~~Dr.\ J\'{e}r\^{o}me  \textsc{H\"{a}rri}} 	& - & EURECOM, France\\
+% 
+%   
+% \end{tabular}
+% \end{center}
+% 
+% \end{titlepage}
+
+% }

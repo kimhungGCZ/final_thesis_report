@@ -1,0 +1,380 @@
+\section{Introduction}
+Recently, new trends in wireless communications have been emerging enabling a wide variety of new applications. In particular, wireless vehicular communications (V2X) including Vehicle-to-Vehicle (V2V) and Vehicle-to-Infrastructure (V2I) communications, are currently being developed and implemented to support the integration of information and communication technology (ICT) within the transportation systems. This concept referred as Intelligent Transportation System (ITS) will provide innovative solutions to improve our lives and make transport safer, more efficient, comfortable and respecting the eco-system.
+
+Accordingly, two primary branches of services targeted to ITS are created. First, \textit{infotainment applications} designed to provide more comfort and assistance to the driver and passengers e.g. Internet access, useful information about weather forecast and nearby point-of-interests. Second, \textit{safety applications} aim at enhancing road traffic safety including collision avoidance services, accident notifications and, collection and distribution of information related to traffic road conditions.
+In the scope of this thesis, we focus on ITS cooperative safety applications as we believe that they represent the most critical and vital ITS services that need further investigation.
+
+Given their importance, ITS cooperative safety applications are particularly highly demanding in terms of accuracy and reliability of information reception. Moreover, they are drastically sensitive to delays. For instance, when an accident occurs, the safety information must be delivered accurately and on time respecting the delay constraints in order to prevent other road hazards from happening. Their effectiveness depends thus on the reliability of the shared communication medium.
+
+The common communication strategy envisioned to be used is the \textit{V2X broadcast} based on the \textit{IEEE 802.11p MAC} \cite{802.11p} standard which is an amendment of the IEEE 802.11 adapted for vehicular environment. Although efficient in small scale environment, broadcast is constrained by the limited shared spectrum and cannot scale consequently with the huge number of nodes in the vehicular network. Other issues, that are worth considering, are on one hand the diverse and large amount of data conveyed over the network, and on the other hand, the high dynamic of the nodes. All of these challenging aspects will result naturally in a severe wireless congestion problem yielding to a degradation of the performance of the communication system. 
+% 
+Additionally, the absence of feedback (no acknowledgement) in the 802.11p broadcast channel might further restrain the reliability of transmissions and more particularly, ``safety-of-life'' transmissions requiring higher reliability and lower latency.
+
+The main objective of this work is to deal with the ITS challenging environment and ensure robust delivery and management of the safety-related information. We propose to design efficient \textit{``control mechanisms''} devoted to control the channel load and thus, reduce the issue of channel \textit{congestion}. Reducing the channel congestion blindly might imply also reducing the precision of the vehicles' knowledge about the surrounding environment (or the "awareness"), as it impacts directly the transmissions. Besides, ITS safety applications depend greatly on the accuracy of the awareness information.
+%Clearly, this imposes a trade-off between two conflicting objectives leading to the question: how to limit the channel congestion without affecting the performance of safety applications?
+%We suggest therefore, to design \textit{control policies} to \textit{control} the awareness system ensuring adequate precision for ITS safety applications and at the same time effective congestion control.
+
+In Section \ref{state}, we introduce the state of the art of the ITS environment and its challenges. Particularly, we analyze systematically the requirements of ITS safety applications. In Section \ref{cont1}, we address the design of control mechanisms to efficiently disseminate the event-driven safety information. We propose a congestion control scheme to adapt the multi-hop dissemination benchmark ``\textit{CBF}'' (Contention-Based Forwarding) to the vehicular challenging environment. We propose in Section \ref{cont2} to manage the one-hop awareness information by designing a robust awareness control mechanism, namely Glow-worm swarm filter (GSF), capable of providing the required accuracy for an efficient and correct detection of hazardous situation. Then, in Section \ref{cont3}, we suggest to apply our GSF to adapt the transmit rate of the awareness. Also, we evaluate the capability of GSF to achieve efficient detection of safety situations.
+
+Observing the fact that the transmissions related to safety events depend mainly on the global context perceived by the vehicles, we demonstrate in Section \ref{frame} the need for a global entity to control both the network congestion and the awareness.
+Finally, Section \ref{conclusion} summarizes the main findings of this thesis and the conclusion that can be drawn and provides direction for future works.
+
+%For an effective evaluation of our control mechanisms, we have contributed to the design of the \textit{iTETRIS}\footnote{\textit{iTETRIS} simulation platform http://www.ict-itetris.eu/10-10-10-community/} platform which is a large scale simulation platform tailored for the evaluation of cooperative ITS protocols and technologies in a close-to-real environment. It is designed to model the several peculiar characteristics of ITS environment and cover communication and mobility aspects as well as the diversity of ITS applications.
+\section{ITS Safety Applications\label{state}}
+
+Safety applications have gained a lot of attraction since they are considered as the original motivation behind ITS. They are mainly devoted to reduce accidents and injuries and thus, to save lives. Typical ITS cooperative safety applications include for example accident notification messages and, collection and distribution of information on traffic road conditions.
+%In the scope of this thesis, we focus on ITS cooperative safety applications as we believe that they represent the most critical and vital ITS services that need further investigation.
+
+Due to the wide diversity of these applications, a large amount of data is expected to be exchanged among nodes. Safety information could be basically divided into two main types: The periodic one-hop location information referred as ``\textit{awareness}'' corresponding to the knowledge of the surrounding environment and the event-driven safety information generated and sent in multi-hop mode at the detection of a safety situation.
+
+For a successful operation of ITS safety, it is required that nodes \textit{cooperate} and accordingly share together this information. Cars, trucks, trains, motorbikes and even pedestrians can contribute to safer roads if they efficiently disseminate and manage jointly the information.
+
+The key challenges for a successful deployment of such services is to manage efficiently the information dissemination and thus, to provide relevant information to the driver fitting specific requirements and constraints. Accordingly designed control mechanisms and communication strategies have to cope with:
+\begin{itemize}
+ \item \textbf{The challenging ITS environment}\\
+ITS environment is characterized by several challenging aspects. They are mostly related to the unreliable and uncertain nature of the vehicular medium. Moreover, the large scale characteristic associated to the limited capacity of the shared spectrum are other crucial aspects that are worth consideration.
+ \item \textbf{The requirements of ITS applications}\\
+ITS safety applications require very short delay and high reliability in the information reception which is not the case for non-safety applications where the data is less sensitive to delay, but also generate more load on the wireless channel. Passengers can tolerate to receive a video downloaded from Internet with delay. However, it is crucially important to be informed in time about an eventual accident before its occurrence. This could be even lethal since it may lead to other hazardous situations.
+\end{itemize}
+
+\section{Design of Event-driven Information Control Mechanism \label{cont1}}
+
+A particular aspect of ITS safety applications is their sensitivity to the delay. The emergency information must be conveyed in very brief delay and to all the vehicles located in a specific area in proximity of danger as depicted in Figure \ref{ch4:scenarios}, short range multi-hop and periodic broadcasting should be used.
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/accident.eps} \label{ch4:accident}}
+\subfloat[]{\includegraphics[scale=0.7]{./Part1/Chapter4/figures/roadwork.eps}\label{ch4:roadwork}}
+\caption[Illustration of two safety situations.]{Illustration of two safety situations. In the first scenario (a), an accident occurs between two cars and to avoid other potential accidents, the safety information must be delivered to all nodes located at the same road as the hazard (red zone). Vehicles on the other roads are not concerned with this information. In the second scenario (b), the information of the local roadwork should be conveyed in the red area to reduce the risk of accident and to guarantee driver security.}
+\label{ch4:scenarios}
+\end{figure}
+
+Explicit acknowledgement not being available, achieving reliable broadcast still remains a very challenging topic. It is also a crucial aspect that needs to be solved before any successful deployment of ITS traffic safety applications. As a given sender cannot know if its transmission has been successful, it relies on redundant transmissions either directly or via forwarding nodes. Flooding accordingly appears to be an appropriate method to address such problem. Although efficient in small scale scenarios, flooding does not scale and leads to the well known broadcast storm problem \cite{IEEEhowto:storm}, as the number of retransmitters grows exponentially, and eventually saturates the wireless channel with unrequired communications leading to network congestion problems. The challenge is therefore to reach a similar dissemination rate as flooding but with significantly less transmissions. Several works have been carried out aiming at enhancing multi-hop dissemination in vehicular networks with the aim to reduce network congestion.
+
+{\em Receiver-based} approach, also known as {\em Contention-based Forwarding (CBF)} \cite{cbf}, is one of proposed solutions. Each node decides locally of the message relaying. Accordingly, receivers contend to be potential relays, the node winning the contention relaying and all other nodes overhearing the relay stopping their contention. Even though it has been proposed to be adopted for ITS safety applications, its design hypotheses have however been based on three major assumptions: uniform vehicular topology, non-fading channels and homogeneous communication capabilities. Realistic ITS environment and more particularly, urban topologies do not comply with any of them, making CBF select relays, which may not exist, may not be reached or may not be optimal due to heterogeneous transmit capabilities.
+
+In this section, we address the design of an efficient CBF contention mechanism tailored to the requirements of ITS safety applications and adapted to the specificities of vehicular urban environments. Also, none of the CBF mechanisms available today differentiates relays based on their dissemination capabilities. We therefore propose two approaches, called {\em Bi-Zone Broadcast (BZB)} and {\em Infrastructure Bi-Zone Broadcast (I-BZB)}, which regroup the asset of both random and distance-based CBF. I-BZB further adjusts the contention-timer to provide a higher chance for nodes with good dissemination properties (RSUs, buses, trams, trucks..) to be relays. We separate the forwarding area into two zones, one where a random CBF should be applied, and one where a distance-based CBF should be used. The two zones, depending on a distance threshold \textit{``D$_{th}$''}, can be adjusted to the topology and connectivity. The contention-timer is then weighted by the neighbor degree of the relays.
+
+As outlined in Figure \ref{BZB}, where dashed line presents the evolution of the waiting time of a standard distance-based CBF with regards the distance from the sender. Plain lines present the different bounds of \textit{BZB} contention scheme, the contention each node has to perform, depends mainly on these two zones.
+\begin{figure}[!t]
+\centering
+\includegraphics[scale=0.6]{./Part1/Chapter5/figures/scenariodth.eps}
+\caption{The \textit{BZB} contention scheme where the dashed and the plane curves represent respectively the distance-based CBF waiting time and the bounds of \textit{BZB}.}
+\label{BZB}
+\end{figure}
+
+In both areas, the waiting time is selected randomly between two bounds. For closer nodes where the distance is lower than the D$_{th}$, the interval of contention time selection is fixed to [T2, T$_{max}$], T2 is given in Eq. \ref{eq:t2} and T$_{max}$ is the maximum waiting time. Due to the random fashion of \textit{BZB}, an improvement of the contention scheme is perceived, as depicted in Figure \ref{BZB}, closer vehicles i.e. third node after the transmitter acquired a contention time lower than the one obtained by a basic distance-based CBF.
+
+The contention interval of vehicles with distance beyond D$_{th}$ is [0, T1] where T1 is detailed in Eq. \ref{eq:t1}. Having a lower bound of 0, farthest nodes are granted the possibility to forward immediately the message at reception without waiting a specific time. In worst cases, distance-based forwarding approach is applied.
+
+\begin{equation}
+T_{1} = T_{max}\,\times\,(1\,-\,\frac{d}{r})\label{eq:t1}\end{equation}
+
+\begin{equation}
+T_{2} = T_{max}\,\times\,(1\,-\,\frac{D_{th}}{r})\label{eq:t2}\end{equation}
+Where r indicates the transmission range, T$_{max}$ is the maximum waiting time, D$_{th}$ is the bi-zone distance threshold and d is the distance from the sender.
+
+
+The evaluation study has been conducted using the iTETRIS platform and a calibrated realistic urban environment of a city of Bologna modeling the non-homogeneity of the topology and connectivity of vehicular environment. We illustrate how this hybrid strategy showed to be significantly more adapted to vehicular urban environment providing around 46\% improvement in dissemination delay as depicted in Figure \ref{BZB-eval1} and 40\% reduction in overhead (Figure \ref{BZB-eval2}) compared to plain CBF or flooding.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{./Part1/Chapter5/figures/overhead-bzbgeo.eps}
+\caption{The variation of the transmission redundancy factor in case of \textit{BZB}, flooding and standard distance-based approaches with regards to the payload.}
+\label{BZB-eval1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf500bzbgeo.eps}}
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf2200bzbgeo.eps}}
+\caption{The CDF of the average reactivity delay in case of \textit{BZB}, flooding and standard distance-based approaches. (a) Packet size 500 bytes. (b) Packet size 2200 bytes.}
+\label{BZB-eval2}
+\end{figure}
+
+\subsection{Impact of awareness inaccuracy on the performance of \textit{BZB}}
+
+Dissemination control mechanisms, and more particularly receiver-based approaches, operate on the basis of the position information or ``awareness''. For instance, the decision of the relay selection depends mainly on the location of the originator and the receiver nodes.
+This location data is collected from several sources, notably, GPS, DENMs, CAMs or beacons. Unfortunately, such sources are often exposed to \textit{inaccuracy} and uncertainty resulting basically from high rate of losses in ITS environment. GPS signals are attenuated by tall buildings blocking the satellites LOS which might generate errors in the order of tens of meters. In addition to that, reflections, high fading and interferences influence drastically the CAMs and DENMs transmissions and can produce consequently high rate of missing positioning data. Furthermore, dynamic and sudden changes in vehicular mobility is an additional issue for awareness precision.
+
+% Both CAMs and GPS signals are highly sensitive to the adverse channel conditions intensified by reflections, high fading and interferences. Furthermore, dynamic and sudden changes in vehicular mobility is another reason for the loss of awareness precision.
+% targeted to build the awareness system of ITS entities
+The main objective of this section is to provide an understanding of the relation between the awareness information and the effectiveness of dissemination mechanisms to deliver reliably and accurately the emergency information. In particular, we focus on the effects of awareness inaccuracy on the behavior and the performance of \textit{BZB}.
+  
+Imprecision and inaccuracy of awareness data could yield to several issues related to either the dissemination operation or the detection of the safety event itself from the application perspective:
+
+Generation of \textit{``false alarms''} of emergency events:
+
+Another important issue is associated to the application level and especially to the detection of the emergency events. For instance, an inaccurate positioning data of the other vehicle in front leads to a wrong detection of an eventual collision between the two vehicles and accordingly issuing false alarms, as depicted in Figure \ref{scen-false}. Relays at reception cannot distinguish that and re-transmit the wrong information.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{./Part1/Chapter5/figures/falsealarm.eps}
+\caption[An illustration of a scenario where a false alarm is triggered upon wrong estimation of positioning information]{An illustration of a scenario where a false alarm is triggered upon wrong estimation of positioning information. Another actual collision occurred and accordingly a transmission is triggered.}
+\label{scen-false}
+\end{figure}
+
+\paragraph{Multiple detection of the same event:}
+
+A scenario that might happen as well is when several nodes (distinct applications) detect the same emergency situation and thus, trigger several alerts. As illustrated in Figure \ref{scen-multi}, node (A) and (B) trigger two different messages that contains information about the same perceived event. The relay node upon receiving the two messages, will send two distinct but redundant messages.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{./Part1/Chapter5/figures/multiplesource.eps}
+\caption{An illustration of a scenario where two nodes (A and B) detect the same emergency event and send different packets to the network.}
+\label{scen-multi}
+\end{figure}
+
+We have conducted a simulation study to investigate specifically the effects of inaccurate detection of safety events on the performance of \textit{BZB}. Two scenarios have been considered, mono detection and multiple detections. In the second scenario, four different sources (or nodes) have been used to trigger the safety information transmission one is considered as actual and three as redundant or false alarms.
+
+Figure \ref{overhead-multi} depicts the measured transmission redundancy. The network overhead of multiple detections scenario is highly important as compared to mono detection. It corresponds almost to more than the double in case of packet size 2200 bytes which is nothing but an extra and useless overhead.
+Analogously, in Figure \ref{cdf-multi}, it is clear to observe that when increasing the number of redundant transmissions or false alarms, \textit{BZB} fails to respect ITS safety applications requirements in terms of reactivity delay. At best case, up to 90\% of the receivers get the packet within more than 50 ms.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{./Part1/Chapter5/figures/overhead-multi.eps}
+\caption{The variation of \textit{BZB} transmission redundancy factor with regards the payload in case of multiple sources scenario.}
+\label{overhead-multi}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf500multi.eps}}
+\subfloat[]{\includegraphics[scale=0.6]{./Part1/Chapter5/figures/cdf2200multi.eps}}
+\caption{The CDF of \textit{BZB} delay in multiple sources scenario. (a) Packet size 500 bytes. (b) Packet size 2200 bytes.}
+\label{cdf-multi}
+\end{figure}
+
+The obtained results reveal the strong impact of awareness inaccuracy on the effectiveness of the event-driven dissemination procedure. An accurate detection and dissemination of an emergency situation depends on an accurate perception of the global context. The cancellation of a triggered transmission of DENM is highly costly \cite{etsidenm} as extra ``cancellation'' DENMs have to be sent to inform other nodes that the event is obsolete. Therefore it is worthy to avoid from the beginning wrong or redundant transmissions. We believe that it is required to further investigate the accuracy and certainty of the global perception (or ``awareness'') of the vehicles.
+
+
+\section{Control Cooperative Awareness Accuracy with Swarm-based Particle Filters \label{cont2}}
+
+A high precision in the global perception is strongly required by event-driven dissemination protocols as well as many ITS cooperative safety applications. For instance, in case of collision avoidance application, accurate geographic information of each vehicle and its neighborhood has to be provided in order to efficiently evaluate the risk of collision with potential vehicles. Yet, GPS signals and wireless communication are known to be unreliable and uncertain. Packets losses due to high fading and interferences may occur frequently, and GPS signals may be missed or received with large errors.
+%This leads to high rates of beacon losses due to high fading and interferences. Moreover, it may happen to miss GPS signals and/or to receive it with large errors. 
+In such cases, extrapolation using position tracking represents a possible solution to recover from unreliable or missing positioning data.
+
+Tracking has been studied extensively in the last decades and several tracking approaches have been proposed. Bayesian filters i.e. Kalman filters (KF) \cite{kf} and particle filters \cite{pf1} are the most well-known ones. The limitation of these approaches is the fact that they rely on reliable and constant position updates either from GPS, or from CAMs and DENMs. In addition, they depend on the assumptions that future motions not varying much from the previous ones as well as that positioning errors are uncorrelated and Gaussian.
+% 
+Yet, the unreliable characteristics of the wireless channel, as well as unexpected sudden motion changes typically found in vehicular motions, make those filters lose the actual location of the vehicles. Observing that vehicular mobility is jointly governed by physical and social laws, e.g. clusters are formed on the road as a result of social needs and behaviors, and depicts comparable patterns to swarm behaviors, we suggest to rely on artificial swarm intelligence to enhance tracking algorithms which in their turn, are expected to improve the awareness accuracy.
+%
+
+We propose a control mechanism for cooperative awareness accuracy. We focus mainly on the one-hop awareness provided by CAMs. Our approach called Glow-worm Swarm Filter (GSF) is a swarm-based Sequential Importance Resampling (SIR) particle filtering based on multiple hypotheses tracking. The proposed solution is to consider not only a single potential future location but also to consider various other potential locations modeling the eventual loss of GPS signals or packets in addition to the unpredictable motion changes.
+A Glow-worm Swarm Optimization (GSO) algorithm has been used because of its capabilities to find multiple local optima and to cluster the search space into various multiple hypotheses. This might implicitly improve the functionality of particle filter by augmenting the diversity of particles and avoiding the degeneracy problem. Figure \ref{fig:gsfscenario} reproduces the same scenario of Figure \ref{fig:pfscenario} but this time GSF is applied, particles are sub-divided into three groups, one major hypothesis and two minor hypotheses. Considering these different hypotheses, the filter, consequently, is able to manage the loss of the beacon and maintain efficiently the tracking process stable.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{./Part2/Chapter6/figures/gsfscloss.eps}
+\caption[An illustration of a tracking scenario.]{An illustration of a tracking scenario. The dots in the figure represent the particles corresponding to the position estimate of the vehicle. The tracked vehicle is estimated by GSF to be in the minor hypothesis. Considering unexpected beacons losses, GSF is able to ensure good tracking performance.}
+\label{fig:gsfscenario}
+\end{figure}
+
+Using the iTETRIS \cite{itetris} simulation platform and calibrated realistic vehicular scenarios, we demonstrate that GSF is adapted to adverse channel conditions and to unexpected change in mobility patterns, providing better tracking accuracy with a lower number of particles compared to the standard SIR-PF. Moreover, GSF showed to achieve its design goal to ensure a trade-off between high tracking precision and fast convergence.
+
+GSF gives better estimation results, the error distance goes below 1.3~m in case of iTETRIS urban scenario. However, the best performance of the basic SIR-PF exceeds 1.65~m of position error. An improvement on the tracking error: 44\% comparing to the SIR-PF is provided by GSF in case of 10 particles for both artificial and iTETRIS scenarios. A slight decrease in the distance error is observed for realistic iTETRIS scenario which can be explained by the fact that the average speed is more important for artificial scenario.
+
+\begin{table}
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{Artificial Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+Error GSF [m] & 1.53 & 1.49 & 1.55\\
+\midrule 
+Error SIR-PF [m] & 2.73 & 2.44 & 2.24\\
+\midrule
+Absolute Error [m] & 1.2 & 0.95 & 0.69 \\
+\midrule
+Benefit \% & 44\% & 39\% & 31\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Error distance of GSF and the basic PF in case of artificial urban scenario when considering 10, 100 and 500 particles.}
+	\label{tab:artificialurban}
+\end{table}
+
+
+\begin{table}
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{iTETRIS Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+Error GSF [m] & 1.36 & 1.31 & 1.27\\
+\midrule 
+Error SIR-PF [m] & 2.42 & 1.79 & 1.69\\
+\midrule
+Absolute Benefit [m] & 1.06 & 0.48 & 0.32 \\
+\midrule
+Benefit \% & 44\% & 27\% & 25\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Error distance of GSF and the basic PF in case of iTETRIS urban scenario in case of 10, 100 and 500 particles.}
+	\label{tab:itetrisurban}
+\end{table}
+
+In order to evaluate the real-time performance of the tracking algorithms, the execution time has been measured for different numbers of particles. Table \ref{tab:execurban} illustrates the real execution time in seconds of 100s of simulation in ns-3 for some scenarios. The basic SIR-PF ensures the lowest run time compared to GSF for the different scenarios which is due to the extra computation that GSF algorithm introduces. However, in order to respect real-time requirements of ITS safety applications and at the same time preserve a high level of accuracy, a trade-off between fast convergence and high precision must be taken into account.
+% 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+\textbf{Urban} & \textbf{10} & \textbf{100} & \textbf{500}\\
+\midrule 
+GSF [s] & 1.3 & 33.7 & 934.6\\
+\midrule 
+SIR-PF [s] & 0.6 & 8.2 & 158.2\\
+\midrule
+Benefit [s] & 0.7 & 25.5 & 776.4\\
+		\bottomrule
+	\end{tabular}
+	\caption{Convergence time of GSF compared to the basic SIR-PF in case of artificial urban scenario for 10, 100 and 500 particles.}
+	\label{tab:execurban}
+\end{table}
+
+We consider also assessing the effect of messages loss on the performance of the tracking algorithms.
+From Table \ref{tab:plossaurban}, we observe that in all the cases the distance error from real position grows when the packet loss ratio increases. The distance error does not exceed around 2.5~m for GSF scheme however it goes up to 4.7~m in case of the SIR-PF. The particles in the basic PF lose their importance. However, in GSF they are spread in all possible directions to augment the space search.
+The table shows how the error increases by more than 70\% for SIR-PF (1.99~m). However, in case of GSF the increase does not exceed 63\% (0.97~m). For one and 2 losses of awareness, SIR-PF error increases by 18\% and 56\% respectively which is more or less the double compared to the error \% of GSF (10\% and 22\%).
+
+\begin{table}
+	\centering
+	\begin{tabular}{lllll}
+		\toprule
+\textbf{Urban Scenario} & \textbf{No Loss} & \textbf{1 Loss} & \textbf{2 Loss} & \textbf{3 Loss}\\
+\midrule 
+GSF & 1.53 & 1.69 & 1.88 & 2.50\\
+\midrule 
+SIR-PF & 2.73 & 3.23 & 4.26 & 4.72\\
+\midrule
+Absolute Error [m] (GSF/SIR-PF)& -/- & 0.16/0.5 & 0.35/1.53 & 0.97/1.99 \\
+\midrule
+Error \% (GSF/SIR-PF)& -/- & 10\%/18\% & 22\%/56\% & 63\%/72\% \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Impact of packet loss on the error distance of GSF and the basic PF in case of urban scenario for 10 particles.}
+	\label{tab:plossaurban}
+\end{table}
+
+
+Typical events have not been addressed carefully in existing approaches which have not considered the evaluation of false alarms, they focused only on the performance of their system to detect safety situations.
+
+It is thus required to design new system to control the transmission of awareness. The new approach has to be able to accurately detect safety events and trigger accordingly awareness transmissions and at the same time, it has to reduce false alarms.
+So we propose to apply the concept of multiple hypotheses (GSF) to this problem. We use the results of Chapter \ref{ch:ch6} that demonstrated the effectiveness of GSF in tracking.
+
+\subsubsection{Detecting False Alarms: Reducing False Positives}
+In this section, we examine the performance of the transmit rate approaches to detect correctly the urgent event of braking and limit false alarms. The FAR is considered as the performance metric. The distance between the ego vehicle and the target vehicle has been measured in order to evaluate the detection of the safety alert. A threshold distance of 8~m has been used, under this value a safety situation should be triggered.
+
+Figure \ref{targetresult} shows the evolution of the distance between both vehicles with regards to the simulation time. The real distance, GSF-based and PF-based distances are plotted. In this scenario, the ego vehicle performs multiple sudden deceleration. From the curves illustrated in Figure \ref{targetresult} we can deduce that our transmit rate approach shows to give higher precisions. PF-based approach fails to detect accurately the braking event. We can notice that PF approach gives sometimes false alarms (two examples are depicted in the Figure).
+The average FAR for SIR-PF based approach reached easily the 54\%. However, it is only 2\% in case of our transmit rate control approach.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{./Part2/Chapter7/figures/resultFAR.eps}
+\caption{Distance between the ego vehicles and the target vs. simulation time.}
+\label{targetresult}
+\end{figure}
+
+We conclude that our GSF based transmit rate control approach ensure good performance as it is capable not only to reduce false negatives and consequently detect emergency event but also to reduce false positive alerts.
+
+\section{Efficient Transmit Rate Control Methodology \label{cont3}}
+
+In order to limit network congestion that could result from periodic transmissions of awareness, based on GSF, we propose an approach to control the awareness transmit rate. This approach benefits from the fact that GSF can adapt to aperiodic transmissions. 
+
+So basically, we intend to handle, on one hand, the channel load and, on the other hand meet the safety applications requirements. The challenge of this system is to understand how to conveniently:
+\begin{enumerate}
+	\item {\em Control channel congestion and reduce unnecessary awareness transmissions.}
+	\item {\em Control critical events and being able to detect unexpected safety situations.}
+\end{enumerate}
+
+The basic concept of our tracking-based approach is to let all nodes predict the awareness of their surroundings. Moreover, each vehicle should predict its own position as well in order to evaluate the precision of the prediction of others. Vehicles are allowed to communicate and send their local awareness only when they perceive a critical deviation from the actual position and detect the need of others to the fresh information. A flowchart of this scheme is presented in Figure \ref{flowchartTB}.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{./Part2/Chapter7/figures/flowcharttb.eps}
+\caption{Flowchart of the tracking-based cooperative awareness rate control.}
+\label{flowchartTB}
+\end{figure}
+
+This aspect makes conceptually {\bf periodic} awareness transmissions become {\bf aperiodic}. Yet, this may reduce the quality of awareness and as such does not cope with the constraints from safety applications. 
+
+Switching to periodic transmissions when detecting such scenarios, could be a solution. The issue here is that, in dynamic ITS environments, these situations are expected to be present often but with varied degrees of criticalness. For example, considering the case of traffic jams, vehicles are assumed to accelerate and decelerate frequently. However, transmissions are not needed each time. This could lead to unnecessary channel load.
+An efficient detection of the context is therefore needed in order to distinguish between actual safety situations and false alarms (false positives).
+
+The idea is to provide alternative hypotheses and transmit the awareness only when the future mobility does not exist in neither of these hypotheses. Additionally, the transmission is triggered only when one of the hypothesis detects a safety event which is defined according to the application.
+
+We evaluate the effectiveness of our transmit rate control based on GSF to reduce false positives maintaining the same performance in detecting safety situations (and reducing false negatives). We demonstrate how well this aspect fits safety constraints.
+
+\subsubsection{Detecting Safety Events: Reducing False Negatives}
+
+Figure \ref{lightdecc} plots the evolution of the speed of a braking scenario. The number of transmissions of both GSF-based and PF-based transmit rate control is also illustrated. We can deduce from this figure that PF based awareness transmission is mostly periodic in the whole scenario which is due to the increasing accumulated error on the position estimate of PF. However, GSF before deceleration showed to be aperiodic due to its ability to track the awareness. Then, when the vehicle starts to decelerate GSF detects this context change and remains aperiodic even after the detection.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.75]{./Part2/Chapter7/figures/mediumspeed.eps}
+\caption{Speed vs. simulation time. Impact of deceleration on tracking performance and on ITS collision warning application in case of medium speed.}
+\label{lightdecc}
+\end{figure}
+
+Figure \ref{brutaldecc} illustrates another braking scenario with high speed. In this scenario both transmit rate control models are periodic before deceleration phase. PF remains periodic even after deceleration however GSF can detect the context change and reduce the periodicity of transmissions when it becomes unnecessary to send.
+We can notice here that the effectiveness of tracking for active safety applications is ensured by GSF since it is able to detect an abrupt context change. Furthermore, it is capable to reduce the number of transmissions when it is not needed, and as such also contribute to the reduction of the channel load.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.75]{./Part2/Chapter7/figures/highspeed.eps}
+\caption{Speed vs. simulation time. Impact of deceleration on tracking performance and on ITS collision warning application in case of high speed.}
+\label{brutaldecc}
+\end{figure}
+
+We conclude, here, that SIR-PF-based scheme even being almost the time periodic cannot ensure good prediction performance. However, apart from ensuring precise awareness prediction, GSF can remain aperiodic and at the same time detect the context change.
+
+\subsection{Reducing channel congestion}
+In this section, we intend to study the performance of the transmit rate control schemes in terms of channel congestion reduction.
+
+Simulation results in Table \ref{tab:rate}, prove that GSF helps to reduce the rate of awareness transmissions, only 4.68 transmissions out of 10 (in case of periodic transmission) are performed in 1~s. More than 50\% of periodic transmission has been suppressed by our GSF algorithm, only 16\% for PF. We can notice also the improvement provided by GSF-based awareness control compared to PF-based algorithm, 45\% for urban scenario and 30\% in case of highway.
+We observe also that GSF-based mechanism gives lower performance for highway scenario which is due to the higher speed (see Section \ref{ch6:sec:Performance-evaluation} for more details about the performance of GSF).
+
+\begin{table}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+Transmit Rate & Urban Scenario & Highway Scenario\\
+\midrule 
+GSF-based           & 4.68           &  5.92  \\
+\midrule 
+SIR-PF-based            & 8.44           & 8.40 \\
+\midrule 
+Benefit \%    &  45\%          & 30\%  \\
+		\bottomrule
+	\end{tabular}
+	\caption{\label{tab:rate}Transmit rate for iTETRIS urban and highway scenario. The transmit rate is computed compared to periodic transmission (1~Hz).}
+\end{table}
+
+Figure \ref{rate} plots the channel load of the different schemes, based on particle filter, GSF and periodic transmission. Periodic transmission shows the worst results in terms of channel load, more than 80\% of channel usage may lead to a severe problem of network congestion.
+We can see that GSF ensures the best performance by maintaining the channel load to less than 15\% which corresponds to the inactive status (0\%-15\%). On the other hand, PF exceeds 15\% of channel load.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.95]{./Part2/Chapter7/figures/rateacosta.eps}
+\caption{Channel load vs. particles number.}
+\label{rate}
+\end{figure}
+
+We conclude that our transmit rate control scheme based on GSF, apart from satisfying the safety applications' constraints, ensures on the other hand an efficient channel congestion management and control.
+
+\section{Design Guidelines for a Generic ITS Congestion Control Framework \label{frame}}
+The results accomplished in this thesis pave the way for the design of a generic framework for safety-related information control. The designed control mechanisms compose the basis of such framework. The main concept is to bring together all relevant control mechanisms in one block guaranteeing the needs and requirements of different ITS applications. We think that the most convenient layer to place control mechanisms is the Facilities layer (from the ETSI/ITS architecture \cite{etsi}) since it controls all the input and output of the nodes.
+
+Moreover, the modeling approach that we suppose is comprised of three building blocks: the awareness management block, the context management and the data aggregation blocks.
+The awareness management block is split into two blocks: the awareness accuracy control and the awareness transmit control. The former provides the vehicles with high precision in its global perception using a specific mobility prediction model. The latter is designed to control the transmission rate of periodic awareness information in order to control the network congestion.
+The context management block provides functions for the management of the relevance of the transmission of event-driven safety data. The data aggregation model handles the potential aggregation of redundant information and takes the decision of the fusion of information.
+
+The design of such generic framework has to be further investigated as it has to take into account all the challenging issues associated with the diversity of the ITS applications.
+
+\section{Conclusion \label{conclusion}}
+
+In this thesis, we have focused on the robust ``control'' mechanisms of the safety-related information. We identified the various control levers available and feedbacks metrics required by control mechanisms for safety applications.
+
+Given its importance, we addressed first the \textit{control of the dissemination} of safety event-driven information in order to limit the number of retransmitters and thus, the ``channel congestion''.
+
+We observed that an efficient control safety-related message dissemination depends on parameters, feedback and levers that cannot be controlled at this level, i.e detection of event, channel load, which are all linked to the local cooperative awareness. Accordingly, we investigated efficient control mechanisms for local cooperative awareness precision and accuracy.
+% We have, thus, attempted to improve it and design a \textit{``control mechanism for awareness precision''}.
+% Our approach has shown its capability to provide required accuracy to enable efficient detection of safety events.
+
+A more precise awareness is capable of a better detection of safety events, but still does not impact the channel congestion. We finally applied the awareness control mechanisms to regulate the load on the channel, by reducing the transmission rate of awareness messages .
+
+In this thesis, we therefore first identified the various influencing factors impacting efficient control mechanisms for traffic safety applications. We then provided a set of control mechanisms capable of regulating the detection and dissemination of traffic safety events at various level and optimizing channel resources.  
