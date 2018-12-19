@@ -5,7 +5,7 @@
 %% Adapted by: Timo Rohrberg, 2009
 %% timo.rohrberg@student.kit.edu
 %%
-%% Additions by: Thorsten Haberecht, IPD - Chair Prof. Böhm, 2010
+%% Additions by: Thorsten Haberecht, IPD - Chair Prof. Bï¿½hm, 2010
 %% thorsten.haberecht@kit.edu
 
 
