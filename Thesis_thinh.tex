@@ -6,6 +6,20 @@
 
 \usepackage{pdfpages}
 \usepackage{imakeidx}
+\usepackage{dingbat}
+\usepackage{adjustbox}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{titlesec}
+
+%%%%%%%% Add new %%%%%%%%%%%%%%%%
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 
 \makeatletter
@@ -63,14 +77,14 @@
 
 % Finally, last but not least, I want to express my special gratitude to my parents, my wife and my son for their unconditional support, love and trust. They, together with another members in my big family, make my life full of kindness and happiness with their encouragement.\\
 
-\addcontentsline{toc}{section}{Abstract}
-\markboth{Abstract}{Abstract}
-\chapter*{Abstract}
+% \addcontentsline{toc}{section}{Abstract}
+% \markboth{Abstract}{Abstract}
+% \chapter*{Abstract}
 % With the development of wireless access technology as well as the explosion of mobile devices (such as smartphones, tablets, and vehicles), the next generation mobile network is not only restricted to provide the traditional voice services but also the data services. Also, the increasing penetration of the mobile devices is generating a huge number of data traffic over mobile networks. In all-IP mobile networks, IP mobility management is a crucial concept to meet the demand of ubiquitous Internet connectivity as well as new service requirements such as seamless handover across heterogeneous networks, consistent quality of experience and stringent delay constraints. In this context, the scalability and bandwidth efficiency from the multicast routing make the IP multicast a valuable solution from the application point of view to deal with a huge number of traffic, particularly, in mobile environments where users usually share frequency bands and limited capacity. But one of the major challenges for the multicast support is when considering mobility. It comes from the fact that the multicast protocols were designed to support the stationary multicast parties. As such, it raises some issues as a result of the interaction of IP multicast and IP mobility protocols such as service interruption, packet loss, routing non-optimal, and packet duplication, etc. In fact, the conventional IP mobility management (e.g., Mobile IPv6 (MIPv6) and Proxy Mobile IPv6 (PMIPv6)) which leverages on the centralized mobility management approach, brings several issues for the network operator like inefficient use of network resources, poor performance, and scalability issues. The concept of Distributed Mobility Management (DMM) aims to tackle these issues and helps the mobile operators address the challenges created by rising mobile usage while enhancing the overall customer experience.\\
 
 % In this thesis, our main objective is to deal with the multicast mobility-related issues. The solutions are proposed in the context of the evolution of the current IP mobility management: from the host-based to the network-based, and also from the centralized to the distributed mobility management. In more details, for a single PMIPv6 domain, we introduce a method to reduce the service disruption and leave latency. We then present a solution from the load balancing point of view to address the service disruption and packet duplication issue. As DMM has not been standardized, we propose an inter-domain mobility solution, which can be considered as a step in the evolution from PMIP towards DMM. Finally, we converge to a final architecture in a DMM environment that can offer various benefits and address most of the multicast listener mobility-related issues. Throughout this thesis, a near-to-real testbed is used to achieve the realistic results.
 
-aa \index{aa}
+
 
 \clearpage
 
@@ -100,56 +114,59 @@ aa \index{aa}
 \input{Introduction/Chapter1/chapter1_intro}
 \part{Background Analysis\label{pa:part1}}
 
-\chapter*{Overview of Part \ref{pa:part1}}
+% \chapter*{Overview of Part \ref{pa:part1}}
 
-In this part, we will introduce the fundamental notions, elements of Internet of Things as well as identity the common issues and challenges when deploying IoT solutions in large scale. We then analyze in detail Interoperability and Reliability issues in CloudIoT paradigm. The  most relevant work related such problems are also discussed.
+% In this part, we will introduce the fundamental notions, elements of Internet of Things as well as identity the common issues and challenges when deploying IoT solutions in large scale. We then analyze in detail Interoperability and Reliability issues in CloudIoT paradigm. The  most relevant work related such problems are also discussed.
 
 
 
-\chapter{Reference Technologies and Challenges}
+\chapter{Reference Technologies}
 \label{ch:reference_technologies}
 \input{Part1/Chapter2/chapter2_reference_technologies} 
 
-\chapter{Related Works}
+\chapter{Related Works and Challenges}
 \label{ch:performance_evaluation}
 \input{Part1/Chapter3/chapter3_simulation}
 
-\chapter*{Conclusion of Part \ref{pa:part1}}
+% \chapter*{Conclusion of Part \ref{pa:part1}}
 
 
 \part{Interoperation in IoT}
 \label{pa:part2}
-\chapter*{Overview of Part \ref{pa:part2}}
-...... To be complete.............
+% \chapter*{Overview of Part \ref{pa:part2}}
+% ...... To be complete.............
 
-\chapter{An Industrial IoT Framework to Simplify Connection Process using System-Generated Connector} 
+\chapter{An Industrial IoT Framework to interoperate IoT device connections using connectors} 
 \label{ch:connector} 
 \input{Part2/Chapter4/chapter4_connector}
 
-\chapter{A Scalable IoT Framework to Design Logical Data Flow using Virtual Sensor} \label{ch:VSF} 
+
+\chapter{A Scalable IoT Framework to Maximize Data Knowledge using Virtual Sensor}
+
+\label{ch:VSF} 
 \input{Part2/Chapter5/chapter5_VSF.tex}
 
-\chapter{WoT-AD: A Descriptive Language for Group of Things in Massive IoT} 
+\chapter{WoT-AD: A Descriptive Language for Group of Things} 
 \label{ch:Wot-AD}
 \input{Part2/Chapter6/chapter6_WOTAD.tex}
 
 
-\chapter*{Conclusion of Part \ref{pa:part2}}
-...... To be complete.............
+% \chapter*{Conclusion of Part \ref{pa:part2}}
+% ...... To be complete.............
 
-\part{Enhance Data Quality}
+\part{Reliability in IoT}
 \label{pa:part3}
-\chapter*{Overview of Part \ref{pa:part3}}
-............. To be compeleted ..............
+% \chapter*{Overview of Part \ref{pa:part3}}
+% ............. To be compeleted ..............
 
 %\clearpage
-\chapter{An Active Learning Method for Errors and Events Detecion in Time Series} \label{ch:CABD}
+\chapter{An Active Learning Method for Errors and Events Detecion} \label{ch:CABD}
 \input{Part3/Chapter7/chapter7_CABD.tex}
 
 \chapter{An Energy Efficient Sampling Algorithm in Massive IoT} \label{ch:smart_freq}
 \input{Part3/Chapter8/chapter8_SMFQ.tex}
-\chapter*{Conclusion of Part \ref{pa:part3}}
-.......... To be compeleted ................
+% \chapter*{Conclusion of Part \ref{pa:part3}}
+% .......... To be compeleted ................
 
 
 % \cleardoublepage\pagestyle{empty}\mbox{}\cleardoublepage
@@ -172,6 +189,11 @@ In this part, we will introduce the fundamental notions, elements of Internet of
 \label{publication}
 % \markboth{List ofPublications}{ListofPublications}
 \input{publications}
+
+\chapter{Tables}
+\label{tablesBig}
+% \markboth{List ofPublications}{ListofPublications}
+\input{tablesBig}
 
 
 % \clearpage

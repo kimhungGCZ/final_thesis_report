@@ -1,10 +1,37 @@
 \section{Conclusion}
+We have been witnessed the explosion of Internet of Things and its positive impacts on several real-life aspects. IoT is considered to have the potential to launch fourth industrial revolution and related economies. Based on the fact that IoT generally consists of small things, widely distributed and constrained capabilities in term of storage and computing power. In addition, the raw data collected from IoT Things is massive, heterogeneous and contains a vast amount of redundant information. All these limitations rise several issues relating to interoperability and reliability in Internet of Things.\\
 
+To tackle these issues, this thesis proposed the solutions to enhance both interoperability and reliability. Through this dissertation, the following objectives are achieved:
+\begin{itemize}
+    \item \textit{Identify the current states and challenges in cloud-based Internet of Things: } In the scope of this thesis, we just highlight such issues as interoperability, data reliability and device reliability. 
+    
+    \item \textit{Propose an IoT framework to achieve interoperability at device communication level: } The proposed solution is an innovative IoT framework that could automate the process of creating cloud-based middleware connector for things used in industrial settings. The framework significantly accelerates the configuration process for heterogeneous connections by using a light-weight and convenient connector template and supports the common set of protocols. Interoperability with other such implementations is preserved using ongoing IoT standardization. 
+    
+    \item \textit{Introduce an IoT Framework to maximize usable knowledge using virtual sensors: } the proposed framework supports building a logical data- flow (LDF) by visualizing either physical sensors or custom virtual sensors. This LDF is used to enables producing the high-level information from collected data. In addition, a web-based virtual sensor editor is also implemented on the top of the framework to simplify creation and configuration of the LDF.
+    
+    \item \textit{Present a semantically Descriptive Language for Group of Things: } The novel language enables semantically presenting compound objects namely Asset in Massive IoT scenario. Our method is based on a novel semantic description named Web of Things – Asset Description and a light-weight Web of Things framework, which are fully integrated together for maximizing the interoperability. 
+    
+    \item \textit{Propose an Active Learning method for errors and events detection in time series.}:  Our method effectively detects both errors and events in a single algorithm powered by active learning. In addition, the detection quality is controlled by the confidence of the classification, which is then used as the termination condition for the active learning procedure.
+    
+    \item \textit{Propose an Energy-Efficient Sampling Algorithm}: The proposed algorithm minimizing energy consumption by real-time estimating the optimal data collection frequency based on historical data. Our method is demonstrated that our proposal is light-weight enough to be deployed on constraint IoT devices that are limited in computation power and storage.
+    
+\end{itemize}
 
+\textbf{\textit{Benefit of the Solutions - Application to Real System and Projects: }}
+all the proposed solutions have been implemented and operating in a cloud-based IoT platform of a start-up company. This platform aims at providing cloud-based services based on Internet of Thing technologies to solve real-life problems. 
+In order to handle the connection from various IoT devices, our solution relating interoperability at device communication level is deployed at the communication layer of such framework. Then, the second solution using virtual sensors to maximize gained knowledge from these devices is also deployed. Furthermore, errors and events detection algorithm is implemented to maintain high data quality. On the other hand, the energy efficient sampling algorithm is implemented on all IoT devices, especially constrained-resource devices. 
 
+\section{Perspectives and Future work}
 
-
-
-
-
-
+With the desire to bride the gaps in interoperability and reliability in Internet of Things, this thesis proposed various solutions from architectures to algorithms. However, due to the variety of the topic, several aspects could not be analyzed in details so that there are big rooms for improvement.
+\begin{itemize}
+    \item \textit{Organizational Interoperability: } Throughout the dissertation, our solutions only target for syntactical interoperability and semantic interoperability. The highest level of interoperability, organizational Interoperability, did not focus. It would be interesting to see how the combination of syntactical and semantic interoperability to achieve organizational interoperability.
+    
+    \item \textit{Leveraging active learning for data repairing: } In chapter~\ref{ch:CABD}, we used active learning to improve the outlier detection quality. Based on the user interaction, the proposed algorithm could effectively identify and distinguish between abnormal data caused by errors and one caused by events. The active learning is applied to maximize the detecting performance while minimizing the user interaction.  Conceptually, active learning could be used in data repairing in the same purpose. Labeling the ``important'' points in dataset could significantly increase the repairing quality. 
+    
+    \item \textit{Enhancing virtual sensor capability: } More and more complex IoT applications and services have been emerging due to the Diffusion  of IoT. However, the virtual sensors proposed solutions in chapter~\ref{ch:VSF} only support mathematical operations. Thus, we need to enhance the functionality of such operation. For example, we could provide customizable operations that allow end-user to develop or configure their desired operations. 
+    
+    \item \textit{Device management in Massive IoT: } Another topic could be considered is the device management in Massive IoT context, where the communication is constrained such as Lora, Sigfox, etc. Most of the current device management mechanism require bidirectional communication. However, massive IoT scenario, the downlink connection from network to device is very limited. Therefore, a novel device management mechanism to bride these gaps is potential research work.
+    
+    
+\end{itemize}
